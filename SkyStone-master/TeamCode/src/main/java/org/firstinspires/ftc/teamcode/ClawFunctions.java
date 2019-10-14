@@ -1,5 +1,7 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.robotcore.util.ElapsedTime;
+
 public class ClawFunctions {
     public ClawFunctions()
     {
@@ -27,4 +29,16 @@ public class ClawFunctions {
         config.leftClaw.setPosition(1);
         config.rightClaw.setPosition(0);
     }
+
+    ElapsedTime timer = new ElapsedTime();
+
+    public void setTimer(ElapsedTime timer) {
+        this.timer = timer;
+    }
+
+    public ElapsedTime getTimer() {
+        return timer;
+    }
+
+
 }
