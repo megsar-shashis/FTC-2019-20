@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 
 @TeleOp(name = "Robowasps Teleop")
-public class RoboWaspsTeleop_two_controller extends LinearOpMode{
+public class TwoControllerTeleop extends LinearOpMode{
 
     public void runOpMode() {
         Config config = new Config();

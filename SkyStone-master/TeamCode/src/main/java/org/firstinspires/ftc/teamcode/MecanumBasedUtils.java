@@ -30,7 +30,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
  * Created by meghn on 10/1/2018.
  */
 
-public class RW_Mecanum_Utils {
+public class MecanumBasedUtils {
 
     //CONSTANTS
     int minGoldHueRange = 31;
@@ -70,7 +70,7 @@ public class RW_Mecanum_Utils {
      */
     private TFObjectDetector tfod;
 
-    public RW_Mecanum_Utils(LinearOpMode _opMode) {
+    public MecanumBasedUtils(LinearOpMode _opMode) {
         opMode = _opMode;
         imu = this.opMode.hardwareMap.get(BNO055IMU.class, "imu");
         BNO055IMU.Parameters parameters = new BNO055IMU.Parameters();
@@ -84,7 +84,7 @@ public class RW_Mecanum_Utils {
         }
     }
 
-    public RW_Mecanum_Utils()
+    public MecanumBasedUtils()
     {
     }
 

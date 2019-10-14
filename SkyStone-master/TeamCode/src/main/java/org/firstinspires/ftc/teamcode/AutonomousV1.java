@@ -73,6 +73,6 @@ public class AutonomousV1 extends LinearOpMode {
 
         //move forward ~12 in
         //scan for skystone + identify if case 1,2,3
-        
+        //pick skystone
     }
 }
