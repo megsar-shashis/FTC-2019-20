@@ -124,6 +124,10 @@ public class FindSkystone extends LinearOpMode {
                         int i = 0;
                         List<Recognition> skystone = new ArrayList<Recognition>();
                         List<Recognition> stone = new ArrayList<Recognition>();
+                        float objectHeight = 0;
+                        float imageHeight = 0;
+                        float ratioHeight = 0;
+                        double horizontalAngle = 0;
                         for (Recognition recognition : updatedRecognitions) {
                             telemetry.addData(String.format("label (%d)", i), recognition.getLabel());
                             telemetry.addData(String.format("  left,top (%d)", i), "%.03f , %.03f",
@@ -131,10 +135,10 @@ public class FindSkystone extends LinearOpMode {
                             telemetry.addData(String.format("  right,bottom (%d)", i), "%.03f , %.03f",
                                     recognition.getRight(), recognition.getBottom());
 
-                            float objectHeight = recognition.getHeight();
-                            float imageHeight = recognition.getImageHeight();
-                            float ratioHeight = imageHeight/objectHeight;
-                            double horizontalAngle = recognition.estimateAngleToObject(AngleUnit.DEGREES);
+                            objectHeight = recognition.getHeight();
+                            imageHeight = recognition.getImageHeight();
+                            ratioHeight = objectHeight/imageHeight;
+                            horizontalAngle = recognition.estimateAngleToObject(AngleUnit.DEGREES);
 
                             telemetry.addData("Estimated Angle", "%.3f", horizontalAngle);
                             telemetry.addData("Height Ratio", "%.3f", ratioHeight);
@@ -147,12 +151,23 @@ public class FindSkystone extends LinearOpMode {
                                 //Add to Stone List
                                 stone.add(recognition);
                             }
+
+                            i++;
                         }
 
                         //Check if Skystone list is empty
                         if(skystone.size() > 0){
                             //Recognizes Skystone
                             telemetry.addData("Skystone Detected: ", skystone.size());
+                            if(horizontalAngle < -5){
+                                //turn counterclockwise
+                            } else if(horizontalAngle > 5){
+                                //turn clockwise
+                            } else {
+                                if (ratioHeight < 0.5){
+                                    //move forwards
+                                }
+                            }
                         }else if(stone.size() > 0){
                             //No Skystones, Move to stone
                             telemetry.addData("No Skystones Detected, Stones Detected: ", stone.size());
