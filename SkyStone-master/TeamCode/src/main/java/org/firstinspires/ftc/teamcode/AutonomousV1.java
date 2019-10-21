@@ -75,6 +75,12 @@ public class AutonomousV1 extends LinearOpMode {
         //scan for skystone + identify if case 1,2,3
         //pick skystone
         //move back ~6 in
-
+        //travel position
+        //move under bridge
+        //turn 90 deg left
+        //hook and pull
+        //place block
+        //travel position
+        //under the bridge
     }
 }
