@@ -29,52 +29,77 @@
 
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
-import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import com.qualcomm.robotcore.hardware.LightSensor;
-
-import org.firstinspires.ftc.robotcontroller.external.samples.HardwarePushbot;
+import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.DcMotor;
 
 /**
- * This file illustrates the concept of driving up to a line and then stopping.
- * It uses the common Pushbot hardware class to define the drive on the robot.
- * The code is structured as a LinearOpMode
+ * This file provides basic Telop driving for a Pushbot robot.
+ * The code is structured as an Iterative OpMode
  *
- * The code shows using two different light sensors:
- *   The Primary sensor shown in this code is a legacy NXT Light sensor (called "sensor_light")
- *   Alternative "commented out" code uses a MR Optical Distance Sensor (called "sensor_ods")
- *   instead of the LEGO sensor.  Chose to use one sensor or the other.
+ * This OpMode uses the common Pushbot hardware class to define the devices on the robot.
+ * All device access is managed through the HardwarePushbot class.
  *
- *   Setting the correct WHITE_THRESHOLD value is key to stopping correctly.
- *   This should be set half way between the light and dark values.
- *   These values can be read on the screen once the OpMode has been INIT, but before it is STARTED.
- *   Move the senso on asnd off the white line and not the min and max readings.
- *   Edit this code to make WHITE_THRESHOLD half way between the min and max.
+ * This particular OpMode executes a basic Tank Drive Teleop for a PushBot
+ * It raises and lowers the claw using the Gampad Y and A buttons respectively.
+ * It also opens and closes the claws slowly using the left and right Bumper buttons.
  *
  * Use Android Studios to Copy this Class, and Paste it into your team's code folder with a new name.
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@Autonomous(name="Autonomous", group="Auto")
-@Disabled
-public class AutonomousV1 extends LinearOpMode {
+@TeleOp(name="MotorTest", group="Test")
+//@Disabled
+public class MotorTest extends OpMode{
 
     /* Declare OpMode members. */
-    Config         robot   = new Config();   // Use a Pushbot's hardware
+    ClawFunctions cf       = new ClawFunctions(); // use the class created to define a Pushbot's hardware
+    Config robot = new Config();
 
+
+    /*
+     * Code to run ONCE when the driver hits INIT
+     */
     @Override
-    public void runOpMode() {
-
-        /* Initialize the drive system variables.
+    public void init() {
+        /* Initialize the hardware variables.
          * The init() method of the hardware class does all the work here
          */
         robot.init(hardwareMap);
 
-        //move forward ~12 in
-        //scan for skystone + identify if case 1,2,3
-        //pick skystone
-        //move back ~6 in
+        // Send telemetry message to signify robot waiting;
+        telemetry.addData("Say", "Hello Driver");    //
+    }
 
+    /*
+     * Code to run REPEATEDLY after the driver hits INIT, but before they hit PLAY
+     */
+    @Override
+    public void init_loop() {
+    }
+
+    /*
+     * Code to run ONCE when the driver hits PLAY
+     */
+    @Override
+    public void start() {
+    }
+
+    /*
+     * Code to run REPEATEDLY after the driver hits PLAY but before they hit STOP
+     */
+    @Override
+    public void loop() {
+        DcMotor test = robot.Arm;
+        double power = .5 * gamepad1.left_stick_y;
+
+        test.setPower(power);
+    }
+
+    /*
+     * Code to run ONCE after the driver hits STOP
+     */
+    @Override
+    public void stop() {
     }
 }

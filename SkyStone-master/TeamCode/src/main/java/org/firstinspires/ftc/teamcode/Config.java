@@ -25,7 +25,7 @@ public class Config{
     Servo VSWinch = null;
     Servo HSWinch = null;
     Servo VHElbow = null;
-
+    DcMotor Arm = null;
     //claw
     Servo orient = null;
     Servo leftClaw = null;
@@ -63,6 +63,7 @@ public class Config{
         VSWinch= hwMap.get(Servo.class, "vs_winch");//hub 1 - port 0
         HSWinch = hwMap.get(Servo.class, "hs_winch"); //hub 1 - port1
         VHElbow = hwMap.get(Servo.class, "vh_elbow"); //hub 1 - port2
+        Arm = hwMap.get(DcMotor.class, "arm");//hub 1 - port 0
 
         orient = hwMap.get(Servo.class, "orient");//hub 1 - port 3
         leftClaw = hwMap.get(Servo.class, "left_claw");//hub 1 - port 4
@@ -78,6 +79,8 @@ public class Config{
         rightFront.setDirection(DcMotor.Direction.FORWARD);
         rightBack.setDirection(DcMotor.Direction.FORWARD);
 
+        Arm.setDirection(DcMotor.Direction.FORWARD);
+
         leftFront.setPower(0);
         leftBack.setPower(0);
         rightFront.setPower(0);
@@ -86,6 +89,7 @@ public class Config{
         VSWinch.setPosition(1);
         HSWinch.setPosition(0);
         VHElbow.setPosition(0);
+        Arm.setPower(0);
 
         orient.setPosition(1);
         leftClaw.setPosition(0);

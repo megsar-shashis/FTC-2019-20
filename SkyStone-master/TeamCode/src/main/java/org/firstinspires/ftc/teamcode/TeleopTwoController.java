@@ -29,9 +29,10 @@
 
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.Servo;
 
 /**
  * This file provides basic Telop driving for a Pushbot robot.
@@ -48,13 +49,13 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@TeleOp(name="ClawRead", group="Read")
+@TeleOp(name="MotorTest", group="Test")
 //@Disabled
-public class ClawRead extends OpMode{
+public class TeleopTwoController extends OpMode{
 
     /* Declare OpMode members. */
     ClawFunctions cf       = new ClawFunctions(); // use the class created to define a Pushbot's hardware
-    Config robot = new Config();
+    Config config = new Config();
 
 
     /*
@@ -65,7 +66,7 @@ public class ClawRead extends OpMode{
         /* Initialize the hardware variables.
          * The init() method of the hardware class does all the work here
          */
-        robot.init(hardwareMap);
+        config.init(hardwareMap);
 
         // Send telemetry message to signify robot waiting;
         telemetry.addData("Say", "Hello Driver");    //
@@ -90,12 +91,98 @@ public class ClawRead extends OpMode{
      */
     @Override
     public void loop() {
-        double leftRead = robot.VHElbow.getPosition();
-        double rightRead = robot.VSWinch.getPosition();
+        if(gamepad1.right_trigger == 1 && gamepad1.left_trigger == 0)
+        {
+            cf.open(config);
+        }
+        if(gamepad1.left_trigger == 1 && gamepad1.right_trigger == 0)
+        {
+            cf.close(config);
+        }
 
-        telemetry.addData("elbow read: ", leftRead);
-        telemetry.addData("IGNORE read: ", rightRead);
+        Servo orient = config.orient;
+
+        if(gamepad2.left_bumper == true && gamepad2.right_bumper == false)
+        {
+            orient.setPosition(0.5);
+        }
+
+        if(gamepad2.left_bumper == false && gamepad2.right_bumper == true)
+        {
+            orient.setPosition(1);
+        }
+
+
+        Servo winch1 = config.VSWinch;
+        double position = winch1.getPosition();
+
+        if(gamepad2.left_trigger == 1 && gamepad2.right_trigger == 0)
+        {
+            position -= .1;
+            winch1.setPosition(position);
+        }
+
+        if(gamepad2.left_trigger == 0 && gamepad2.right_trigger == 1)
+        {
+            position += .1;
+            winch1.setPosition(position);
+        }
+
+        if(gamepad2.left_trigger == 0 && gamepad2.right_trigger == 0)
+        {
+            winch1.setPosition(position);
+        }
+
+        Servo winch2 = config.HSWinch;
+        double position2 = winch2.getPosition();
+
+        if(gamepad2.left_bumper == true && gamepad2.right_bumper == false)
+        {
+            position2 -= .1;
+            winch2.setPosition(position2);
+        }
+
+        if(gamepad2.left_bumper == false && gamepad2.right_bumper == true)
+        {
+            position2 += .1;
+            winch2.setPosition(position2);
+        }
+
+        if(gamepad2.left_bumper == false && gamepad2.right_bumper == false)
+        {
+            winch1.setPosition(position2);
+        }
+
+
+        double fwdBackPower = -gamepad1.left_stick_y;
+        double strafePower = gamepad1.left_stick_x;
+        double turnPower = gamepad1.right_stick_x;
+
+        double leftFrontPower = fwdBackPower + turnPower + strafePower;
+        double rightFrontPower = fwdBackPower - turnPower - strafePower;
+        double leftBackPower = fwdBackPower + turnPower - strafePower;
+        double rightBackPower = fwdBackPower - turnPower + strafePower;
+
+        double maxPower = Math.abs(leftFrontPower);
+        if(Math.abs(rightFrontPower) > maxPower) {maxPower = Math.abs(rightFrontPower);}
+        if(Math.abs(leftBackPower) > maxPower) {maxPower = Math.abs(leftBackPower);}
+        if(Math.abs(rightBackPower) > maxPower) {maxPower = Math.abs(rightBackPower);}
+
+        if (maxPower > 1) {
+            leftFrontPower = leftFrontPower/maxPower;
+            rightFrontPower = rightFrontPower/maxPower;
+            leftBackPower = leftBackPower/maxPower;
+            rightBackPower = rightBackPower/maxPower;
+        }
+
+        telemetry.addData("powers", "|%.3f|%.3f|%.3f|%.3f|",
+                leftFrontPower, rightFrontPower, leftBackPower, rightBackPower);
         telemetry.update();
+        config.leftFront.setPower(leftFrontPower);
+        config.rightFront.setPower(rightFrontPower);
+        config.leftBack.setPower(leftBackPower);
+        config.rightBack.setPower(rightBackPower);
+
     }
 
     /*

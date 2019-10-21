@@ -29,9 +29,10 @@
 
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.Servo;
 
 /**
  * This file provides basic Telop driving for a Pushbot robot.
@@ -48,9 +49,9 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@TeleOp(name="ClawRead", group="Read")
+@TeleOp(name="LSlideTest", group="Test")
 //@Disabled
-public class ClawRead extends OpMode{
+public class LSlideTest extends OpMode{
 
     /* Declare OpMode members. */
     ClawFunctions cf       = new ClawFunctions(); // use the class created to define a Pushbot's hardware
@@ -90,12 +91,25 @@ public class ClawRead extends OpMode{
      */
     @Override
     public void loop() {
-        double leftRead = robot.VHElbow.getPosition();
-        double rightRead = robot.VSWinch.getPosition();
+        Servo winch1 = robot.VSWinch;
+        double position = winch1.getPosition();
 
-        telemetry.addData("elbow read: ", leftRead);
-        telemetry.addData("IGNORE read: ", rightRead);
-        telemetry.update();
+        if(gamepad1.left_trigger == 1 && gamepad1.right_trigger == 0)
+        {
+            position -= .1;
+            winch1.setPosition(position);
+        }
+
+        if(gamepad1.left_trigger == 0 && gamepad1.right_trigger == 1)
+        {
+            position += .1;
+            winch1.setPosition(position);
+        }
+
+        if(gamepad1.left_trigger == 0 && gamepad1.right_trigger == 0)
+        {
+            winch1.setPosition(position);
+        }
     }
 
     /*
