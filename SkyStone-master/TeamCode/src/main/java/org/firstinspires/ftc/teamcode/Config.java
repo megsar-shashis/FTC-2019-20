@@ -95,8 +95,8 @@ public class Config{
         leftClaw.setPosition(0);
         rightClaw.setPosition(0);
 
-        leftPull.setPosition(1);
-        rightPull.setPosition(0);
+        leftPull.setPosition(-0.5);
+        rightPull.setPosition(0.5);
 
 
         // May want to use RUN_USING_ENCODERS if encoders are installed.
