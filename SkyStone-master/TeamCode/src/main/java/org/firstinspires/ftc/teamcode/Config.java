@@ -60,13 +60,13 @@ public class Config{
         leftBack = hwMap.get(DcMotor.class, "left_back");//hub2 - port 2
         rightBack = hwMap.get(DcMotor.class, "right_back");//hub2 - port 3
 
-        VSWinch= hwMap.get(Servo.class, "vs_winch");//hub 1 - port 0
-        HSWinch = hwMap.get(Servo.class, "hs_winch"); //hub 1 - port1
-        VHElbow = hwMap.get(Servo.class, "vh_elbow"); //hub 1 - port2
+        VSWinch= hwMap.get(Servo.class, "vs_winch");//hub 1 - port 0  Change to port 5
+        HSWinch = hwMap.get(Servo.class, "hs_winch"); //hub 1 - port1 Change to port 3
+        VHElbow = hwMap.get(Servo.class, "vh_elbow"); //hub 1 - port2 Change to port 4
 
-        orient = hwMap.get(Servo.class, "orient");//hub 1 - port 3
-        leftClaw = hwMap.get(Servo.class, "left_claw");//hub 1 - port 4
-        rightClaw = hwMap.get(Servo.class, "right_claw");//hub 1 - port 5
+        orient = hwMap.get(Servo.class, "orient");//hub 1 - port 3 Change to port 0
+        leftClaw = hwMap.get(Servo.class, "left_claw");//hub 1 - port 4 Change to port 1
+        rightClaw = hwMap.get(Servo.class, "right_claw");//hub 1 - port 5 Change to Port 2
 
         leftPull = hwMap.get(Servo.class, "left_pull");//hub 2 - port 0
         rightPull = hwMap.get(Servo.class, "right_pull");//hub 2 - port 1
