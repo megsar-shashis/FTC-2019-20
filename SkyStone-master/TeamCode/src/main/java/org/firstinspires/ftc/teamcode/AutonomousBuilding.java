@@ -58,7 +58,7 @@ import org.firstinspires.ftc.robotcontroller.external.samples.HardwarePushbot;
 
 @Autonomous(name="Autonomous", group="Auto")
 @Disabled
-public class AutonomousV1 extends LinearOpMode {
+public class AutonomousBuilding extends LinearOpMode {
 
     /* Declare OpMode members. */
     Config         robot   = new Config();   // Use a Pushbot's hardware
@@ -71,16 +71,6 @@ public class AutonomousV1 extends LinearOpMode {
          */
         robot.init(hardwareMap);
 
-        //move forward ~12 in
-        //scan for skystone + identify if case 1,2,3
-        //pick skystone
-        //move back ~6 in
-        //travel position
-        //move under bridge
-        //turn 90 deg left
-        //hook and pull
-        //place block
-        //travel position
-        //under the bridge
+        //move forward ~
     }
 }

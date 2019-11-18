@@ -86,16 +86,16 @@ public class Config{
         rightFront.setPower(0);
         rightBack.setPower(0);
 
-        VSWinch.setPosition(1);
-        HSWinch.setPosition(0);
-        VHElbow.setPosition(0);
+        // VSWinch.setPosition(1);
+        // HSWinch.setPosition(0);
+        // VHElbow.setPosition(0);
         Arm.setPower(0);
 
-        orient.setPosition(1);
-        leftClaw.setPosition(0);
-        rightClaw.setPosition(0);
+        // orient.setPosition(1);
+        // leftClaw.setPosition(0);
+        // rightClaw.setPosition(0);
 
-        leftPull.setPosition(1);
+        leftPull.setPosition(0.5);
         rightPull.setPosition(0);
 
 
@@ -103,3 +103,6 @@ public class Config{
     }
 
 }
+
+//        leftPull.setPosition(0.18);
+//        rightPull.setPosition(0.46);

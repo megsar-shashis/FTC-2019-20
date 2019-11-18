@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d503246b-9753-4021-9122-fd0b95a4e676" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousFunctions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousV1.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousBuilding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/MotorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/MotorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TeleopTwoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TeleopTwoController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,157 +29,100 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TeleopTwoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="622">
-              <caret line="112" column="9" lean-forward="true" selection-start-line="112" selection-start-column="9" selection-end-line="112" selection-end-column="9" />
+            <state relative-caret-position="1241">
+              <caret line="103" column="40" selection-start-line="103" selection-start-column="40" selection-end-line="103" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptVuMarkIdentificationWebcam.java">
+        <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Config.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="159" column="48" lean-forward="true" selection-start-line="159" selection-start-column="48" selection-end-line="159" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptVuforiaSkyStoneNavigation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="87" column="13" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptVuforiaSkyStoneNavigationWebcam.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-188">
-              <caret line="86" column="13" selection-start-line="86" selection-start-column="13" selection-end-line="86" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptTensorFlowObjectDetectionWebcam.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-630">
-              <caret line="60" column="61" selection-start-line="60" selection-start-column="61" selection-end-line="60" selection-end-column="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptSoundsOnBotJava.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="63" column="13" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousV1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="537">
-              <caret line="71" column="32" lean-forward="true" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
+            <state relative-caret-position="1700">
+              <caret line="108" selection-start-line="108" selection-end-line="108" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousBuilding.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="639">
+              <caret line="73" column="24" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousFunctions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1292">
-              <caret line="663" lean-forward="true" selection-start-line="663" selection-end-line="663" />
+            <state relative-caret-position="1105">
+              <caret line="638" lean-forward="true" selection-start-line="638" selection-end-line="638" />
               <folding>
                 <element signature="docComment;class#AutonomousFunctions#0" />
-                <element signature="e#19938#22704#0" />
-                <element signature="e#20857#20932#0" />
-                <element signature="e#22121#22698#1" />
-                <element signature="e#22710#25379#0" />
-                <element signature="e#23532#23607#0" />
-                <element signature="e#24796#25373#1" />
-                <element signature="e#25385#28053#0" />
-                <element signature="e#26206#26281#0" />
-                <element signature="e#27470#28047#1" />
-                <element signature="e#28059#30940#0" />
-                <element signature="e#29002#29077#0" />
-                <element signature="e#30356#30933#1" />
-                <element signature="e#30946#33689#0" />
-                <element signature="e#31751#31826#0" />
-                <element signature="e#33105#33682#1" />
-                <element signature="e#33695#36584#0" />
-                <element signature="e#34646#34721#0" />
-                <element signature="e#36000#36577#1" />
-                <element signature="e#36590#39950#0" />
-                <element signature="e#37755#37771#0" />
-                <element signature="e#38724#39944#1" />
-                <element signature="e#38886#39367#1" />
-                <element signature="e#39956#44944#0" />
-                <element signature="e#40931#43024#1" />
-                <element signature="e#42409#43014#1" />
-                <element signature="e#43038#44938#1" />
-                <element signature="e#44323#44928#1" />
-                <element signature="e#44950#46421#0" />
-                <element signature="e#45618#46415#1" />
-                <element signature="e#45978#46188#1" />
-                <element signature="e#46194#46405#1" />
-                <element signature="e#46427#46591#0" />
-                <element signature="e#46597#47252#0" />
-                <element signature="e#46947#47021#0" />
-                <element signature="e#49766#50006#0" />
-                <element signature="e#50012#50408#0" />
-                <element signature="e#50184#50369#1" />
-                <element signature="e#50414#51209#0" />
-                <element signature="e#51027#51170#1" />
-                <element signature="e#51216#51275#0" />
-                <element signature="e#51280#51345#0" />
-                <element signature="e#51490#53791#0" />
-                <element signature="e#51757#51796#1" />
-                <element signature="e#51844#51884#1" />
-                <element signature="e#51930#53785#1" />
-                <element signature="e#51980#52799#1" />
-                <element signature="e#52049#52608#1" />
-                <element signature="e#52051#52091#0" />
-                <element signature="e#52406#52506#0" />
-                <element signature="e#52614#52785#1" />
-                <element signature="e#52844#53611#1" />
-                <element signature="e#52916#53420#1" />
-                <element signature="e#53248#53317#0" />
-                <element signature="e#53426#53597#1" />
-                <element signature="e#53617#53775#1" />
-                <element signature="e#53797#53817#0" />
-                <element signature="e#53797#54798#0" />
-                <element signature="e#54096#54135#1" />
-                <element signature="e#54183#54223#1" />
-                <element signature="e#54573#54673#0" />
-                <element signature="e#33921#34042#0" />
-                <element signature="e#64424#64661#0" />
+                <element signature="method#MecanumSlideInInches#0;class#AutonomousFunctions#0" />
+                <element signature="e#2346#2421#0" />
+                <element signature="e#3610#4187#1" />
+                <element signature="method#MecanumSlideRightInInches#0;class#AutonomousFunctions#0" />
+                <element signature="e#5021#5096#0" />
+                <element signature="e#6285#6862#1" />
+                <element signature="method#MecanumSlideLeftInInches#0;class#AutonomousFunctions#0" />
+                <element signature="e#7695#7770#0" />
+                <element signature="e#8959#9536#1" />
+                <element signature="method#MecanumMoveInInches#0;class#AutonomousFunctions#0" />
+                <element signature="e#10491#10566#0" />
+                <element signature="e#11845#12422#1" />
+                <element signature="method#MecanumMoveForwardInInches#0;class#AutonomousFunctions#0" />
+                <element signature="e#13240#13315#0" />
+                <element signature="e#14594#15171#1" />
+                <element signature="method#MecanumMoveBackwardInInches#0;class#AutonomousFunctions#0" />
+                <element signature="e#16135#16210#0" />
+                <element signature="e#17489#18066#1" />
+                <element signature="method#MecanumMoveInInchesWithRampUpSpeed#0;class#AutonomousFunctions#0" />
+                <element signature="e#19244#19260#0" />
+                <element signature="e#20213#21433#1" />
+                <element signature="e#20375#20856#1" />
+                <element signature="method#MecanumMoveInInchesWithCounter#0;class#AutonomousFunctions#0" />
+                <element signature="e#22420#24513#1" />
+                <element signature="e#23898#24503#1" />
+                <element signature="e#24527#26427#1" />
+                <element signature="e#25812#26417#1" />
+                <element signature="method#MecanumTurningInDegrees#0;class#AutonomousFunctions#0" />
+                <element signature="e#27107#27904#1" />
+                <element signature="e#27467#27677#1" />
+                <element signature="e#27683#27894#1" />
+                <element signature="method#getAbsoluteHeading#0;class#AutonomousFunctions#0" />
+                <element signature="method#ConfigureToMoveForward#0;class#AutonomousFunctions#0" />
+                <element signature="e#28436#28510#0" />
+                <element signature="method#GetTouchSensorState#0;class#AutonomousFunctions#0" />
+                <element signature="method#MoveLeadScrew#0;class#AutonomousFunctions#0" />
+                <element signature="e#29298#29483#1" />
+                <element signature="method#oneMotorArmEncoder#0;class#AutonomousFunctions#0" />
+                <element signature="e#30141#30284#1" />
+                <element signature="class#ScrewDirection#0;class#AutonomousFunctions#0" />
+                <element signature="e#30394#30459#0" />
+                <element signature="method#MoveLeadScrewWithMagnets#0;class#AutonomousFunctions#0" />
+                <element signature="e#30871#30910#1" />
+                <element signature="e#30958#30998#1" />
+                <element signature="e#31044#32899#1" />
+                <element signature="e#31094#31913#1" />
+                <element signature="e#31163#31722#1" />
+                <element signature="e#31165#31205#0" />
+                <element signature="e#31520#31620#0" />
+                <element signature="e#31728#31899#1" />
+                <element signature="e#31958#32725#1" />
+                <element signature="e#32030#32534#1" />
+                <element signature="e#32362#32431#0" />
+                <element signature="e#32540#32711#1" />
+                <element signature="e#32731#32889#1" />
+                <element signature="e#32911#32931#0" />
+                <element signature="method#MoveLeadScrew#1;class#AutonomousFunctions#0" />
+                <element signature="e#33210#33249#1" />
+                <element signature="e#33297#33337#1" />
+                <element signature="e#33687#33787#0" />
+                <element signature="e#33918#34039#0" />
+                <element signature="method#dropTeamMarker#0;class#AutonomousFunctions#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/ClawRead.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="88" column="78" lean-forward="true" selection-start-line="88" selection-start-column="78" selection-end-line="88" selection-end-column="78" />
-              <folding>
-                <element signature="method#init#0;class#ClawRead#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/ElbowTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -209,16 +156,17 @@
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/RoboWaspsTeleop_two_controller.java" />
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/ClawFunctions.java" />
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/ClawTest.java" />
-        <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Config.java" />
-        <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/MotorTest.java" />
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/LSlideTest.java" />
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TwoControllerTeleop.java" />
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TWOControllerTeleop.java" />
-        <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TeleopTwoController.java" />
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/ClawRead.java" />
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/ElbowTest.java" />
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousV1.java" />
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousFunctions.java" />
+        <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/MotorTest.java" />
+        <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Config.java" />
+        <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TeleopTwoController.java" />
+        <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousBuilding.java" />
       </list>
     </option>
   </component>
@@ -234,9 +182,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -274,11 +221,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../FTC-2018-19/ftc_app-4.3" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
@@ -397,7 +345,6 @@
       <window_info id="Designer" order="6" />
       <window_info id="Resources Explorer" order="7" />
       <window_info id="Capture Tool" order="8" />
-      <window_info anchor="bottom" id="Find" />
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Logcat" order="1" />
       <window_info anchor="bottom" id="TODO" order="2" />
@@ -405,6 +352,7 @@
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Build" order="5" weight="0.32977462" />
       <window_info anchor="bottom" id="Android Profiler" order="6" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Find" order="7" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Gradle" order="2" />
@@ -459,69 +407,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/MotorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="724">
-          <caret line="89" column="7" lean-forward="true" selection-start-line="73" selection-start-column="4" selection-end-line="89" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="61" selection-start-line="61" selection-end-line="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TwoControllerTeleop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="639">
-          <caret line="94" lean-forward="true" selection-start-line="16" selection-start-column="11" selection-end-line="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptVuMarkIdentificationWebcam.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="159" column="48" lean-forward="true" selection-start-line="159" selection-start-column="48" selection-end-line="159" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptVuforiaSkyStoneNavigation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="87" column="13" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptVuforiaSkyStoneNavigationWebcam.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-188">
-          <caret line="86" column="13" selection-start-line="86" selection-start-column="13" selection-end-line="86" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptSoundsOnBotJava.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="63" column="13" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptTensorFlowObjectDetectionWebcam.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-630">
-          <caret line="60" column="61" selection-start-line="60" selection-start-column="61" selection-end-line="60" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TeleopTwoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="622">
-          <caret line="112" column="9" lean-forward="true" selection-start-line="112" selection-start-column="9" selection-end-line="112" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/ClawTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="656">
@@ -529,10 +414,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptVuMarkIdentificationWebcam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1955">
+          <caret line="159" column="48" selection-start-line="159" selection-start-column="48" selection-end-line="159" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptVuforiaSkyStoneNavigation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="87" column="13" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptVuforiaSkyStoneNavigationWebcam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="86" column="13" selection-start-line="86" selection-start-column="13" selection-end-line="86" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptSoundsOnBotJava.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="63" column="13" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/ClawRead.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="88" column="78" lean-forward="true" selection-start-line="88" selection-start-column="78" selection-end-line="88" selection-end-column="78" />
+        <state relative-caret-position="867">
+          <caret line="88" column="78" selection-start-line="88" selection-start-column="78" selection-end-line="88" selection-end-column="78" />
           <folding>
             <element signature="method#init#0;class#ClawRead#0" />
           </folding>
@@ -541,87 +454,129 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/ElbowTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+        <state relative-caret-position="595">
+          <caret line="70" column="6" lean-forward="true" selection-start-line="70" selection-start-column="6" selection-end-line="70" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousV1.java">
+    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/MotorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="71" column="32" lean-forward="true" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
+        <state relative-caret-position="418">
+          <caret line="89" column="7" lean-forward="true" selection-start-line="89" selection-start-column="7" selection-end-line="89" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TwoControllerTeleop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="82" column="38" lean-forward="true" selection-start-line="82" selection-start-column="38" selection-end-line="82" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptTensorFlowObjectDetectionWebcam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-544">
+          <caret line="60" column="61" selection-start-line="60" selection-start-column="61" selection-end-line="60" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/SkystoneTensorFlowObjectDetection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TeleopTwoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1241">
+          <caret line="103" column="40" selection-start-line="103" selection-start-column="40" selection-end-line="103" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1700">
+          <caret line="108" selection-start-line="108" selection-end-line="108" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousFunctions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="663" lean-forward="true" selection-start-line="663" selection-end-line="663" />
+        <state relative-caret-position="1105">
+          <caret line="638" lean-forward="true" selection-start-line="638" selection-end-line="638" />
           <folding>
             <element signature="docComment;class#AutonomousFunctions#0" />
-            <element signature="e#19938#22704#0" />
-            <element signature="e#20857#20932#0" />
-            <element signature="e#22121#22698#1" />
-            <element signature="e#22710#25379#0" />
-            <element signature="e#23532#23607#0" />
-            <element signature="e#24796#25373#1" />
-            <element signature="e#25385#28053#0" />
-            <element signature="e#26206#26281#0" />
-            <element signature="e#27470#28047#1" />
-            <element signature="e#28059#30940#0" />
-            <element signature="e#29002#29077#0" />
-            <element signature="e#30356#30933#1" />
-            <element signature="e#30946#33689#0" />
-            <element signature="e#31751#31826#0" />
-            <element signature="e#33105#33682#1" />
-            <element signature="e#33695#36584#0" />
-            <element signature="e#34646#34721#0" />
-            <element signature="e#36000#36577#1" />
-            <element signature="e#36590#39950#0" />
-            <element signature="e#37755#37771#0" />
-            <element signature="e#38724#39944#1" />
-            <element signature="e#38886#39367#1" />
-            <element signature="e#39956#44944#0" />
-            <element signature="e#40931#43024#1" />
-            <element signature="e#42409#43014#1" />
-            <element signature="e#43038#44938#1" />
-            <element signature="e#44323#44928#1" />
-            <element signature="e#44950#46421#0" />
-            <element signature="e#45618#46415#1" />
-            <element signature="e#45978#46188#1" />
-            <element signature="e#46194#46405#1" />
-            <element signature="e#46427#46591#0" />
-            <element signature="e#46597#47252#0" />
-            <element signature="e#46947#47021#0" />
-            <element signature="e#49766#50006#0" />
-            <element signature="e#50012#50408#0" />
-            <element signature="e#50184#50369#1" />
-            <element signature="e#50414#51209#0" />
-            <element signature="e#51027#51170#1" />
-            <element signature="e#51216#51275#0" />
-            <element signature="e#51280#51345#0" />
-            <element signature="e#51490#53791#0" />
-            <element signature="e#51757#51796#1" />
-            <element signature="e#51844#51884#1" />
-            <element signature="e#51930#53785#1" />
-            <element signature="e#51980#52799#1" />
-            <element signature="e#52049#52608#1" />
-            <element signature="e#52051#52091#0" />
-            <element signature="e#52406#52506#0" />
-            <element signature="e#52614#52785#1" />
-            <element signature="e#52844#53611#1" />
-            <element signature="e#52916#53420#1" />
-            <element signature="e#53248#53317#0" />
-            <element signature="e#53426#53597#1" />
-            <element signature="e#53617#53775#1" />
-            <element signature="e#53797#53817#0" />
-            <element signature="e#53797#54798#0" />
-            <element signature="e#54096#54135#1" />
-            <element signature="e#54183#54223#1" />
-            <element signature="e#54573#54673#0" />
-            <element signature="e#33921#34042#0" />
-            <element signature="e#64424#64661#0" />
+            <element signature="method#MecanumSlideInInches#0;class#AutonomousFunctions#0" />
+            <element signature="e#2346#2421#0" />
+            <element signature="e#3610#4187#1" />
+            <element signature="method#MecanumSlideRightInInches#0;class#AutonomousFunctions#0" />
+            <element signature="e#5021#5096#0" />
+            <element signature="e#6285#6862#1" />
+            <element signature="method#MecanumSlideLeftInInches#0;class#AutonomousFunctions#0" />
+            <element signature="e#7695#7770#0" />
+            <element signature="e#8959#9536#1" />
+            <element signature="method#MecanumMoveInInches#0;class#AutonomousFunctions#0" />
+            <element signature="e#10491#10566#0" />
+            <element signature="e#11845#12422#1" />
+            <element signature="method#MecanumMoveForwardInInches#0;class#AutonomousFunctions#0" />
+            <element signature="e#13240#13315#0" />
+            <element signature="e#14594#15171#1" />
+            <element signature="method#MecanumMoveBackwardInInches#0;class#AutonomousFunctions#0" />
+            <element signature="e#16135#16210#0" />
+            <element signature="e#17489#18066#1" />
+            <element signature="method#MecanumMoveInInchesWithRampUpSpeed#0;class#AutonomousFunctions#0" />
+            <element signature="e#19244#19260#0" />
+            <element signature="e#20213#21433#1" />
+            <element signature="e#20375#20856#1" />
+            <element signature="method#MecanumMoveInInchesWithCounter#0;class#AutonomousFunctions#0" />
+            <element signature="e#22420#24513#1" />
+            <element signature="e#23898#24503#1" />
+            <element signature="e#24527#26427#1" />
+            <element signature="e#25812#26417#1" />
+            <element signature="method#MecanumTurningInDegrees#0;class#AutonomousFunctions#0" />
+            <element signature="e#27107#27904#1" />
+            <element signature="e#27467#27677#1" />
+            <element signature="e#27683#27894#1" />
+            <element signature="method#getAbsoluteHeading#0;class#AutonomousFunctions#0" />
+            <element signature="method#ConfigureToMoveForward#0;class#AutonomousFunctions#0" />
+            <element signature="e#28436#28510#0" />
+            <element signature="method#GetTouchSensorState#0;class#AutonomousFunctions#0" />
+            <element signature="method#MoveLeadScrew#0;class#AutonomousFunctions#0" />
+            <element signature="e#29298#29483#1" />
+            <element signature="method#oneMotorArmEncoder#0;class#AutonomousFunctions#0" />
+            <element signature="e#30141#30284#1" />
+            <element signature="class#ScrewDirection#0;class#AutonomousFunctions#0" />
+            <element signature="e#30394#30459#0" />
+            <element signature="method#MoveLeadScrewWithMagnets#0;class#AutonomousFunctions#0" />
+            <element signature="e#30871#30910#1" />
+            <element signature="e#30958#30998#1" />
+            <element signature="e#31044#32899#1" />
+            <element signature="e#31094#31913#1" />
+            <element signature="e#31163#31722#1" />
+            <element signature="e#31165#31205#0" />
+            <element signature="e#31520#31620#0" />
+            <element signature="e#31728#31899#1" />
+            <element signature="e#31958#32725#1" />
+            <element signature="e#32030#32534#1" />
+            <element signature="e#32362#32431#0" />
+            <element signature="e#32540#32711#1" />
+            <element signature="e#32731#32889#1" />
+            <element signature="e#32911#32931#0" />
+            <element signature="method#MoveLeadScrew#1;class#AutonomousFunctions#0" />
+            <element signature="e#33210#33249#1" />
+            <element signature="e#33297#33337#1" />
+            <element signature="e#33687#33787#0" />
+            <element signature="e#33918#34039#0" />
+            <element signature="method#dropTeamMarker#0;class#AutonomousFunctions#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousBuilding.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="639">
+          <caret line="73" column="24" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
         </state>
       </provider>
     </entry>

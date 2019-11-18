@@ -91,7 +91,7 @@ public class MotorTest extends OpMode{
     @Override
     public void loop() {
         DcMotor test = robot.Arm;
-        double power = .5 * gamepad1.left_stick_y;
+        double power = gamepad1.left_stick_y;
 
         test.setPower(power);
     }

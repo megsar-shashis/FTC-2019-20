@@ -49,7 +49,7 @@ import com.qualcomm.robotcore.hardware.Servo;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@TeleOp(name="MotorTest", group="Test")
+@TeleOp(name="Teleop", group="Teleop")
 //@Disabled
 public class TeleopTwoController extends OpMode{
 
@@ -84,6 +84,7 @@ public class TeleopTwoController extends OpMode{
      */
     @Override
     public void start() {
+
     }
 
     /*
@@ -91,70 +92,81 @@ public class TeleopTwoController extends OpMode{
      */
     @Override
     public void loop() {
-        if(gamepad1.right_trigger == 1 && gamepad1.left_trigger == 0)
-        {
-            cf.open(config);
-        }
-        if(gamepad1.left_trigger == 1 && gamepad1.right_trigger == 0)
-        {
-            cf.close(config);
-        }
+        config.leftPull.setPosition(.45);
+        config.rightPull.setPosition(.46);
 
-        Servo orient = config.orient;
+        // if(gamepad1.left_trigger == 1 && gamepad1.right_trigger == 0)
+        // {
+        //     config.leftPull.setPosition(.5);
+        //     config.rightPull.setPosition(.8);
+        // }
 
-        if(gamepad2.left_bumper == true && gamepad2.right_bumper == false)
-        {
-            orient.setPosition(0.5);
-        }
+        // Servo orient = config.orient;
 
-        if(gamepad2.left_bumper == false && gamepad2.right_bumper == true)
-        {
-            orient.setPosition(1);
-        }
+        // if(gamepad1.left_bumper == true && gamepad2.right_bumper == false)
+        // {
+        //     orient.setPosition(0.5);
+        // }
 
-
-        Servo winch1 = config.VSWinch;
-        double position = winch1.getPosition();
-
-        if(gamepad2.left_trigger == 1 && gamepad2.right_trigger == 0)
-        {
-            position -= .1;
-            winch1.setPosition(position);
-        }
-
-        if(gamepad2.left_trigger == 0 && gamepad2.right_trigger == 1)
-        {
-            position += .1;
-            winch1.setPosition(position);
-        }
-
-        if(gamepad2.left_trigger == 0 && gamepad2.right_trigger == 0)
-        {
-            winch1.setPosition(position);
-        }
-
-        Servo winch2 = config.HSWinch;
-        double position2 = winch2.getPosition();
-
-        if(gamepad2.left_bumper == true && gamepad2.right_bumper == false)
-        {
-            position2 -= .1;
-            winch2.setPosition(position2);
-        }
-
-        if(gamepad2.left_bumper == false && gamepad2.right_bumper == true)
-        {
-            position2 += .1;
-            winch2.setPosition(position2);
-        }
-
-        if(gamepad2.left_bumper == false && gamepad2.right_bumper == false)
-        {
-            winch1.setPosition(position2);
-        }
+        // if(gamepad1.left_bumper == false && gamepad2.right_bumper == true)
+        // {
+        //     orient.setPosition(1);
+        // }
 
 
-        double fwdBackPower = -gamepad1.left_stick_y;
+        // Servo winch1 = config.VSWinch;
+        // double position = winch1.getPosition();
+
+        // if(gamepad2.left_trigger == 1 && gamepad2.right_trigger == 0)
+        // {
+        //     position -= .1;
+        //     winch1.setPosition(position);
+        // }
+
+        // if(gamepad2.left_trigger == 0 && gamepad2.right_trigger == 1)
+        // {
+        //     position += .1;
+        //     winch1.setPosition(position);
+        // }
+
+        // if(gamepad2.left_trigger == 0 && gamepad2.right_trigger == 0)
+        // {
+        //     winch1.setPosition(position);
+        // }
+
+        // Servo winch2 = config.HSWinch;
+        // double position2 = winch2.getPosition();
+
+        // if(gamepad2.left_bumper == true && gamepad2.right_bumper == false)
+        // {
+        //     position2 -= .1;
+        //     winch2.setPosition(position2);
+        // }
+
+        // if(gamepad2.left_bumper == false && gamepad2.right_bumper == true)
+        // {
+        //     position2 += .1;
+        //     winch2.setPosition(position2);
+        // }
+
+        // if(gamepad2.left_bumper == false && gamepad2.right_bumper == false)
+        // {
+        //     winch1.setPosition(position2);
+        // }
+
+        // double arm = gamepad2.left_stick_y;
+        // config.Arm.setPower(arm);
+        // if(arm == 0)
+        // {
+        //     int cPosition;
+        //     cPosition = config.Arm.getCurrentPosition();
+        //     config.Arm.setTargetPosition(cPosition);
+        //     config.Arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        //     config.Arm.setPower(.5);
+        // }
+
+
+        double fwdBackPower = gamepad1.left_stick_y;
         double strafePower = gamepad1.left_stick_x;
         double turnPower = gamepad1.right_stick_x;
 
