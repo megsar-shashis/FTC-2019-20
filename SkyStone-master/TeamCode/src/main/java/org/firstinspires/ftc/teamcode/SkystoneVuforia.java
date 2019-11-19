@@ -108,7 +108,7 @@ public class SkystoneVuforia extends LinearOpMode {
         FORWARD,
         BACKWARD
     }
-    private SkystoneLocation FindSkystone(){
+    public SkystoneLocation FindSkystone(){
         SkystoneLocation skystoneLocation = SkystoneLocation.NONE;
         initVuforia();
 

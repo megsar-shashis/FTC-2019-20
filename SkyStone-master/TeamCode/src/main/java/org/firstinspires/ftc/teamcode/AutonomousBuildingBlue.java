@@ -30,19 +30,7 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import com.qualcomm.robotcore.hardware.LightSensor;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.List;
-import org.firstinspires.ftc.robotcore.external.ClassFactory;
-import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
-import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
-import org.firstinspires.ftc.robotcore.external.navigation.VuforiaLocalizer;
-import org.firstinspires.ftc.robotcore.external.tfod.TFObjectDetector;
-import org.firstinspires.ftc.robotcore.external.tfod.Recognition;
-import org.firstinspires.ftc.robotcontroller.external.samples.HardwarePushbot;
 
 /**
  * This file illustrates the concept of driving up to a line and then stopping.
@@ -64,12 +52,13 @@ import org.firstinspires.ftc.robotcontroller.external.samples.HardwarePushbot;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@Autonomous(name="Autonomous", group="Auto")
+@Autonomous(name="AutonomousBBlue", group="Auto")
 //@Disabled
-public class AutonomousV1 extends LinearOpMode {
+public class AutonomousBuildingBlue extends LinearOpMode {
 
     /* Declare OpMode members. */
-    Config         robot   = new Config();   // Use a Pushbot's hardware
+    Config c = new Config();   // Use a Pushbot's hardware
+    AutonomousFunctions f = new AutonomousFunctions();
 
     @Override
     public void runOpMode() {
@@ -77,21 +66,26 @@ public class AutonomousV1 extends LinearOpMode {
         /* Initialize the drive system variables.
          * The init() method of the hardware class does all the work here
          */
-        robot.init(hardwareMap);
+        c.init(hardwareMap);
 
-        /*ORIGINAL FRAMEWORK */
+        //move forward ~ 25"
+        f.MecanumMoveForwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 25);
 
-        //move forward ~12 in
-        //scan for skystone + identify if case 1,2,3
-        //pick skystone
-        //move back ~6 in
-        //travel position
-        //move under bridge
-        //turn 90 deg left
-        //hook and pull
-        //place block
-        //travel position
-        //under the bridge
+        //slide right ~ 8"
+        f.MecanumSlideLeftInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 5);
+
+        //move forward ~ 5"
+        f.MecanumMoveForwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 5);
+
+        //clamp pull servos
+
+        //move backward ~ 30"
+        f.MecanumMoveBackwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 30);
+
+        //release pull servos
+
+        //slide left ~ 52"
+        f.MecanumSlideRightInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 52);
+
     }
-
 }

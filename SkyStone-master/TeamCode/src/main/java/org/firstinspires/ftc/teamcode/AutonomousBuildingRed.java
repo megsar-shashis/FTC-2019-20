@@ -56,12 +56,13 @@ import org.firstinspires.ftc.robotcontroller.external.samples.HardwarePushbot;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@Autonomous(name="Autonomous", group="Auto")
-@Disabled
-public class AutonomousBuilding extends LinearOpMode {
+@Autonomous(name="AutonomousBRed", group="Auto")
+//@Disabled
+public class AutonomousBuildingRed extends LinearOpMode {
 
     /* Declare OpMode members. */
-    Config         robot   = new Config();   // Use a Pushbot's hardware
+    Config c = new Config();   // Use a Pushbot's hardware
+    AutonomousFunctions f = new AutonomousFunctions();
 
     @Override
     public void runOpMode() {
@@ -69,8 +70,26 @@ public class AutonomousBuilding extends LinearOpMode {
         /* Initialize the drive system variables.
          * The init() method of the hardware class does all the work here
          */
-        robot.init(hardwareMap);
+        c.init(hardwareMap);
 
-        //move forward ~
+        //move forward ~ 25"
+        f.MecanumMoveForwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 25);
+
+        //slide right ~ 8"
+        f.MecanumSlideRightInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 5);
+
+        //move forward ~ 5"
+        f.MecanumMoveForwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 5);
+
+        //clamp pull servos
+
+        //move backward ~ 30"
+        f.MecanumMoveBackwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 30);
+
+        //release pull servos
+
+        //slide left ~ 52"
+        f.MecanumSlideLeftInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 52);
+
     }
 }

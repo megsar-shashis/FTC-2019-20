@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d503246b-9753-4021-9122-fd0b95a4e676" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousBuildingBlue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousLoadingRed.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/MotorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/MotorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TeleopTwoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TeleopTwoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousBuilding.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousBuildingRed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousFunctions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousV1.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousV1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/MecanumBasedUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/MecanumBasedUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/SkystoneVuforia.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/SkystoneVuforia.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,11 +47,236 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousBuilding.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousBuildingRed.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="639">
-              <caret line="73" column="24" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
+            <state relative-caret-position="622">
+              <caret line="91" column="94" selection-start-line="91" selection-start-column="94" selection-end-line="91" selection-end-column="94" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousBuildingBlue.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="520">
+              <caret line="81" column="29" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousLoadingRed.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="384">
+              <caret line="77" selection-start-line="77" selection-end-line="77" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/SkystoneVuforia.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-55">
+              <caret line="65" column="11" lean-forward="true" selection-start-line="65" selection-start-column="11" selection-end-line="65" selection-end-column="11" />
+              <folding>
+                <element signature="docComment;class#SkystoneVuforia#0" />
+                <element signature="e#4285#4314#0" />
+                <element signature="e#4442#4569#0" />
+                <element signature="e#4612#4633#0" />
+                <element signature="e#4845#4860#0" />
+                <element signature="method#FindSkystone#0;class#SkystoneVuforia#0" />
+                <element signature="e#5443#5478#1" />
+                <element signature="e#5484#5579#1" />
+                <element signature="e#5589#5792#0" />
+                <element signature="e#5819#5859#1" />
+                <element signature="e#6149#6234#0" />
+                <element signature="e#7136#8691#1" />
+                <element signature="e#8342#8487#1" />
+                <element signature="e#8492#8631#1" />
+                <element signature="e#8798#10750#1" />
+                <element signature="e#8989#9070#1" />
+                <element signature="e#9074#9439#1" />
+                <element signature="e#9227#9316#1" />
+                <element signature="e#9320#9409#1" />
+                <element signature="e#9544#9693#1" />
+                <element signature="e#9774#9925#1" />
+                <element signature="e#9931#10724#1" />
+                <element signature="e#10138#10306#1" />
+                <element signature="e#10405#10575#1" />
+                <element signature="e#10579#10694#1" />
+                <element signature="e#10775#10966#1" />
+                <element signature="e#10970#11114#1" />
+                <element signature="docComment;method#initVuforia#0;class#SkystoneVuforia#0" />
+                <element signature="method#initVuforia#0;class#SkystoneVuforia#0" />
+                <element signature="e#11440#11553#0" />
+                <element signature="method#initTfod#0;class#SkystoneVuforia#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/MecanumBasedUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1882">
+              <caret line="1033" selection-start-line="1033" selection-end-line="1033" />
+              <folding>
+                <element signature="docComment;class#MecanumBasedUtils#0" />
+                <element signature="e#1594#1695#0" />
+                <element signature="e#2400#2528#0" />
+                <element signature="e#2746#3280#0" />
+                <element signature="e#3172#3274#1" />
+                <element signature="e#3286#3324#0" />
+                <element signature="e#3330#9914#0" />
+                <element signature="e#3661#3752#0" />
+                <element signature="e#3863#3898#1" />
+                <element signature="e#3904#4011#1" />
+                <element signature="e#4055#9675#1" />
+                <element signature="e#4069#4114#0" />
+                <element signature="e#4145#4193#1" />
+                <element signature="e#4206#4283#0" />
+                <element signature="e#4496#9665#1" />
+                <element signature="e#4532#9651#1" />
+                <element signature="e#4554#4639#0" />
+                <element signature="e#4841#9633#1" />
+                <element signature="e#5008#9454#1" />
+                <element signature="e#5249#5928#1" />
+                <element signature="e#5338#5538#1" />
+                <element signature="e#5571#5774#1" />
+                <element signature="e#5780#5898#1" />
+                <element signature="e#6297#6377#0" />
+                <element signature="e#8320#9124#1" />
+                <element signature="e#8472#8738#1" />
+                <element signature="e#8830#9094#1" />
+                <element signature="e#9182#9428#1" />
+                <element signature="e#9703#9743#1" />
+                <element signature="e#9922#14407#0" />
+                <element signature="e#10304#10395#0" />
+                <element signature="e#10506#10541#1" />
+                <element signature="e#10547#10654#1" />
+                <element signature="e#10698#13696#1" />
+                <element signature="e#10712#10757#0" />
+                <element signature="e#10788#10836#1" />
+                <element signature="e#10938#13686#1" />
+                <element signature="e#10974#13672#1" />
+                <element signature="e#10996#11081#0" />
+                <element signature="e#11283#13654#1" />
+                <element signature="e#11450#13576#1" />
+                <element signature="e#11691#12200#1" />
+                <element signature="e#11780#11895#1" />
+                <element signature="e#11928#12046#1" />
+                <element signature="e#12052#12170#1" />
+                <element signature="e#12671#13550#1" />
+                <element signature="e#12775#12994#1" />
+                <element signature="e#13070#13291#1" />
+                <element signature="e#13297#13520#1" />
+                <element signature="e#13743#14213#0" />
+                <element signature="e#13781#13917#1" />
+                <element signature="e#13972#14107#1" />
+                <element signature="e#14361#14401#1" />
+                <element signature="e#14413#14475#0" />
+                <element signature="e#14413#15041#0" />
+                <element signature="e#14517#14630#0" />
+                <element signature="e#15047#15117#0" />
+                <element signature="e#15639#15698#0" />
+                <element signature="e#16790#17706#0" />
+                <element signature="e#16998#17073#0" />
+                <element signature="e#17712#17993#0" />
+                <element signature="e#17999#18115#0" />
+                <element signature="e#19178#19452#0" />
+                <element signature="e#19388#19424#1" />
+                <element signature="e#19458#19780#0" />
+                <element signature="e#19544#19773#1" />
+                <element signature="e#19673#19763#1" />
+                <element signature="e#19785#19904#0" />
+                <element signature="e#20036#22802#0" />
+                <element signature="e#20955#21030#0" />
+                <element signature="e#22219#22796#1" />
+                <element signature="e#22808#25477#0" />
+                <element signature="e#23630#23705#0" />
+                <element signature="e#24894#25471#1" />
+                <element signature="e#25483#28151#0" />
+                <element signature="e#26304#26379#0" />
+                <element signature="e#27568#28145#1" />
+                <element signature="e#28157#31038#0" />
+                <element signature="e#29100#29175#0" />
+                <element signature="e#30454#31031#1" />
+                <element signature="e#31044#33787#0" />
+                <element signature="e#31849#31924#0" />
+                <element signature="e#33203#33780#1" />
+                <element signature="e#33793#36682#0" />
+                <element signature="e#34744#34819#0" />
+                <element signature="e#36098#36675#1" />
+                <element signature="e#36688#40048#0" />
+                <element signature="e#37853#37869#0" />
+                <element signature="e#38822#40042#1" />
+                <element signature="e#38984#39465#1" />
+                <element signature="e#40054#45042#0" />
+                <element signature="e#41029#43122#1" />
+                <element signature="e#42507#43112#1" />
+                <element signature="e#43136#45036#1" />
+                <element signature="e#44421#45026#1" />
+                <element signature="e#45048#46519#0" />
+                <element signature="e#45716#46513#1" />
+                <element signature="e#46076#46286#1" />
+                <element signature="e#46292#46503#1" />
+                <element signature="e#46525#46689#0" />
+                <element signature="e#46695#47350#0" />
+                <element signature="e#47045#47119#0" />
+                <element signature="e#49864#50104#0" />
+                <element signature="e#50110#50506#0" />
+                <element signature="e#50282#50467#1" />
+                <element signature="e#50512#51307#0" />
+                <element signature="e#51125#51268#1" />
+                <element signature="e#51314#51373#0" />
+                <element signature="e#51378#51443#0" />
+                <element signature="e#51588#53889#0" />
+                <element signature="e#51855#51894#1" />
+                <element signature="e#51942#51982#1" />
+                <element signature="e#52028#53883#1" />
+                <element signature="e#52078#52897#1" />
+                <element signature="e#52147#52706#1" />
+                <element signature="e#52149#52189#0" />
+                <element signature="e#52504#52604#0" />
+                <element signature="e#52712#52883#1" />
+                <element signature="e#52942#53709#1" />
+                <element signature="e#53014#53518#1" />
+                <element signature="e#53346#53415#0" />
+                <element signature="e#53524#53695#1" />
+                <element signature="e#53715#53873#1" />
+                <element signature="e#53895#53915#0" />
+                <element signature="e#53895#54896#0" />
+                <element signature="e#54194#54233#1" />
+                <element signature="e#54281#54321#1" />
+                <element signature="e#54671#54771#0" />
+                <element signature="e#55031#59466#0" />
+                <element signature="e#56159#56234#0" />
+                <element signature="e#57872#58449#1" />
+                <element signature="e#58702#59014#1" />
+                <element signature="e#59146#59460#1" />
+                <element signature="e#59472#60482#0" />
+                <element signature="e#60094#60287#1" />
+                <element signature="e#60488#61497#0" />
+                <element signature="e#61109#61302#1" />
+                <element signature="e#61503#63906#0" />
+                <element signature="e#62418#63900#1" />
+                <element signature="e#62873#63119#1" />
+                <element signature="e#63212#63615#1" />
+                <element signature="e#63656#63890#1" />
+                <element signature="e#63912#64181#0" />
+                <element signature="e#64187#64391#0" />
+                <element signature="e#64522#64759#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousV1.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="441">
+              <caret line="81" column="31" selection-start-line="81" selection-start-column="31" selection-end-line="81" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -55,8 +284,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousFunctions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1105">
-              <caret line="638" selection-start-line="638" selection-end-line="638" />
+            <state relative-caret-position="282">
+              <caret line="623" lean-forward="true" selection-start-line="623" selection-end-line="623" />
               <folding>
                 <element signature="docComment;class#AutonomousFunctions#0" />
                 <element signature="method#MecanumSlideInInches#0;class#AutonomousFunctions#0" />
@@ -93,34 +322,52 @@
                 <element signature="method#getAbsoluteHeading#0;class#AutonomousFunctions#0" />
                 <element signature="method#ConfigureToMoveForward#0;class#AutonomousFunctions#0" />
                 <element signature="e#28436#28510#0" />
-                <element signature="method#GetTouchSensorState#0;class#AutonomousFunctions#0" />
-                <element signature="method#MoveLeadScrew#0;class#AutonomousFunctions#0" />
-                <element signature="e#29298#29483#1" />
-                <element signature="method#oneMotorArmEncoder#0;class#AutonomousFunctions#0" />
-                <element signature="e#30141#30284#1" />
-                <element signature="class#ScrewDirection#0;class#AutonomousFunctions#0" />
-                <element signature="e#30394#30459#0" />
-                <element signature="method#MoveLeadScrewWithMagnets#0;class#AutonomousFunctions#0" />
-                <element signature="e#30871#30910#1" />
-                <element signature="e#30958#30998#1" />
-                <element signature="e#31044#32899#1" />
-                <element signature="e#31094#31913#1" />
-                <element signature="e#31163#31722#1" />
-                <element signature="e#31165#31205#0" />
-                <element signature="e#31520#31620#0" />
-                <element signature="e#31728#31899#1" />
-                <element signature="e#31958#32725#1" />
-                <element signature="e#32030#32534#1" />
-                <element signature="e#32362#32431#0" />
-                <element signature="e#32540#32711#1" />
-                <element signature="e#32731#32889#1" />
-                <element signature="e#32911#32931#0" />
-                <element signature="method#MoveLeadScrew#1;class#AutonomousFunctions#0" />
-                <element signature="e#33210#33249#1" />
-                <element signature="e#33297#33337#1" />
-                <element signature="e#33687#33787#0" />
-                <element signature="e#33918#34039#0" />
-                <element signature="method#dropTeamMarker#0;class#AutonomousFunctions#0" />
+                <element signature="class#SkystoneLocation#0;class#AutonomousFunctions#0" />
+                <element signature="method#FindSkystone#0;class#AutonomousFunctions#0" />
+                <element signature="e#31045#31080#1" />
+                <element signature="e#31086#31181#1" />
+                <element signature="e#31191#31394#0" />
+                <element signature="e#31421#31461#1" />
+                <element signature="e#31609#36905#1" />
+                <element signature="e#31709#36895#1" />
+                <element signature="e#31745#36881#1" />
+                <element signature="e#31767#31852#0" />
+                <element signature="e#32054#36863#1" />
+                <element signature="e#32754#34309#1" />
+                <element signature="e#33960#34105#1" />
+                <element signature="e#34110#34249#1" />
+                <element signature="e#34416#36432#1" />
+                <element signature="e#34607#34688#1" />
+                <element signature="e#34692#35057#1" />
+                <element signature="e#34845#34934#1" />
+                <element signature="e#34938#35027#1" />
+                <element signature="e#35162#35327#1" />
+                <element signature="e#35408#35559#1" />
+                <element signature="e#35565#36406#1" />
+                <element signature="e#35772#35956#1" />
+                <element signature="e#36055#36241#1" />
+                <element signature="e#36245#36376#1" />
+                <element signature="e#36457#36648#1" />
+                <element signature="e#36652#36796#1" />
+                <element signature="e#36933#36973#1" />
+                <element signature="docComment;method#initVuforia#0;class#AutonomousFunctions#0" />
+                <element signature="method#initVuforia#0;class#AutonomousFunctions#0" />
+                <element signature="e#37122#37235#0" />
+                <element signature="docComment;method#initTfod#0;class#AutonomousFunctions#0" />
+                <element signature="method#initTfod#0;class#AutonomousFunctions#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/ClawFunctions.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+              <folding>
+                <element signature="e#776#777#0" expanded="true" />
+                <element signature="e#804#805#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -160,12 +407,17 @@
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TWOControllerTeleop.java" />
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/ClawRead.java" />
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/ElbowTest.java" />
-        <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousV1.java" />
-        <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousFunctions.java" />
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/MotorTest.java" />
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Config.java" />
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TeleopTwoController.java" />
+        <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousV1.java" />
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousBuilding.java" />
+        <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/MecanumBasedUtils.java" />
+        <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousBuildingRed.java" />
+        <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousBuildingBlue.java" />
+        <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/SkystoneVuforia.java" />
+        <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousFunctions.java" />
+        <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousLoadingRed.java" />
       </list>
     </option>
   </component>
@@ -371,13 +623,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/MecanumBasedUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/LSlideTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1377">
@@ -394,17 +639,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/readme.md">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/ClawFunctions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
-          <folding>
-            <element signature="e#776#777#0" expanded="true" />
-            <element signature="e#804#805#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/ClawTest.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -479,13 +713,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/SkystoneTensorFlowObjectDetection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TeleopTwoController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1241">
@@ -500,10 +727,203 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/SkystoneTensorFlowObjectDetection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/MecanumBasedUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1882">
+          <caret line="1033" selection-start-line="1033" selection-end-line="1033" />
+          <folding>
+            <element signature="docComment;class#MecanumBasedUtils#0" />
+            <element signature="e#1594#1695#0" />
+            <element signature="e#2400#2528#0" />
+            <element signature="e#2746#3280#0" />
+            <element signature="e#3172#3274#1" />
+            <element signature="e#3286#3324#0" />
+            <element signature="e#3330#9914#0" />
+            <element signature="e#3661#3752#0" />
+            <element signature="e#3863#3898#1" />
+            <element signature="e#3904#4011#1" />
+            <element signature="e#4055#9675#1" />
+            <element signature="e#4069#4114#0" />
+            <element signature="e#4145#4193#1" />
+            <element signature="e#4206#4283#0" />
+            <element signature="e#4496#9665#1" />
+            <element signature="e#4532#9651#1" />
+            <element signature="e#4554#4639#0" />
+            <element signature="e#4841#9633#1" />
+            <element signature="e#5008#9454#1" />
+            <element signature="e#5249#5928#1" />
+            <element signature="e#5338#5538#1" />
+            <element signature="e#5571#5774#1" />
+            <element signature="e#5780#5898#1" />
+            <element signature="e#6297#6377#0" />
+            <element signature="e#8320#9124#1" />
+            <element signature="e#8472#8738#1" />
+            <element signature="e#8830#9094#1" />
+            <element signature="e#9182#9428#1" />
+            <element signature="e#9703#9743#1" />
+            <element signature="e#9922#14407#0" />
+            <element signature="e#10304#10395#0" />
+            <element signature="e#10506#10541#1" />
+            <element signature="e#10547#10654#1" />
+            <element signature="e#10698#13696#1" />
+            <element signature="e#10712#10757#0" />
+            <element signature="e#10788#10836#1" />
+            <element signature="e#10938#13686#1" />
+            <element signature="e#10974#13672#1" />
+            <element signature="e#10996#11081#0" />
+            <element signature="e#11283#13654#1" />
+            <element signature="e#11450#13576#1" />
+            <element signature="e#11691#12200#1" />
+            <element signature="e#11780#11895#1" />
+            <element signature="e#11928#12046#1" />
+            <element signature="e#12052#12170#1" />
+            <element signature="e#12671#13550#1" />
+            <element signature="e#12775#12994#1" />
+            <element signature="e#13070#13291#1" />
+            <element signature="e#13297#13520#1" />
+            <element signature="e#13743#14213#0" />
+            <element signature="e#13781#13917#1" />
+            <element signature="e#13972#14107#1" />
+            <element signature="e#14361#14401#1" />
+            <element signature="e#14413#14475#0" />
+            <element signature="e#14413#15041#0" />
+            <element signature="e#14517#14630#0" />
+            <element signature="e#15047#15117#0" />
+            <element signature="e#15639#15698#0" />
+            <element signature="e#16790#17706#0" />
+            <element signature="e#16998#17073#0" />
+            <element signature="e#17712#17993#0" />
+            <element signature="e#17999#18115#0" />
+            <element signature="e#19178#19452#0" />
+            <element signature="e#19388#19424#1" />
+            <element signature="e#19458#19780#0" />
+            <element signature="e#19544#19773#1" />
+            <element signature="e#19673#19763#1" />
+            <element signature="e#19785#19904#0" />
+            <element signature="e#20036#22802#0" />
+            <element signature="e#20955#21030#0" />
+            <element signature="e#22219#22796#1" />
+            <element signature="e#22808#25477#0" />
+            <element signature="e#23630#23705#0" />
+            <element signature="e#24894#25471#1" />
+            <element signature="e#25483#28151#0" />
+            <element signature="e#26304#26379#0" />
+            <element signature="e#27568#28145#1" />
+            <element signature="e#28157#31038#0" />
+            <element signature="e#29100#29175#0" />
+            <element signature="e#30454#31031#1" />
+            <element signature="e#31044#33787#0" />
+            <element signature="e#31849#31924#0" />
+            <element signature="e#33203#33780#1" />
+            <element signature="e#33793#36682#0" />
+            <element signature="e#34744#34819#0" />
+            <element signature="e#36098#36675#1" />
+            <element signature="e#36688#40048#0" />
+            <element signature="e#37853#37869#0" />
+            <element signature="e#38822#40042#1" />
+            <element signature="e#38984#39465#1" />
+            <element signature="e#40054#45042#0" />
+            <element signature="e#41029#43122#1" />
+            <element signature="e#42507#43112#1" />
+            <element signature="e#43136#45036#1" />
+            <element signature="e#44421#45026#1" />
+            <element signature="e#45048#46519#0" />
+            <element signature="e#45716#46513#1" />
+            <element signature="e#46076#46286#1" />
+            <element signature="e#46292#46503#1" />
+            <element signature="e#46525#46689#0" />
+            <element signature="e#46695#47350#0" />
+            <element signature="e#47045#47119#0" />
+            <element signature="e#49864#50104#0" />
+            <element signature="e#50110#50506#0" />
+            <element signature="e#50282#50467#1" />
+            <element signature="e#50512#51307#0" />
+            <element signature="e#51125#51268#1" />
+            <element signature="e#51314#51373#0" />
+            <element signature="e#51378#51443#0" />
+            <element signature="e#51588#53889#0" />
+            <element signature="e#51855#51894#1" />
+            <element signature="e#51942#51982#1" />
+            <element signature="e#52028#53883#1" />
+            <element signature="e#52078#52897#1" />
+            <element signature="e#52147#52706#1" />
+            <element signature="e#52149#52189#0" />
+            <element signature="e#52504#52604#0" />
+            <element signature="e#52712#52883#1" />
+            <element signature="e#52942#53709#1" />
+            <element signature="e#53014#53518#1" />
+            <element signature="e#53346#53415#0" />
+            <element signature="e#53524#53695#1" />
+            <element signature="e#53715#53873#1" />
+            <element signature="e#53895#53915#0" />
+            <element signature="e#53895#54896#0" />
+            <element signature="e#54194#54233#1" />
+            <element signature="e#54281#54321#1" />
+            <element signature="e#54671#54771#0" />
+            <element signature="e#55031#59466#0" />
+            <element signature="e#56159#56234#0" />
+            <element signature="e#57872#58449#1" />
+            <element signature="e#58702#59014#1" />
+            <element signature="e#59146#59460#1" />
+            <element signature="e#59472#60482#0" />
+            <element signature="e#60094#60287#1" />
+            <element signature="e#60488#61497#0" />
+            <element signature="e#61109#61302#1" />
+            <element signature="e#61503#63906#0" />
+            <element signature="e#62418#63900#1" />
+            <element signature="e#62873#63119#1" />
+            <element signature="e#63212#63615#1" />
+            <element signature="e#63656#63890#1" />
+            <element signature="e#63912#64181#0" />
+            <element signature="e#64187#64391#0" />
+            <element signature="e#64522#64759#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/ClawFunctions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+          <folding>
+            <element signature="e#776#777#0" expanded="true" />
+            <element signature="e#804#805#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousV1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="81" column="31" selection-start-line="81" selection-start-column="31" selection-end-line="81" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousBuildingRed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="622">
+          <caret line="91" column="94" selection-start-line="91" selection-start-column="94" selection-end-line="91" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousBuildingBlue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="81" column="29" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousFunctions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
-          <caret line="638" selection-start-line="638" selection-end-line="638" />
+        <state relative-caret-position="282">
+          <caret line="623" lean-forward="true" selection-start-line="623" selection-end-line="623" />
           <folding>
             <element signature="docComment;class#AutonomousFunctions#0" />
             <element signature="method#MecanumSlideInInches#0;class#AutonomousFunctions#0" />
@@ -540,42 +960,87 @@
             <element signature="method#getAbsoluteHeading#0;class#AutonomousFunctions#0" />
             <element signature="method#ConfigureToMoveForward#0;class#AutonomousFunctions#0" />
             <element signature="e#28436#28510#0" />
-            <element signature="method#GetTouchSensorState#0;class#AutonomousFunctions#0" />
-            <element signature="method#MoveLeadScrew#0;class#AutonomousFunctions#0" />
-            <element signature="e#29298#29483#1" />
-            <element signature="method#oneMotorArmEncoder#0;class#AutonomousFunctions#0" />
-            <element signature="e#30141#30284#1" />
-            <element signature="class#ScrewDirection#0;class#AutonomousFunctions#0" />
-            <element signature="e#30394#30459#0" />
-            <element signature="method#MoveLeadScrewWithMagnets#0;class#AutonomousFunctions#0" />
-            <element signature="e#30871#30910#1" />
-            <element signature="e#30958#30998#1" />
-            <element signature="e#31044#32899#1" />
-            <element signature="e#31094#31913#1" />
-            <element signature="e#31163#31722#1" />
-            <element signature="e#31165#31205#0" />
-            <element signature="e#31520#31620#0" />
-            <element signature="e#31728#31899#1" />
-            <element signature="e#31958#32725#1" />
-            <element signature="e#32030#32534#1" />
-            <element signature="e#32362#32431#0" />
-            <element signature="e#32540#32711#1" />
-            <element signature="e#32731#32889#1" />
-            <element signature="e#32911#32931#0" />
-            <element signature="method#MoveLeadScrew#1;class#AutonomousFunctions#0" />
-            <element signature="e#33210#33249#1" />
-            <element signature="e#33297#33337#1" />
-            <element signature="e#33687#33787#0" />
-            <element signature="e#33918#34039#0" />
-            <element signature="method#dropTeamMarker#0;class#AutonomousFunctions#0" />
+            <element signature="class#SkystoneLocation#0;class#AutonomousFunctions#0" />
+            <element signature="method#FindSkystone#0;class#AutonomousFunctions#0" />
+            <element signature="e#31045#31080#1" />
+            <element signature="e#31086#31181#1" />
+            <element signature="e#31191#31394#0" />
+            <element signature="e#31421#31461#1" />
+            <element signature="e#31609#36905#1" />
+            <element signature="e#31709#36895#1" />
+            <element signature="e#31745#36881#1" />
+            <element signature="e#31767#31852#0" />
+            <element signature="e#32054#36863#1" />
+            <element signature="e#32754#34309#1" />
+            <element signature="e#33960#34105#1" />
+            <element signature="e#34110#34249#1" />
+            <element signature="e#34416#36432#1" />
+            <element signature="e#34607#34688#1" />
+            <element signature="e#34692#35057#1" />
+            <element signature="e#34845#34934#1" />
+            <element signature="e#34938#35027#1" />
+            <element signature="e#35162#35327#1" />
+            <element signature="e#35408#35559#1" />
+            <element signature="e#35565#36406#1" />
+            <element signature="e#35772#35956#1" />
+            <element signature="e#36055#36241#1" />
+            <element signature="e#36245#36376#1" />
+            <element signature="e#36457#36648#1" />
+            <element signature="e#36652#36796#1" />
+            <element signature="e#36933#36973#1" />
+            <element signature="docComment;method#initVuforia#0;class#AutonomousFunctions#0" />
+            <element signature="method#initVuforia#0;class#AutonomousFunctions#0" />
+            <element signature="e#37122#37235#0" />
+            <element signature="docComment;method#initTfod#0;class#AutonomousFunctions#0" />
+            <element signature="method#initTfod#0;class#AutonomousFunctions#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousBuilding.java">
+    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousLoadingRed.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="639">
-          <caret line="73" column="24" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
+        <state relative-caret-position="384">
+          <caret line="77" selection-start-line="77" selection-end-line="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/SkystoneVuforia.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-55">
+          <caret line="65" column="11" lean-forward="true" selection-start-line="65" selection-start-column="11" selection-end-line="65" selection-end-column="11" />
+          <folding>
+            <element signature="docComment;class#SkystoneVuforia#0" />
+            <element signature="e#4285#4314#0" />
+            <element signature="e#4442#4569#0" />
+            <element signature="e#4612#4633#0" />
+            <element signature="e#4845#4860#0" />
+            <element signature="method#FindSkystone#0;class#SkystoneVuforia#0" />
+            <element signature="e#5443#5478#1" />
+            <element signature="e#5484#5579#1" />
+            <element signature="e#5589#5792#0" />
+            <element signature="e#5819#5859#1" />
+            <element signature="e#6149#6234#0" />
+            <element signature="e#7136#8691#1" />
+            <element signature="e#8342#8487#1" />
+            <element signature="e#8492#8631#1" />
+            <element signature="e#8798#10750#1" />
+            <element signature="e#8989#9070#1" />
+            <element signature="e#9074#9439#1" />
+            <element signature="e#9227#9316#1" />
+            <element signature="e#9320#9409#1" />
+            <element signature="e#9544#9693#1" />
+            <element signature="e#9774#9925#1" />
+            <element signature="e#9931#10724#1" />
+            <element signature="e#10138#10306#1" />
+            <element signature="e#10405#10575#1" />
+            <element signature="e#10579#10694#1" />
+            <element signature="e#10775#10966#1" />
+            <element signature="e#10970#11114#1" />
+            <element signature="docComment;method#initVuforia#0;class#SkystoneVuforia#0" />
+            <element signature="method#initVuforia#0;class#SkystoneVuforia#0" />
+            <element signature="e#11440#11553#0" />
+            <element signature="method#initTfod#0;class#SkystoneVuforia#0" />
+          </folding>
         </state>
       </provider>
     </entry>

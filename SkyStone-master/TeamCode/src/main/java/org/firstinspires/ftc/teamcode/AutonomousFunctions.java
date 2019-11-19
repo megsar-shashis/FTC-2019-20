@@ -12,6 +12,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.robotcore.external.ClassFactory;
+import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesOrder;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesReference;
@@ -21,6 +22,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.VuforiaLocalizer.Came
 import org.firstinspires.ftc.robotcore.external.tfod.Recognition;
 import org.firstinspires.ftc.robotcore.external.tfod.TFObjectDetector;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -623,127 +625,170 @@ public class AutonomousFunctions {
     // **************************** END OF MOVE, SLIDE & TURN ROBOT ***********************************************************
 
 
-    // **************************** START OF LATCHING & LANDING ROBOT ***********************************************************
-    public boolean GetTouchSensorState (DigitalChannel touchSensor) {
-        return touchSensor.getState();
-    }
+    // **************************** START OF SKYSTONE DETECTION ***********************************************************
+    private static final String TFOD_MODEL_ASSET = "Skystone.tflite";
+    private static final String LABEL_FIRST_ELEMENT = "Stone";
+    private static final String LABEL_SECOND_ELEMENT = "Skystone";
+    private static final String VUFORIA_KEY =
+            "AR/ZUHH/////AAABmUqm26qkS0kJtcAm07xRqe5jkIrpagCp8Mt6fJQLNN3uG4F5Qn6UIwRnhbinYkn+S+rbdFMcS0aEcORq5kSi5hNxMxGq7YB3V2f8pDhtPJFb5DDLwzrhKDIwGI8CST3T+JhN6mQhsHnMI45xtjMASIKs6v2b0ZpYh2YvzNY8ZgDDK4jVSZ9wg7jGlIlOVnUINeMtSoUnrXRCqqQ6OHZSNVkPjcP7pPitJuXgPltX0uz+b90EWWOsxzW4K2R2+3FE5WtUr6/8MOgUHDc+64BqVJe7ird88ctEJ/W0E5rRspZ6BRre1N9/4x19XZDyLJWKIcMiAtepqz8T7F55GbEyPNXTet3KYAbPeCR+Sj7YuOoE";
+    private VuforiaLocalizer vuforia;
+    private TFObjectDetector tfod;
 
-    public void MoveLeadScrew(DcMotor lScrewMotor, DigitalChannel touchSensor, double power) {
-        while (this.opMode.opModeIsActive() && GetTouchSensorState(touchSensor)) {
-            this.opMode.telemetry.addData("position", lScrewMotor.getCurrentPosition());
-            this.opMode.telemetry.update();
-            lScrewMotor.setPower(power);
+
+    //find location of skystone
+    public enum SkystoneLocation{
+        NONE,
+        LEFT,
+        CENTER,
+        RIGHT,
+        FORWARD,
+        BACKWARD
+    }
+    public SkystoneVuforia.SkystoneLocation FindSkystone(){
+        SkystoneVuforia.SkystoneLocation skystoneLocation = SkystoneVuforia.SkystoneLocation.NONE;
+        initVuforia();
+
+        if (ClassFactory.getInstance().canCreateTFObjectDetector()) {
+            initTfod();
+        } else {
+            this.opMode.telemetry.addData("Sorry!", "This device is not compatible with TFOD");
         }
-        lScrewMotor.setPower(0);
-    }
 
-    public void oneMotorArmEncoder(int inches, double power, DcMotor liftMotor)
-    {
-        liftMotor.setDirection(DcMotor.Direction.FORWARD);
-
-        liftMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-
-        liftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-
-        liftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-
-        double postionsPerInch = 1120/(3.14*4);
-        int positionsToMove = (int)(postionsPerInch * inches);
-        liftMotor.setTargetPosition(positionsToMove);
-
-        liftMotor.setPower(power);
-
-        while(this.opMode.opModeIsActive() && liftMotor.isBusy()) {
-            this.opMode.telemetry.addData("leftMotor", liftMotor.getCurrentPosition());
-            this.opMode.telemetry.update();
+        /**
+         * Activate TensorFlow Object Detection before we wait for the start command.
+         * Do it here so that the Camera Stream window will have the TensorFlow annotations visible.
+         **/
+        if (tfod != null) {
+            tfod.activate();
         }
-        //liftMotor.setPower(0);
-    }
 
+        this.opMode.telemetry.addData(">", "Press Play to start op mode");
+        this.opMode.telemetry.update();
+        this.opMode.waitForStart();
 
-    public  enum ScrewDirection{
-        Extend, Contract
-    }
-    //This is a function that lands the robot in the autonomous mode.
-    // Input Parameters are top magnetic sensor, bottom magnetic sensor, lead screw motor, and the power at which the lead screw will spin
+        if (this.opMode.opModeIsActive()) {
+            while (this.opMode.opModeIsActive() && skystoneLocation == SkystoneVuforia.SkystoneLocation.NONE) {
+                if (tfod != null) {
+                    // getUpdatedRecognitions() will return null if no new information is available since
+                    // the last time that call was made.
+                    List<Recognition> updatedRecognitions = tfod.getUpdatedRecognitions();
+                    if (updatedRecognitions != null) {
+                        this.opMode.telemetry.addData("# Object Detected", updatedRecognitions.size());
+                        // step through the list of recognitions and display boundary info.
+                        int i = 0;
+                        List<Recognition> skystone = new ArrayList<Recognition>();
+                        List<Recognition> stone = new ArrayList<Recognition>();
+                        float objectHeight = 0;
+                        float imageHeight = 0;
+                        float ratioHeight = 0;
+                        double horizontalAngle = 0;
+                        int skystoneUsed = 0;
+                        for (Recognition recognition : updatedRecognitions) {
+                            this.opMode.telemetry.addData(String.format("label (%d)", i), recognition.getLabel());
+                            this.opMode.telemetry.addData(String.format("  left,top (%d)", i), "%.03f , %.03f",
+                                    recognition.getLeft(), recognition.getTop());
+                            this.opMode.telemetry.addData(String.format("  right,bottom (%d)", i), "%.03f , %.03f",
+                                    recognition.getRight(), recognition.getBottom());
 
-    public void MoveLeadScrewWithMagnets(DigitalChannel _topSensor, DigitalChannel _bottomSensor,
-                                         DcMotor _leadScrewMotor, ScrewDirection direction) {
-        double motorPower = 0;
-        if (direction == ScrewDirection.Extend) {
-            motorPower = 1;
-        } else if (direction == ScrewDirection.Contract) {
-            motorPower = -1;
-        }
-        while (this.opMode.opModeIsActive()) {
-            if (_topSensor.getState() == false) { // top sensor detects a magnet
-                if (motorPower > 0) { // positive power extends the lead screw
-                    // stop, do nothing
-                    this.opMode.telemetry.addData("Top sensor detected magnet.", "upwards motion stopped");
-                    this.opMode.telemetry.update();
-                    motorPower = 0;
-                    _leadScrewMotor.setPower(motorPower);
-                    // you could put a return statement here to exit out of the function when top magnet detects sensor.
-                    // Uncomment the following to do so
-                    return;
-                } else {
-                    // top sensor detects magnet but the assembly is moving down, so it is ok
-                    _leadScrewMotor.setPower(motorPower);
+                            objectHeight = recognition.getHeight();
+                            imageHeight = recognition.getImageHeight();
+                            ratioHeight = objectHeight/imageHeight;
+                            horizontalAngle = recognition.estimateAngleToObject(AngleUnit.DEGREES);
+
+                            this.opMode.telemetry.addData("Estimated Angle", "%.3f", horizontalAngle);
+                            this.opMode.telemetry.addData("Height Ratio", "%.3f", ratioHeight);
+                            this.opMode.telemetry.addData("Object Height", "%.3f", objectHeight);
+                            this.opMode.telemetry.addData("Image Height", "%.3f", imageHeight);
+                            if (recognition.getLabel().equals("Skystone")){
+                                //Add to Skystone List
+                                skystone.add(recognition);
+                            }else {
+                                //Add to Stone List
+                                stone.add(recognition);
+                            }
+
+                            i++;
+                        }
+
+                        //Check if Skystone list is empty
+                        if(skystone.size() > 0){
+                            //Recognizes Skystone
+                            this.opMode.telemetry.addData("Skystone Detected: ", skystone.size());
+                            if(skystone.size() == 1){
+                                skystoneUsed = 0;
+                            }else{
+                                if(skystone.get(0).estimateAngleToObject(AngleUnit.DEGREES) > skystone.get(1).estimateAngleToObject(AngleUnit.DEGREES)){
+                                    skystoneUsed = 0;
+                                }else{
+                                    skystoneUsed = 1;
+                                }
+                            }
+                            if(skystone.get(skystoneUsed).estimateAngleToObject(AngleUnit.DEGREES) < -5){
+                                //move left
+                                skystoneLocation = SkystoneVuforia.SkystoneLocation.LEFT;
+                            } else if(skystone.get(skystoneUsed).estimateAngleToObject(AngleUnit.DEGREES) > 5){
+                                //move right
+                                skystoneLocation = skystoneLocation.RIGHT;
+                            } else {
+                                //skystoneLocation = skystoneLocation.CENTERX;
+                                if (skystone.get(skystoneUsed).getHeight()/skystone.get(skystoneUsed).getImageHeight() < 0.45){
+                                    //move forwards
+                                    skystoneLocation = SkystoneVuforia.SkystoneLocation.FORWARD;
+                                }else if (skystone.get(skystoneUsed).getHeight()/skystone.get(skystoneUsed).getImageHeight() > 0.55){
+                                    //move backwards
+                                    skystoneLocation = SkystoneVuforia.SkystoneLocation.BACKWARD;
+                                }else{
+                                    skystoneLocation = SkystoneVuforia.SkystoneLocation.CENTER;
+                                }
+                            }
+                        }else if(stone.size() > 0){
+                            //No Skystones, Move to stone
+                            this.opMode.telemetry.addData("No Skystones Detected, Stones Detected: ", stone.size());
+
+                        }else{
+                            //Nothing Detected
+                            this.opMode.telemetry.addData("Nothing Detected", 0);
+                        }
+
+                        this.opMode.telemetry.update();
+                    }
                 }
-            } else if (_bottomSensor.getState() == false) { // bottom sensor detects a magnet
-                if (motorPower < 0) {
-                    // stop do nothing unless power
-                    this.opMode.telemetry.addData("Bottom sensor detected magnet", "downwards motion stopped");
-                    this.opMode.telemetry.update();
-                    motorPower = 0;
-                    _leadScrewMotor.setPower(motorPower);
-                    // you could put a return statement here to exit out of the function.
-                    // Uncomment the following to do so/
-                    return;
-                } else {
-                    // bottom sensor detects magnet but the assembly is moving up so it is ok
-                    _leadScrewMotor.setPower(motorPower);
-                }
-            } else {
-                // neither the top, nor the bottom magnetic sensor has detected a magnet
-                _leadScrewMotor.setPower(motorPower);
             }
         }
+
+        if (tfod != null) {
+            tfod.shutdown();
+        }
+        return skystoneLocation;
     }
 
-    // position is 14800
-    //public boolean MoveLeadScrew(DcMotor _leadScrewMotor, ScrewDirection direction, int position) {
-    public void MoveLeadScrew(DcMotor _leadScrewMotor, ScrewDirection direction, int position) {
-        double motorPower = 0;
-        if (direction == ScrewDirection.Extend) {
-            motorPower = 1;
-        } else if (direction == ScrewDirection.Contract) {
-            motorPower = -1;
-        }
-        _leadScrewMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        _leadScrewMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        _leadScrewMotor.setTargetPosition(position);
-        _leadScrewMotor.setPower(motorPower);
-        while (this.opMode.opModeIsActive() &&_leadScrewMotor.getCurrentPosition() <= position) {
+    /**
+     * Initialize the Vuforia localization engine.
+     */
+    private void initVuforia() {
+        /*
+         * Configure Vuforia by creating a Parameter object, and passing it to the Vuforia engine.
+         */
+        VuforiaLocalizer.Parameters parameters = new VuforiaLocalizer.Parameters();
 
-            // you could put a return statement here to exit out of the function when top magnet detects sensor.
-            // Uncomment the following to do so
+        parameters.vuforiaLicenseKey = VUFORIA_KEY;
+        parameters.cameraName = this.opMode.hardwareMap.get(WebcamName.class, "Webcam 1");
 
-        }
-        _leadScrewMotor.setPower(0);
-        //return true;
+        //  Instantiate the Vuforia engine
+        vuforia = ClassFactory.getInstance().createVuforia(parameters);
+
+        // Loading trackables is not necessary for the TensorFlow Object Detection engine.
     }
 
-    // **************************** END OF LATCHING & LANDING ROBOT *********************************************************
-
-
-
-    // **************************** START OF ALIGNING OF ROBOT WITH COLOR SENSOR ********************************************
-
-    // **************************** END OF ALIGNING OF ROBOT WITH COLOR SENSOR ********************************************
-
-    //*****************************         START OF SERVO FUNCTIONS           *******************************************
-    public void dropTeamMarker (Servo markerServo, double position) {
-        markerServo.setPosition(position);
+    /**
+     * Initialize the TensorFlow Object Detection engine.
+     */
+    private void initTfod() {
+        int tfodMonitorViewId = this.opMode.hardwareMap.appContext.getResources().getIdentifier(
+                "tfodMonitorViewId", "id", this.opMode.hardwareMap.appContext.getPackageName());
+        TFObjectDetector.Parameters tfodParameters = new TFObjectDetector.Parameters(tfodMonitorViewId);
+        tfodParameters.minimumConfidence = 0.7;
+        tfod = ClassFactory.getInstance().createTFObjectDetector(tfodParameters, vuforia);
+        tfod.loadModelFromAsset(TFOD_MODEL_ASSET, LABEL_FIRST_ELEMENT, LABEL_SECOND_ELEMENT);
     }
 }

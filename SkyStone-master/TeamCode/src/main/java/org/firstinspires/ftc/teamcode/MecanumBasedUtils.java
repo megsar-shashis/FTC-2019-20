@@ -1031,61 +1031,7 @@ public class MecanumBasedUtils {
 //        rightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
     }
 
-    public void MecanumMoveForwardUntilColorDetected
-            (DcMotor leftFront, DcMotor rightFront,
-             DcMotor leftBack, DcMotor rightBack, double power, ColorSensor leftColorSensor, ColorSensor rightColorSensor)
-    {
-        //positive slides right, negative slides left
 
-        this.opMode.telemetry.addLine("Inside the MecanumMoveForwardUntilColorDetected");
-
-
-        leftFront.setDirection(DcMotor.Direction.REVERSE);
-        rightFront.setDirection(DcMotor.Direction.FORWARD);
-        leftBack.setDirection(DcMotor.Direction.REVERSE);
-        rightBack.setDirection(DcMotor.Direction.FORWARD);
-
-        leftFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        rightFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        leftBack.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        rightBack.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-
-        int counter = 0;
-        while (this.opMode.opModeIsActive() && counter != 3){
-            this.opMode.telemetry.addLine("Inside while loop");
-            ColorRanges.ColorFromHue hueLeft = ColorRanges.GetColor(leftColorSensor.red(), leftColorSensor.green(), leftColorSensor.blue());
-            ColorRanges.ColorFromHue hueRight = ColorRanges.GetColor(rightColorSensor.red(), rightColorSensor.green(), rightColorSensor.blue());
-            while (this.opMode.opModeIsActive() &&
-                    (hueLeft != ColorRanges.ColorFromHue.BLUE || hueRight != ColorRanges.ColorFromHue.BLUE)){
-                leftFront.setPower(0.1);
-                leftBack.setPower(0.1);
-                rightFront.setPower(0.1);
-                rightBack.setPower(0.1);
-            }
-
-            leftFront.setPower(0);
-            leftBack.setPower(0);
-            rightFront.setPower(0);
-            rightBack.setPower(0);
-
-            if (hueLeft == ColorRanges.ColorFromHue.BLUE ) {
-                rightFront.setPower(0.1);
-                rightBack.setPower(0.1);
-
-            } else {
-                // At this point hueColorRight is BLUE
-                leftFront.setPower(0.1);
-                leftBack.setPower(0.1);
-            }
-
-            if(counter<2) {
-                MecanumMoveBackwardInInches(leftFront, rightFront, leftBack, rightBack, 0.1, 1);
-            }
-            // move back the robot by giving negative power to both wheels
-            counter++;
-        }
-
-    }
 
 
     // **************************** END OF MOVE, SLIDE & TURN ROBOT ***********************************************************
