@@ -164,7 +164,7 @@ public class TeleopTwoController extends OpMode{
         //     config.Arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         //     config.Arm.setPower(.5);
         // }
-
+        
 
         double fwdBackPower = gamepad1.left_stick_y;
         double strafePower = gamepad1.left_stick_x;

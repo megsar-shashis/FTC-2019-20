@@ -52,9 +52,9 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@Autonomous(name="AutonomousLRed", group="Auto")
+@Autonomous(name="AutonomousURed", group="Auto")
 //@Disabled
-public class AutonomousLoadingRed extends LinearOpMode {
+public class AutonomousUltimateRed extends LinearOpMode {
 
     /* Declare OpMode members. */
     Config c = new Config();   // Use a Pushbot's hardware
@@ -132,10 +132,24 @@ public class AutonomousLoadingRed extends LinearOpMode {
 
         cf.open(c);
 
-        //move backward away ~ 8"
-        f.MecanumMoveBackwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 8);
+        //move backward to foundation ~ 12"
+        f.MecanumMoveBackwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 12);
 
-        //move left to park away ~ 48"
-        f.MecanumSlideLeftInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 48);
+        //turn 180 deg
+        f.MecanumTurningInDegrees(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 180);
+
+        //move backward to foundation ~ 12"
+        f.MecanumMoveBackwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 12);
+
+        //clamp pull servos
+
+        //move forward ~ 30"
+        f.MecanumMoveForwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 30);
+
+        //release pull servos
+
+        //slide left ~ 52"
+        f.MecanumSlideRightInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 52);
+
     }
 }
