@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d503246b-9753-4021-9122-fd0b95a4e676" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousBuildingBlue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousLoadingRed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousBuilding.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousBuildingRed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousFunctions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousV1.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousV1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/MecanumBasedUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/MecanumBasedUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/SkystoneVuforia.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/SkystoneVuforia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousLoadingRed.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousLoadingRed.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +43,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousBuildingRed.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="622">
+            <state relative-caret-position="650">
               <caret line="91" column="94" selection-start-line="91" selection-start-column="94" selection-end-line="91" selection-end-column="94" />
             </state>
           </provider>
@@ -59,26 +52,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousBuildingBlue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
+            <state relative-caret-position="901">
               <caret line="81" column="29" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousLoadingRed.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="77" selection-start-line="77" selection-end-line="77" />
+            <state relative-caret-position="-132">
+              <caret line="112" column="40" selection-start-line="112" selection-start-column="40" selection-end-line="112" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/SkystoneVuforia.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-55">
-              <caret line="65" column="11" lean-forward="true" selection-start-line="65" selection-start-column="11" selection-end-line="65" selection-end-column="11" />
+            <state relative-caret-position="-340">
+              <caret line="65" column="11" selection-start-line="65" selection-start-column="11" selection-end-line="65" selection-end-column="11" />
               <folding>
                 <element signature="docComment;class#SkystoneVuforia#0" />
                 <element signature="e#4285#4314#0" />
@@ -86,30 +79,8 @@
                 <element signature="e#4612#4633#0" />
                 <element signature="e#4845#4860#0" />
                 <element signature="method#FindSkystone#0;class#SkystoneVuforia#0" />
-                <element signature="e#5443#5478#1" />
-                <element signature="e#5484#5579#1" />
-                <element signature="e#5589#5792#0" />
-                <element signature="e#5819#5859#1" />
-                <element signature="e#6149#6234#0" />
-                <element signature="e#7136#8691#1" />
-                <element signature="e#8342#8487#1" />
-                <element signature="e#8492#8631#1" />
-                <element signature="e#8798#10750#1" />
-                <element signature="e#8989#9070#1" />
-                <element signature="e#9074#9439#1" />
-                <element signature="e#9227#9316#1" />
-                <element signature="e#9320#9409#1" />
-                <element signature="e#9544#9693#1" />
-                <element signature="e#9774#9925#1" />
-                <element signature="e#9931#10724#1" />
-                <element signature="e#10138#10306#1" />
-                <element signature="e#10405#10575#1" />
-                <element signature="e#10579#10694#1" />
-                <element signature="e#10775#10966#1" />
-                <element signature="e#10970#11114#1" />
                 <element signature="docComment;method#initVuforia#0;class#SkystoneVuforia#0" />
                 <element signature="method#initVuforia#0;class#SkystoneVuforia#0" />
-                <element signature="e#11440#11553#0" />
                 <element signature="method#initTfod#0;class#SkystoneVuforia#0" />
               </folding>
             </state>
@@ -119,7 +90,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/MecanumBasedUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1882">
+            <state relative-caret-position="2652">
               <caret line="1033" selection-start-line="1033" selection-end-line="1033" />
               <folding>
                 <element signature="docComment;class#MecanumBasedUtils#0" />
@@ -224,49 +195,6 @@
                 <element signature="e#46525#46689#0" />
                 <element signature="e#46695#47350#0" />
                 <element signature="e#47045#47119#0" />
-                <element signature="e#49864#50104#0" />
-                <element signature="e#50110#50506#0" />
-                <element signature="e#50282#50467#1" />
-                <element signature="e#50512#51307#0" />
-                <element signature="e#51125#51268#1" />
-                <element signature="e#51314#51373#0" />
-                <element signature="e#51378#51443#0" />
-                <element signature="e#51588#53889#0" />
-                <element signature="e#51855#51894#1" />
-                <element signature="e#51942#51982#1" />
-                <element signature="e#52028#53883#1" />
-                <element signature="e#52078#52897#1" />
-                <element signature="e#52147#52706#1" />
-                <element signature="e#52149#52189#0" />
-                <element signature="e#52504#52604#0" />
-                <element signature="e#52712#52883#1" />
-                <element signature="e#52942#53709#1" />
-                <element signature="e#53014#53518#1" />
-                <element signature="e#53346#53415#0" />
-                <element signature="e#53524#53695#1" />
-                <element signature="e#53715#53873#1" />
-                <element signature="e#53895#53915#0" />
-                <element signature="e#53895#54896#0" />
-                <element signature="e#54194#54233#1" />
-                <element signature="e#54281#54321#1" />
-                <element signature="e#54671#54771#0" />
-                <element signature="e#55031#59466#0" />
-                <element signature="e#56159#56234#0" />
-                <element signature="e#57872#58449#1" />
-                <element signature="e#58702#59014#1" />
-                <element signature="e#59146#59460#1" />
-                <element signature="e#59472#60482#0" />
-                <element signature="e#60094#60287#1" />
-                <element signature="e#60488#61497#0" />
-                <element signature="e#61109#61302#1" />
-                <element signature="e#61503#63906#0" />
-                <element signature="e#62418#63900#1" />
-                <element signature="e#62873#63119#1" />
-                <element signature="e#63212#63615#1" />
-                <element signature="e#63656#63890#1" />
-                <element signature="e#63912#64181#0" />
-                <element signature="e#64187#64391#0" />
-                <element signature="e#64522#64759#0" />
               </folding>
             </state>
           </provider>
@@ -275,7 +203,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousV1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
+            <state relative-caret-position="697">
               <caret line="81" column="31" selection-start-line="81" selection-start-column="31" selection-end-line="81" selection-end-column="31" />
             </state>
           </provider>
@@ -284,75 +212,25 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousFunctions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="623" lean-forward="true" selection-start-line="623" selection-end-line="623" />
+            <state relative-caret-position="1071">
+              <caret line="623" selection-start-line="623" selection-end-line="623" />
               <folding>
                 <element signature="docComment;class#AutonomousFunctions#0" />
                 <element signature="method#MecanumSlideInInches#0;class#AutonomousFunctions#0" />
-                <element signature="e#2346#2421#0" />
-                <element signature="e#3610#4187#1" />
                 <element signature="method#MecanumSlideRightInInches#0;class#AutonomousFunctions#0" />
-                <element signature="e#5021#5096#0" />
-                <element signature="e#6285#6862#1" />
                 <element signature="method#MecanumSlideLeftInInches#0;class#AutonomousFunctions#0" />
-                <element signature="e#7695#7770#0" />
-                <element signature="e#8959#9536#1" />
                 <element signature="method#MecanumMoveInInches#0;class#AutonomousFunctions#0" />
-                <element signature="e#10491#10566#0" />
-                <element signature="e#11845#12422#1" />
                 <element signature="method#MecanumMoveForwardInInches#0;class#AutonomousFunctions#0" />
-                <element signature="e#13240#13315#0" />
-                <element signature="e#14594#15171#1" />
                 <element signature="method#MecanumMoveBackwardInInches#0;class#AutonomousFunctions#0" />
-                <element signature="e#16135#16210#0" />
-                <element signature="e#17489#18066#1" />
                 <element signature="method#MecanumMoveInInchesWithRampUpSpeed#0;class#AutonomousFunctions#0" />
-                <element signature="e#19244#19260#0" />
-                <element signature="e#20213#21433#1" />
-                <element signature="e#20375#20856#1" />
                 <element signature="method#MecanumMoveInInchesWithCounter#0;class#AutonomousFunctions#0" />
-                <element signature="e#22420#24513#1" />
-                <element signature="e#23898#24503#1" />
-                <element signature="e#24527#26427#1" />
-                <element signature="e#25812#26417#1" />
                 <element signature="method#MecanumTurningInDegrees#0;class#AutonomousFunctions#0" />
-                <element signature="e#27107#27904#1" />
-                <element signature="e#27467#27677#1" />
-                <element signature="e#27683#27894#1" />
                 <element signature="method#getAbsoluteHeading#0;class#AutonomousFunctions#0" />
                 <element signature="method#ConfigureToMoveForward#0;class#AutonomousFunctions#0" />
-                <element signature="e#28436#28510#0" />
                 <element signature="class#SkystoneLocation#0;class#AutonomousFunctions#0" />
                 <element signature="method#FindSkystone#0;class#AutonomousFunctions#0" />
-                <element signature="e#31045#31080#1" />
-                <element signature="e#31086#31181#1" />
-                <element signature="e#31191#31394#0" />
-                <element signature="e#31421#31461#1" />
-                <element signature="e#31609#36905#1" />
-                <element signature="e#31709#36895#1" />
-                <element signature="e#31745#36881#1" />
-                <element signature="e#31767#31852#0" />
-                <element signature="e#32054#36863#1" />
-                <element signature="e#32754#34309#1" />
-                <element signature="e#33960#34105#1" />
-                <element signature="e#34110#34249#1" />
-                <element signature="e#34416#36432#1" />
-                <element signature="e#34607#34688#1" />
-                <element signature="e#34692#35057#1" />
-                <element signature="e#34845#34934#1" />
-                <element signature="e#34938#35027#1" />
-                <element signature="e#35162#35327#1" />
-                <element signature="e#35408#35559#1" />
-                <element signature="e#35565#36406#1" />
-                <element signature="e#35772#35956#1" />
-                <element signature="e#36055#36241#1" />
-                <element signature="e#36245#36376#1" />
-                <element signature="e#36457#36648#1" />
-                <element signature="e#36652#36796#1" />
-                <element signature="e#36933#36973#1" />
                 <element signature="docComment;method#initVuforia#0;class#AutonomousFunctions#0" />
                 <element signature="method#initVuforia#0;class#AutonomousFunctions#0" />
-                <element signature="e#37122#37235#0" />
                 <element signature="docComment;method#initTfod#0;class#AutonomousFunctions#0" />
                 <element signature="method#initTfod#0;class#AutonomousFunctions#0" />
               </folding>
@@ -433,46 +311,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="SkyStone-master" type="1abcf292:AndroidViewProjectNode" />
-              <item name="FtcRobotController" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="SkyStone-master" type="1abcf292:AndroidViewProjectNode" />
-              <item name="FtcRobotController" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="SkyStone-master" type="1abcf292:AndroidViewProjectNode" />
-              <item name="FtcRobotController" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="robotcontroller" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SkyStone-master" type="1abcf292:AndroidViewProjectNode" />
-              <item name="TeamCode" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="SkyStone-master" type="1abcf292:AndroidViewProjectNode" />
-              <item name="TeamCode" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="SkyStone-master" type="1abcf292:AndroidViewProjectNode" />
-              <item name="TeamCode" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="teamcode" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="AndroidView" />
       <pane id="ProjectPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -601,7 +443,7 @@
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Terminal" order="3" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
-      <window_info anchor="bottom" id="Build" order="5" weight="0.32977462" />
+      <window_info anchor="bottom" id="Build" order="5" visible="true" weight="0.32977462" />
       <window_info anchor="bottom" id="Android Profiler" order="6" show_stripe_button="false" />
       <window_info anchor="bottom" id="Find" order="7" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
@@ -713,6 +555,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/SkystoneTensorFlowObjectDetection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TeleopTwoController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1241">
@@ -727,16 +576,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/SkystoneTensorFlowObjectDetection.java">
+    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousBuildingBlue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
+        <state relative-caret-position="901">
+          <caret line="81" column="29" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/MecanumBasedUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1882">
+        <state relative-caret-position="2652">
           <caret line="1033" selection-start-line="1033" selection-end-line="1033" />
           <folding>
             <element signature="docComment;class#MecanumBasedUtils#0" />
@@ -841,49 +690,40 @@
             <element signature="e#46525#46689#0" />
             <element signature="e#46695#47350#0" />
             <element signature="e#47045#47119#0" />
-            <element signature="e#49864#50104#0" />
-            <element signature="e#50110#50506#0" />
-            <element signature="e#50282#50467#1" />
-            <element signature="e#50512#51307#0" />
-            <element signature="e#51125#51268#1" />
-            <element signature="e#51314#51373#0" />
-            <element signature="e#51378#51443#0" />
-            <element signature="e#51588#53889#0" />
-            <element signature="e#51855#51894#1" />
-            <element signature="e#51942#51982#1" />
-            <element signature="e#52028#53883#1" />
-            <element signature="e#52078#52897#1" />
-            <element signature="e#52147#52706#1" />
-            <element signature="e#52149#52189#0" />
-            <element signature="e#52504#52604#0" />
-            <element signature="e#52712#52883#1" />
-            <element signature="e#52942#53709#1" />
-            <element signature="e#53014#53518#1" />
-            <element signature="e#53346#53415#0" />
-            <element signature="e#53524#53695#1" />
-            <element signature="e#53715#53873#1" />
-            <element signature="e#53895#53915#0" />
-            <element signature="e#53895#54896#0" />
-            <element signature="e#54194#54233#1" />
-            <element signature="e#54281#54321#1" />
-            <element signature="e#54671#54771#0" />
-            <element signature="e#55031#59466#0" />
-            <element signature="e#56159#56234#0" />
-            <element signature="e#57872#58449#1" />
-            <element signature="e#58702#59014#1" />
-            <element signature="e#59146#59460#1" />
-            <element signature="e#59472#60482#0" />
-            <element signature="e#60094#60287#1" />
-            <element signature="e#60488#61497#0" />
-            <element signature="e#61109#61302#1" />
-            <element signature="e#61503#63906#0" />
-            <element signature="e#62418#63900#1" />
-            <element signature="e#62873#63119#1" />
-            <element signature="e#63212#63615#1" />
-            <element signature="e#63656#63890#1" />
-            <element signature="e#63912#64181#0" />
-            <element signature="e#64187#64391#0" />
-            <element signature="e#64522#64759#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousV1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="81" column="31" selection-start-line="81" selection-start-column="31" selection-end-line="81" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousFunctions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="623" selection-start-line="623" selection-end-line="623" />
+          <folding>
+            <element signature="docComment;class#AutonomousFunctions#0" />
+            <element signature="method#MecanumSlideInInches#0;class#AutonomousFunctions#0" />
+            <element signature="method#MecanumSlideRightInInches#0;class#AutonomousFunctions#0" />
+            <element signature="method#MecanumSlideLeftInInches#0;class#AutonomousFunctions#0" />
+            <element signature="method#MecanumMoveInInches#0;class#AutonomousFunctions#0" />
+            <element signature="method#MecanumMoveForwardInInches#0;class#AutonomousFunctions#0" />
+            <element signature="method#MecanumMoveBackwardInInches#0;class#AutonomousFunctions#0" />
+            <element signature="method#MecanumMoveInInchesWithRampUpSpeed#0;class#AutonomousFunctions#0" />
+            <element signature="method#MecanumMoveInInchesWithCounter#0;class#AutonomousFunctions#0" />
+            <element signature="method#MecanumTurningInDegrees#0;class#AutonomousFunctions#0" />
+            <element signature="method#getAbsoluteHeading#0;class#AutonomousFunctions#0" />
+            <element signature="method#ConfigureToMoveForward#0;class#AutonomousFunctions#0" />
+            <element signature="class#SkystoneLocation#0;class#AutonomousFunctions#0" />
+            <element signature="method#FindSkystone#0;class#AutonomousFunctions#0" />
+            <element signature="docComment;method#initVuforia#0;class#AutonomousFunctions#0" />
+            <element signature="method#initVuforia#0;class#AutonomousFunctions#0" />
+            <element signature="docComment;method#initTfod#0;class#AutonomousFunctions#0" />
+            <element signature="method#initTfod#0;class#AutonomousFunctions#0" />
           </folding>
         </state>
       </provider>
@@ -899,115 +739,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousV1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="81" column="31" selection-start-line="81" selection-start-column="31" selection-end-line="81" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousBuildingRed.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="622">
+        <state relative-caret-position="650">
           <caret line="91" column="94" selection-start-line="91" selection-start-column="94" selection-end-line="91" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousBuildingBlue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="81" column="29" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousFunctions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="623" lean-forward="true" selection-start-line="623" selection-end-line="623" />
-          <folding>
-            <element signature="docComment;class#AutonomousFunctions#0" />
-            <element signature="method#MecanumSlideInInches#0;class#AutonomousFunctions#0" />
-            <element signature="e#2346#2421#0" />
-            <element signature="e#3610#4187#1" />
-            <element signature="method#MecanumSlideRightInInches#0;class#AutonomousFunctions#0" />
-            <element signature="e#5021#5096#0" />
-            <element signature="e#6285#6862#1" />
-            <element signature="method#MecanumSlideLeftInInches#0;class#AutonomousFunctions#0" />
-            <element signature="e#7695#7770#0" />
-            <element signature="e#8959#9536#1" />
-            <element signature="method#MecanumMoveInInches#0;class#AutonomousFunctions#0" />
-            <element signature="e#10491#10566#0" />
-            <element signature="e#11845#12422#1" />
-            <element signature="method#MecanumMoveForwardInInches#0;class#AutonomousFunctions#0" />
-            <element signature="e#13240#13315#0" />
-            <element signature="e#14594#15171#1" />
-            <element signature="method#MecanumMoveBackwardInInches#0;class#AutonomousFunctions#0" />
-            <element signature="e#16135#16210#0" />
-            <element signature="e#17489#18066#1" />
-            <element signature="method#MecanumMoveInInchesWithRampUpSpeed#0;class#AutonomousFunctions#0" />
-            <element signature="e#19244#19260#0" />
-            <element signature="e#20213#21433#1" />
-            <element signature="e#20375#20856#1" />
-            <element signature="method#MecanumMoveInInchesWithCounter#0;class#AutonomousFunctions#0" />
-            <element signature="e#22420#24513#1" />
-            <element signature="e#23898#24503#1" />
-            <element signature="e#24527#26427#1" />
-            <element signature="e#25812#26417#1" />
-            <element signature="method#MecanumTurningInDegrees#0;class#AutonomousFunctions#0" />
-            <element signature="e#27107#27904#1" />
-            <element signature="e#27467#27677#1" />
-            <element signature="e#27683#27894#1" />
-            <element signature="method#getAbsoluteHeading#0;class#AutonomousFunctions#0" />
-            <element signature="method#ConfigureToMoveForward#0;class#AutonomousFunctions#0" />
-            <element signature="e#28436#28510#0" />
-            <element signature="class#SkystoneLocation#0;class#AutonomousFunctions#0" />
-            <element signature="method#FindSkystone#0;class#AutonomousFunctions#0" />
-            <element signature="e#31045#31080#1" />
-            <element signature="e#31086#31181#1" />
-            <element signature="e#31191#31394#0" />
-            <element signature="e#31421#31461#1" />
-            <element signature="e#31609#36905#1" />
-            <element signature="e#31709#36895#1" />
-            <element signature="e#31745#36881#1" />
-            <element signature="e#31767#31852#0" />
-            <element signature="e#32054#36863#1" />
-            <element signature="e#32754#34309#1" />
-            <element signature="e#33960#34105#1" />
-            <element signature="e#34110#34249#1" />
-            <element signature="e#34416#36432#1" />
-            <element signature="e#34607#34688#1" />
-            <element signature="e#34692#35057#1" />
-            <element signature="e#34845#34934#1" />
-            <element signature="e#34938#35027#1" />
-            <element signature="e#35162#35327#1" />
-            <element signature="e#35408#35559#1" />
-            <element signature="e#35565#36406#1" />
-            <element signature="e#35772#35956#1" />
-            <element signature="e#36055#36241#1" />
-            <element signature="e#36245#36376#1" />
-            <element signature="e#36457#36648#1" />
-            <element signature="e#36652#36796#1" />
-            <element signature="e#36933#36973#1" />
-            <element signature="docComment;method#initVuforia#0;class#AutonomousFunctions#0" />
-            <element signature="method#initVuforia#0;class#AutonomousFunctions#0" />
-            <element signature="e#37122#37235#0" />
-            <element signature="docComment;method#initTfod#0;class#AutonomousFunctions#0" />
-            <element signature="method#initTfod#0;class#AutonomousFunctions#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousLoadingRed.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/SkystoneVuforia.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-55">
-          <caret line="65" column="11" lean-forward="true" selection-start-line="65" selection-start-column="11" selection-end-line="65" selection-end-column="11" />
+        <state relative-caret-position="-340">
+          <caret line="65" column="11" selection-start-line="65" selection-start-column="11" selection-end-line="65" selection-end-column="11" />
           <folding>
             <element signature="docComment;class#SkystoneVuforia#0" />
             <element signature="e#4285#4314#0" />
@@ -1015,32 +757,17 @@
             <element signature="e#4612#4633#0" />
             <element signature="e#4845#4860#0" />
             <element signature="method#FindSkystone#0;class#SkystoneVuforia#0" />
-            <element signature="e#5443#5478#1" />
-            <element signature="e#5484#5579#1" />
-            <element signature="e#5589#5792#0" />
-            <element signature="e#5819#5859#1" />
-            <element signature="e#6149#6234#0" />
-            <element signature="e#7136#8691#1" />
-            <element signature="e#8342#8487#1" />
-            <element signature="e#8492#8631#1" />
-            <element signature="e#8798#10750#1" />
-            <element signature="e#8989#9070#1" />
-            <element signature="e#9074#9439#1" />
-            <element signature="e#9227#9316#1" />
-            <element signature="e#9320#9409#1" />
-            <element signature="e#9544#9693#1" />
-            <element signature="e#9774#9925#1" />
-            <element signature="e#9931#10724#1" />
-            <element signature="e#10138#10306#1" />
-            <element signature="e#10405#10575#1" />
-            <element signature="e#10579#10694#1" />
-            <element signature="e#10775#10966#1" />
-            <element signature="e#10970#11114#1" />
             <element signature="docComment;method#initVuforia#0;class#SkystoneVuforia#0" />
             <element signature="method#initVuforia#0;class#SkystoneVuforia#0" />
-            <element signature="e#11440#11553#0" />
             <element signature="method#initTfod#0;class#SkystoneVuforia#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousLoadingRed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-132">
+          <caret line="112" column="40" selection-start-line="112" selection-start-column="40" selection-end-line="112" selection-end-column="40" />
         </state>
       </provider>
     </entry>

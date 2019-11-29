@@ -59,6 +59,7 @@ public class AutonomousLoadingRed extends LinearOpMode {
     /* Declare OpMode members. */
     Config c = new Config();   // Use a Pushbot's hardware
     AutonomousFunctions f = new AutonomousFunctions();
+    ClawFunctions cf = new ClawFunctions();
 
     @Override
     public void runOpMode() {
@@ -68,13 +69,60 @@ public class AutonomousLoadingRed extends LinearOpMode {
          */
         c.init(hardwareMap);
 
-        //move forward ~ 25"
-        f.MecanumMoveForwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 25);
+        //move forward ~ 12"
+        f.MecanumMoveForwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 12);
 
         //check for case 1,2,3
         SkystoneVuforia.SkystoneLocation locationPrint = f.FindSkystone();
         telemetry.addData("location", locationPrint.toString());
         telemetry.update();
+
+        if(locationPrint.toString() == "LEFT")
+        {
+            f.MecanumSlideLeftInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 8);
+            cf.open(c);
+            f.MecanumMoveForwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 16);
+            cf.close(c);
+            double p = c.VSWinch.getPosition();
+            p+=0.01;
+            c.VSWinch.setPosition(p);
+            f.MecanumMoveBackwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 16);
+            f.MecanumSlideRightInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 16);
+
+        }
+        if(locationPrint.toString() == "RIGHT")
+        {
+            f.MecanumSlideRightInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 8);
+            cf.open(c);
+            f.MecanumMoveForwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 16);
+            cf.close(c);
+            double p = c.VSWinch.getPosition();
+            p+=0.01;
+            c.VSWinch.setPosition(p);
+            f.MecanumMoveBackwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 16);
+        }
+        if(locationPrint.toString() == "CENTER")
+        {
+            cf.open(c);
+            f.MecanumMoveForwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 16);
+            cf.close(c);
+            double p = c.VSWinch.getPosition();
+            p+=0.01;
+            c.VSWinch.setPosition(p);
+            f.MecanumMoveBackwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 16);
+            f.MecanumSlideRightInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 8);
+        }
+        if(locationPrint.toString() == "NONE")
+        {
+            cf.open(c);
+            f.MecanumMoveForwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 16);
+            cf.close(c);
+            double p = c.VSWinch.getPosition();
+            p+=0.01;
+            c.VSWinch.setPosition(p);
+            f.MecanumMoveBackwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 16);
+            f.MecanumSlideRightInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 8);
+        }
 
         //slide right ~ 8"
         f.MecanumSlideRightInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 5);
