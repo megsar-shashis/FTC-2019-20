@@ -20,14 +20,12 @@ public class ClawFunctions {
 
     public void open(Config config)
     {
-        config.leftClaw.setPosition(.5);
-        config.rightClaw.setPosition(.5);
+        config.claw.setPosition(.5);
     }
 
     public void close(Config config)
     {
-        config.leftClaw.setPosition(1);
-        config.rightClaw.setPosition(0);
+        config.claw.setPosition(1);
     }
 
     ElapsedTime timer = new ElapsedTime();

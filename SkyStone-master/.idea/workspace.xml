@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d503246b-9753-4021-9122-fd0b95a4e676" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousUltimateRed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousLoadingRed.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousLoadingRed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/ClawFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/ClawFunctions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TeleopTwoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TeleopTwoController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TeleopTwoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="166" column="8" selection-start-line="166" selection-start-column="8" selection-end-line="166" selection-end-column="8" />
+            <state relative-caret-position="-51">
+              <caret line="104" column="17" selection-start-line="104" selection-start-column="17" selection-end-line="104" selection-end-column="17" />
               <folding>
                 <element signature="docComment;class#TeleopTwoController#0" />
                 <element signature="e#2752#2781#0" />
@@ -40,11 +39,28 @@
                 <element signature="e#3471#3531#0" />
                 <element signature="method#start#0;class#TeleopTwoController#0" />
                 <element signature="e#3584#3676#0" />
-                <element signature="e#3810#3874#0" />
                 <element signature="e#6710#6937#1" />
                 <element signature="e#7325#7386#0" />
                 <element signature="method#stop#0;class#TeleopTwoController#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Config.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="55">
+              <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/ClawTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="503">
+              <caret line="108" column="5" lean-forward="true" selection-start-line="108" selection-start-column="5" selection-end-line="108" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -79,7 +95,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousLoadingRed.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
+            <state relative-caret-position="871">
               <caret line="138" column="93" selection-start-line="138" selection-start-column="93" selection-end-line="138" selection-end-column="93" />
             </state>
           </provider>
@@ -88,7 +104,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/SkystoneVuforia.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-340">
+            <state relative-caret-position="-336">
               <caret line="65" column="11" selection-start-line="65" selection-start-column="11" selection-end-line="65" selection-end-column="11" />
               <folding>
                 <element signature="docComment;class#SkystoneVuforia#0" />
@@ -101,128 +117,6 @@
                 <element signature="method#initVuforia#0;class#SkystoneVuforia#0" />
                 <element signature="method#initTfod#0;class#SkystoneVuforia#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/MecanumBasedUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2652">
-              <caret line="1033" selection-start-line="1033" selection-end-line="1033" />
-              <folding>
-                <element signature="docComment;class#MecanumBasedUtils#0" />
-                <element signature="e#1594#1695#0" />
-                <element signature="e#2400#2528#0" />
-                <element signature="e#2746#3280#0" />
-                <element signature="e#3172#3274#1" />
-                <element signature="e#3286#3324#0" />
-                <element signature="e#3330#9914#0" />
-                <element signature="e#3661#3752#0" />
-                <element signature="e#3863#3898#1" />
-                <element signature="e#3904#4011#1" />
-                <element signature="e#4055#9675#1" />
-                <element signature="e#4069#4114#0" />
-                <element signature="e#4145#4193#1" />
-                <element signature="e#4206#4283#0" />
-                <element signature="e#4496#9665#1" />
-                <element signature="e#4532#9651#1" />
-                <element signature="e#4554#4639#0" />
-                <element signature="e#4841#9633#1" />
-                <element signature="e#5008#9454#1" />
-                <element signature="e#5249#5928#1" />
-                <element signature="e#5338#5538#1" />
-                <element signature="e#5571#5774#1" />
-                <element signature="e#5780#5898#1" />
-                <element signature="e#6297#6377#0" />
-                <element signature="e#8320#9124#1" />
-                <element signature="e#8472#8738#1" />
-                <element signature="e#8830#9094#1" />
-                <element signature="e#9182#9428#1" />
-                <element signature="e#9703#9743#1" />
-                <element signature="e#9922#14407#0" />
-                <element signature="e#10304#10395#0" />
-                <element signature="e#10506#10541#1" />
-                <element signature="e#10547#10654#1" />
-                <element signature="e#10698#13696#1" />
-                <element signature="e#10712#10757#0" />
-                <element signature="e#10788#10836#1" />
-                <element signature="e#10938#13686#1" />
-                <element signature="e#10974#13672#1" />
-                <element signature="e#10996#11081#0" />
-                <element signature="e#11283#13654#1" />
-                <element signature="e#11450#13576#1" />
-                <element signature="e#11691#12200#1" />
-                <element signature="e#11780#11895#1" />
-                <element signature="e#11928#12046#1" />
-                <element signature="e#12052#12170#1" />
-                <element signature="e#12671#13550#1" />
-                <element signature="e#12775#12994#1" />
-                <element signature="e#13070#13291#1" />
-                <element signature="e#13297#13520#1" />
-                <element signature="e#13743#14213#0" />
-                <element signature="e#13781#13917#1" />
-                <element signature="e#13972#14107#1" />
-                <element signature="e#14361#14401#1" />
-                <element signature="e#14413#14475#0" />
-                <element signature="e#14413#15041#0" />
-                <element signature="e#14517#14630#0" />
-                <element signature="e#15047#15117#0" />
-                <element signature="e#15639#15698#0" />
-                <element signature="e#16790#17706#0" />
-                <element signature="e#16998#17073#0" />
-                <element signature="e#17712#17993#0" />
-                <element signature="e#17999#18115#0" />
-                <element signature="e#19178#19452#0" />
-                <element signature="e#19388#19424#1" />
-                <element signature="e#19458#19780#0" />
-                <element signature="e#19544#19773#1" />
-                <element signature="e#19673#19763#1" />
-                <element signature="e#19785#19904#0" />
-                <element signature="e#20036#22802#0" />
-                <element signature="e#20955#21030#0" />
-                <element signature="e#22219#22796#1" />
-                <element signature="e#22808#25477#0" />
-                <element signature="e#23630#23705#0" />
-                <element signature="e#24894#25471#1" />
-                <element signature="e#25483#28151#0" />
-                <element signature="e#26304#26379#0" />
-                <element signature="e#27568#28145#1" />
-                <element signature="e#28157#31038#0" />
-                <element signature="e#29100#29175#0" />
-                <element signature="e#30454#31031#1" />
-                <element signature="e#31044#33787#0" />
-                <element signature="e#31849#31924#0" />
-                <element signature="e#33203#33780#1" />
-                <element signature="e#33793#36682#0" />
-                <element signature="e#34744#34819#0" />
-                <element signature="e#36098#36675#1" />
-                <element signature="e#36688#40048#0" />
-                <element signature="e#37853#37869#0" />
-                <element signature="e#38822#40042#1" />
-                <element signature="e#38984#39465#1" />
-                <element signature="e#40054#45042#0" />
-                <element signature="e#41029#43122#1" />
-                <element signature="e#42507#43112#1" />
-                <element signature="e#43136#45036#1" />
-                <element signature="e#44421#45026#1" />
-                <element signature="e#45048#46519#0" />
-                <element signature="e#45716#46513#1" />
-                <element signature="e#46076#46286#1" />
-                <element signature="e#46292#46503#1" />
-                <element signature="e#46525#46689#0" />
-                <element signature="e#46695#47350#0" />
-                <element signature="e#47045#47119#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousV1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="81" column="31" selection-start-line="81" selection-start-column="31" selection-end-line="81" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -259,9 +153,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/ClawFunctions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+            <state relative-caret-position="374">
+              <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
               <folding>
+                <element signature="e#394#395#0" expanded="true" />
+                <element signature="e#439#440#0" expanded="true" />
+                <element signature="e#483#484#0" expanded="true" />
+                <element signature="e#529#530#0" expanded="true" />
                 <element signature="e#776#777#0" expanded="true" />
                 <element signature="e#804#805#0" expanded="true" />
               </folding>
@@ -296,7 +194,6 @@
       <list>
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/RW_RConfig.java" />
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/RoboWaspsTeleop_two_controller.java" />
-        <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/ClawFunctions.java" />
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/ClawTest.java" />
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/LSlideTest.java" />
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TwoControllerTeleop.java" />
@@ -304,7 +201,6 @@
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/ClawRead.java" />
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/ElbowTest.java" />
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/MotorTest.java" />
-        <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Config.java" />
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousV1.java" />
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousBuilding.java" />
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/MecanumBasedUtils.java" />
@@ -314,6 +210,8 @@
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousFunctions.java" />
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousUltimateRed.java" />
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousLoadingRed.java" />
+        <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Config.java" />
+        <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/ClawFunctions.java" />
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TeleopTwoController.java" />
       </list>
     </option>
@@ -486,11 +384,11 @@
       <window_info anchor="bottom" id="Build" order="5" visible="true" weight="0.32977462" />
       <window_info anchor="bottom" id="Android Profiler" order="6" show_stripe_button="false" />
       <window_info anchor="bottom" id="Find" order="7" />
-      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="right" id="Gradle" order="2" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="Gradle" order="1" />
+      <window_info anchor="right" id="Theme Preview" order="2" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Device File Explorer" order="4" weight="0.3298969" />
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
@@ -521,13 +419,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/readme.md">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/ClawTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="656">
-          <caret line="108" column="5" lean-forward="true" selection-start-line="108" selection-start-column="5" selection-end-line="108" selection-end-column="5" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptVuMarkIdentificationWebcam.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -592,13 +483,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1700">
-          <caret line="108" selection-start-line="108" selection-end-line="108" />
         </state>
       </provider>
     </entry>
@@ -761,9 +645,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TwoControllerTeleop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1088">
+          <caret line="82" column="38" lean-forward="true" selection-start-line="82" selection-start-column="38" selection-end-line="82" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/ClawTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="108" column="5" lean-forward="true" selection-start-line="108" selection-start-column="5" selection-end-line="108" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="55">
+          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/ClawFunctions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+          <folding>
+            <element signature="e#394#395#0" expanded="true" />
+            <element signature="e#439#440#0" expanded="true" />
+            <element signature="e#483#484#0" expanded="true" />
+            <element signature="e#529#530#0" expanded="true" />
+            <element signature="e#776#777#0" expanded="true" />
+            <element signature="e#804#805#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousLoadingRed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="871">
+          <caret line="138" column="93" selection-start-line="138" selection-start-column="93" selection-end-line="138" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousUltimateRed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1364">
+          <caret line="145" column="22" selection-start-line="145" selection-start-column="22" selection-end-line="145" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/SkystoneVuforia.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-340">
+        <state relative-caret-position="-336">
           <caret line="65" column="11" selection-start-line="65" selection-start-column="11" selection-end-line="65" selection-end-column="11" />
           <folding>
             <element signature="docComment;class#SkystoneVuforia#0" />
@@ -779,42 +713,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/ClawFunctions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
-          <folding>
-            <element signature="e#776#777#0" expanded="true" />
-            <element signature="e#804#805#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousLoadingRed.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="138" column="93" selection-start-line="138" selection-start-column="93" selection-end-line="138" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutonomousUltimateRed.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1364">
-          <caret line="145" column="22" selection-start-line="145" selection-start-column="22" selection-end-line="145" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TwoControllerTeleop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="82" column="38" lean-forward="true" selection-start-line="82" selection-start-column="38" selection-end-line="82" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/TeleopTwoController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="166" column="8" selection-start-line="166" selection-start-column="8" selection-end-line="166" selection-end-column="8" />
+        <state relative-caret-position="-51">
+          <caret line="104" column="17" selection-start-line="104" selection-start-column="17" selection-end-line="104" selection-end-column="17" />
           <folding>
             <element signature="docComment;class#TeleopTwoController#0" />
             <element signature="e#2752#2781#0" />
@@ -825,7 +727,6 @@
             <element signature="e#3471#3531#0" />
             <element signature="method#start#0;class#TeleopTwoController#0" />
             <element signature="e#3584#3676#0" />
-            <element signature="e#3810#3874#0" />
             <element signature="e#6710#6937#1" />
             <element signature="e#7325#7386#0" />
             <element signature="method#stop#0;class#TeleopTwoController#0" />
