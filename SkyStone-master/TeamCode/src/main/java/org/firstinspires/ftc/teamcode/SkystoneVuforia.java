@@ -62,7 +62,7 @@ import java.util.List;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@Autonomous(name="Skystone Vuforia", group="Auto")
+@Autonomous(name="Autonomous", group="Auto")
 //@Disabled
 public class SkystoneVuforia extends LinearOpMode {
     private static final String TFOD_MODEL_ASSET = "Skystone.tflite";

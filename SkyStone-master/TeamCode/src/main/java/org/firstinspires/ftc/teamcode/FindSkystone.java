@@ -29,9 +29,11 @@
 
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.DcMotor;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -53,197 +55,20 @@ import org.firstinspires.ftc.robotcore.external.tfod.Recognition;
  * IMPORTANT: In order to use this OpMode, you need to obtain your own Vuforia license key as
  * is explained below.
  */
-@TeleOp(name = "Find Skystone")
+@Autonomous(name = "Find Skystone", group = "Skystone")
 //@Disabled
 public class FindSkystone extends LinearOpMode {
-    private static final String TFOD_MODEL_ASSET = "Skystone.tflite";
-    private static final String LABEL_FIRST_ELEMENT = "Stone";
-    private static final String LABEL_SECOND_ELEMENT = "Skystone";
-    public enum SkystoneLocation{
-        NONE,
-        LEFT,
-        CENTER,
-        RIGHT,
-        FORWARD,
-        BACKWARD
-    }
-    SkystoneLocation skystoneLocation = SkystoneLocation.NONE;
-    /*
-     * IMPORTANT: You need to obtain your own license key to use Vuforia. The string below with which
-     * 'parameters.vuforiaLicenseKey' is initialized is for illustration only, and will not function.
-     * A Vuforia 'Development' license key, can be obtained free of charge from the Vuforia developer
-     * web site at https://developer.vuforia.com/license-manager.
-     *
-     * Vuforia license keys are always 380 characters long, and look as if they contain mostly
-     * random data. As an example, here is a example of a fragment of a valid key:
-     *      ... yIgIzTqZ4mWjk9wd3cZO9T1axEqzuhxoGlfOOI2dRzKS4T0hQ8kT ...
-     * Once you've obtained a license key, copy the string from the Vuforia web site
-     * and paste it in to your code on the next line, between the double quotes.
-     */
-    private static final String VUFORIA_KEY =
-            "AR/ZUHH/////AAABmUqm26qkS0kJtcAm07xRqe5jkIrpagCp8Mt6fJQLNN3uG4F5Qn6UIwRnhbinYkn+S+rbdFMcS0aEcORq5kSi5hNxMxGq7YB3V2f8pDhtPJFb5DDLwzrhKDIwGI8CST3T+JhN6mQhsHnMI45xtjMASIKs6v2b0ZpYh2YvzNY8ZgDDK4jVSZ9wg7jGlIlOVnUINeMtSoUnrXRCqqQ6OHZSNVkPjcP7pPitJuXgPltX0uz+b90EWWOsxzW4K2R2+3FE5WtUr6/8MOgUHDc+64BqVJe7ird88ctEJ/W0E5rRspZ6BRre1N9/4x19XZDyLJWKIcMiAtepqz8T7F55GbEyPNXTet3KYAbPeCR+Sj7YuOoE";
-
-    /**
-     * {@link #vuforia} is the variable we will use to store our instance of the Vuforia
-     * localization engine.
-     */
-    private VuforiaLocalizer vuforia;
-
-    /**
-     * {@link #tfod} is the variable we will use to store our instance of the TensorFlow Object
-     * Detection engine.
-     */
-    private TFObjectDetector tfod;
-
     @Override
     public void runOpMode() {
-        // The TFObjectDetector uses the camera frames from the VuforiaLocalizer, so we create that
-        // first.
-        initVuforia();
-
-        if (ClassFactory.getInstance().canCreateTFObjectDetector()) {
-            initTfod();
-        } else {
-            telemetry.addData("Sorry!", "This device is not compatible with TFOD");
-        }
-
-        /**
-         * Activate TensorFlow Object Detection before we wait for the start command.
-         * Do it here so that the Camera Stream window will have the TensorFlow annotations visible.
-         **/
-        if (tfod != null) {
-            tfod.activate();
-        }
 
         /** Wait for the game to begin */
-        telemetry.addData(">", "Press Play to start op mode");
-        telemetry.update();
+        this.telemetry.addData(">", "Press Play to start op mode");
+        this.telemetry.update();
         waitForStart();
 
-        if (opModeIsActive()) {
-            while (opModeIsActive()) {
-                if (tfod != null) {
-                    // getUpdatedRecognitions() will return null if no new information is available since
-                    // the last time that call was made.
-                    List<Recognition> updatedRecognitions = tfod.getUpdatedRecognitions();
-                    if (updatedRecognitions != null) {
-                        telemetry.addData("# Object Detected", updatedRecognitions.size());
-                        // step through the list of recognitions and display boundary info.
-                        int i = 0;
-                        List<Recognition> skystone = new ArrayList<Recognition>();
-                        List<Recognition> stone = new ArrayList<Recognition>();
-                        float objectHeight = 0;
-                        float imageHeight = 0;
-                        float ratioHeight = 0;
-                        double horizontalAngle = 0;
-                        int skystoneUsed = 0;
-                        for (Recognition recognition : updatedRecognitions) {
-                            telemetry.addData(String.format("label (%d)", i), recognition.getLabel());
-                            telemetry.addData(String.format("  left,top (%d)", i), "%.03f , %.03f",
-                                    recognition.getLeft(), recognition.getTop());
-                            telemetry.addData(String.format("  right,bottom (%d)", i), "%.03f , %.03f",
-                                    recognition.getRight(), recognition.getBottom());
-
-                            objectHeight = recognition.getHeight();
-                            imageHeight = recognition.getImageHeight();
-                            ratioHeight = objectHeight/imageHeight;
-                            horizontalAngle = recognition.estimateAngleToObject(AngleUnit.DEGREES);
-
-                            telemetry.addData("Estimated Angle", "%.3f", horizontalAngle);
-                            telemetry.addData("Height Ratio", "%.3f", ratioHeight);
-                            telemetry.addData("Object Height", "%.3f", objectHeight);
-                            telemetry.addData("Image Height", "%.3f", imageHeight);
-                            if (recognition.getLabel().equals("Skystone")){
-                                //Add to Skystone List
-                                skystone.add(recognition);
-                            }else {
-                                //Add to Stone List
-                                stone.add(recognition);
-                            }
-
-                            i++;
-                        }
-
-                        //Check if Skystone list is empty
-                        if(skystone.size() > 0){
-                            //Recognizes Skystone
-                            telemetry.addData("Skystone Detected: ", skystone.size());
-                            if(skystone.size() == 1){
-                                skystoneUsed = 0;
-                            }else{
-                                if(skystone.get(0).estimateAngleToObject(AngleUnit.DEGREES) > skystone.get(1).estimateAngleToObject(AngleUnit.DEGREES)){
-                                    skystoneUsed = 0;
-                                }else{
-                                    skystoneUsed = 1;
-                                }
-                            }
-                            if(skystone.get(skystoneUsed).estimateAngleToObject(AngleUnit.DEGREES) < -5){
-                                //move left
-                                skystoneLocation = SkystoneLocation.LEFT;
-                            } else if(skystone.get(skystoneUsed).estimateAngleToObject(AngleUnit.DEGREES) > 5){
-                                //move right
-                                skystoneLocation = skystoneLocation.RIGHT;
-                            } else {
-                                //skystoneLocation = skystoneLocation.CENTERX;
-                                if (skystone.get(skystoneUsed).getHeight()/skystone.get(skystoneUsed).getImageHeight() < 0.45){
-                                    //move forwards
-                                    skystoneLocation = SkystoneLocation.FORWARD;
-                                }else if (skystone.get(skystoneUsed).getHeight()/skystone.get(skystoneUsed).getImageHeight() > 0.55){
-                                    //move backwards
-                                    skystoneLocation = SkystoneLocation.BACKWARD;
-                                }else{
-                                    skystoneLocation = SkystoneLocation.CENTER;
-                                }
-                            }
-                        }else if(stone.size() > 0){
-                            //No Skystones, Move to stone
-                            telemetry.addData("No Skystones Detected, Stones Detected: ", stone.size());
-                        }else{
-                            //Nothing Detected
-                            telemetry.addData("Nothing Detected", 0);
-                        }
-
-                        telemetry.addData("Location",skystoneLocation.toString());
-
-                        telemetry.update();
-                    }
-                }
-            }
-        }
-
-        if (tfod != null) {
-            tfod.shutdown();
+        if (this.opModeIsActive()) {
+            FindSkystoneFunction findSkystone = new FindSkystoneFunction(this);
+            findSkystone.FindSkystoneAndMoveRobot();
         }
     }
-
-    /**
-     * Initialize the Vuforia localization engine.
-     */
-    private void initVuforia() {
-        /*
-         * Configure Vuforia by creating a Parameter object, and passing it to the Vuforia engine.
-         */
-        VuforiaLocalizer.Parameters parameters = new VuforiaLocalizer.Parameters();
-
-        parameters.vuforiaLicenseKey = VUFORIA_KEY;
-        parameters.cameraName = hardwareMap.get(WebcamName.class, "Webcam 1");
-
-        //  Instantiate the Vuforia engine
-        vuforia = ClassFactory.getInstance().createVuforia(parameters);
-
-        // Loading trackables is not necessary for the TensorFlow Object Detection engine.
-    }
-
-    /**
-     * Initialize the TensorFlow Object Detection engine.
-     */
-    private void initTfod() {
-        int tfodMonitorViewId = hardwareMap.appContext.getResources().getIdentifier(
-                "tfodMonitorViewId", "id", hardwareMap.appContext.getPackageName());
-        TFObjectDetector.Parameters tfodParameters = new TFObjectDetector.Parameters(tfodMonitorViewId);
-        tfodParameters.minimumConfidence = 0.7;
-        tfod = ClassFactory.getInstance().createTFObjectDetector(tfodParameters, vuforia);
-        tfod.loadModelFromAsset(TFOD_MODEL_ASSET, LABEL_FIRST_ELEMENT, LABEL_SECOND_ELEMENT);
-    }
-
 }
