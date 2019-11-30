@@ -133,20 +133,14 @@ public class AutonomousUltimateRed extends LinearOpMode {
         cf.open(c);
 
         //move backward to foundation ~ 12"
-        f.MecanumMoveBackwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 12);
+        f.MecanumMoveForwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 12);
 
-        //turn 180 deg
-        f.MecanumTurningInDegrees(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 180);
-
-        //move backward to foundation ~ 12"
-        f.MecanumMoveBackwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 12);
-
-        //clamp pull servos
+        cf.closePull(c);
 
         //move forward ~ 30"
         f.MecanumMoveForwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 30);
 
-        //release pull servos
+        cf.openPull(c);
 
         //slide left ~ 52"
         f.MecanumSlideRightInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 52);

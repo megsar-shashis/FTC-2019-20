@@ -8,14 +8,16 @@ public class ClawFunctions {
 
     }
 
-    public void pickOrient(Config config)
+    public void closePull(Config config)
     {
-        config.orient.setPosition(.5);
+        config.leftPull.setPosition(.5);
+        config.rightPull.setPosition(.5);
     }
 
-    public void transportOrient(Config config)
+    public void openPull(Config config)
     {
-        config.orient.setPosition(.75);
+        config.leftPull.setPosition(1);
+        config.rightPull.setPosition(1);
     }
 
     public void open(Config config)
