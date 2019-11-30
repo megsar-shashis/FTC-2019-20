@@ -12,10 +12,10 @@ public class RW_Utils_Test_Autonomous_Mecanum_Basics extends LinearOpMode {
     RW_RConfig robot = new RW_RConfig();
     private ElapsedTime runtime = new ElapsedTime();
 
+    MecanumBasedUtils Utils = new MecanumBasedUtils(this);
     public void runOpMode() {
         robot.init(hardwareMap);
 
-        MecanumBasedUtils Utils = new MecanumBasedUtils(this);
 
          Utils.MecanumSlideLeftInInches(robot.leftFront, robot.rightFront, robot.leftBack,
              robot.rightBack, 0.2, 14);
