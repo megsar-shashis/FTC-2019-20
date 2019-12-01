@@ -68,10 +68,8 @@ public class FindSkystone extends LinearOpMode {
 
         // create an instance of FindSkystoneFunction and init Vuforia
         FindSkystoneFunction findSkystone = new FindSkystoneFunction(this);
-        findSkystone.initVuforia();
 
         waitForStart();
-
         if (this.opModeIsActive()) {
             findSkystone.FindSkystoneAndMoveRobot();
         }
