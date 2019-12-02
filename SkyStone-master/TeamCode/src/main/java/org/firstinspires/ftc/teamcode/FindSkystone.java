@@ -58,18 +58,17 @@ import org.firstinspires.ftc.robotcore.external.tfod.Recognition;
 @Autonomous(name = "Find Skystone", group = "Skystone")
 //@Disabled
 public class FindSkystone extends LinearOpMode {
-
     @Override
     public void runOpMode() {
 
         /** Wait for the game to begin */
         this.telemetry.addData(">", "Press Play to start op mode");
         this.telemetry.update();
-
-        // create an instance of FindSkystoneFunction and init Vuforia
-        FindSkystoneFunction findSkystone = new FindSkystoneFunction(this);
+        //FindSkystoneFunction findSkystone = new FindSkystoneFunction(this);
+        FindSkystoneOpenCV findSkystone = new FindSkystoneOpenCV(this);
 
         waitForStart();
+
         if (this.opModeIsActive()) {
             findSkystone.FindSkystoneAndMoveRobot();
         }
