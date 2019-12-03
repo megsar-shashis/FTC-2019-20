@@ -33,14 +33,12 @@ public class FindSkystoneOpenCV {
     private int valLeft = -1;
     private int valRight = -1;
 
-    private int[] vals = {valMid, valLeft, valRight};
-
-    private static float rectHeight = .8f / 8f;
-    private static float rectWidth = 2.0f / 8f;
+    private static float rectHeight = 1.0f / 8f;
+    private static float rectWidth = 1.6f / 8f;
 
     private float[] midPos = {4f / 8f, 4f / 8f};//0 = col, 1 = row
-    private float[] leftPos = {1.8f / 8f, 4f / 8f};
-    private float[] rightPos = {6.2f / 8f, 4f / 8f};
+    private float[] leftPos = {2.2f / 8f, 4f / 8f};
+    private float[] rightPos = {5.8f / 8f, 4f / 8f};
     //moves all rectangles right or left by amount. units are in ratio to monitor
 
     private final int rows = 640;
@@ -69,55 +67,43 @@ public class FindSkystoneOpenCV {
      * Unitl function to move the robot in front of the skystone
      */
     public void FindSkystoneAndMoveRobot() {
-        // first of all, move the robot 8 inches forward from the start position
-        //moveRobotForward(leftFront, rightFront, leftBack, rightBack, 8);
 
+        // detect the skytone, middle, left, or right inside three blocks
         while (!this.opMode.isStopRequested()) {
-
-            this.updateVals();
-            vals = this.getVals();
-            this.opMode.telemetry.addData("Values", vals[1] + "   " + vals[0] + "   " + vals[2]);
+            this.opMode.telemetry.addData("Values", valLeft + "   " + valMid + "   " + valRight);
             this.opMode.telemetry.update();
 
-            if (vals[0] == 0 || vals[1] == 0 || vals[2] == 0 ) {
+            // break when only one value is 0 to filter out the noise
+            if (valMid == 0 && valLeft != 0 && valRight != 0
+            || valMid != 0 && valLeft == 0 && valRight != 0
+            || valMid != 0 && valLeft != 0 && valRight == 0) {
                 break;
             }
         }
 
         float leftOffset = 0.0f;
         // move robot left or right based on position
-        if (vals[1] == 0){
+        if (valLeft == 0){
             //left
-            leftOffset = 2;
+            leftOffset = -4;
             scale = 1.5;
             forwardScale = 0;
-        } else if (vals[2] == 0){
+        } else if (valRight == 0){
             //right
-            leftOffset = 12;
+            leftOffset = 10;
             scale = 3;
             forwardScale = leftOffset / 8;
         } else {
             // middle
-            leftOffset = 5;
+            leftOffset = 3;
             scale = 3;
             forwardScale = leftOffset / 8;
         }
 
         moveRobot(leftFront, rightFront, leftBack, rightBack, leftOffset * scale);
-        moveRobotForward(leftFront, rightFront, leftBack, rightBack, 20 + forwardScale);
+        moveRobotForward(leftFront, rightFront, leftBack, rightBack, 32 + forwardScale);
 
         webCam.closeCameraDevice();
-    }
-
-    private int[] getVals() {
-
-        return vals;
-    }
-
-    private void updateVals() {
-        vals[0] = valMid;
-        vals[1] = valLeft;
-        vals[2] = valRight;
     }
 
     private void moveRobot
