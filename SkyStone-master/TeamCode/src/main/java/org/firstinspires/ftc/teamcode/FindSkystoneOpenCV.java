@@ -91,12 +91,12 @@ public class FindSkystoneOpenCV {
         } else if (valRight == 0){
             //right
             leftOffset = 10;
-            scale = 3;
+            scale = 1.5;
             forwardScale = leftOffset / 8;
         } else {
             // middle
             leftOffset = 3;
-            scale = 3;
+            scale = 1.5;
             forwardScale = leftOffset / 8;
         }
 
@@ -144,10 +144,10 @@ public class FindSkystoneOpenCV {
 
         //ensures robot will go to the destination needed
         this.opMode.telemetry.addLine("run to");
-        leftFront.setPower(0.715); //change values
+        leftFront.setPower(0.716); //change values
         rightFront.setPower(0.45);
         leftBack.setPower(0.35);
-        rightBack.setPower(0.715);
+        rightBack.setPower(0.716);
         this.opMode.telemetry.addLine("set power");
         //sets speed at which robot will run, 'power' is input
 
