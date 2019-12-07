@@ -93,7 +93,7 @@ public class AutonomousUltimateRed extends LinearOpMode {
         cf.openl(c);
 
 
-        cf.pull(c);
+//        cf.pull(c);
 
 
 
@@ -101,7 +101,7 @@ public class AutonomousUltimateRed extends LinearOpMode {
         f.MecanumMoveBackwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 30);
 
         //release pull servos
-        cf.nopull(c);
+//        cf.nopull(c);
 
         f.MecanumMoveBackwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 3);
 

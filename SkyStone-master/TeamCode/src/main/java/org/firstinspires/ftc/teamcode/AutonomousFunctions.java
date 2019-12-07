@@ -337,6 +337,7 @@ public class AutonomousFunctions {
 
         this.opMode.telemetry.addLine("Remember, positive inches slide right...");
         this.opMode.telemetry.addLine(" and negative inches slide left");
+        this.opMode.telemetry.update();
 
         leftFront.setDirection(DcMotor.Direction.FORWARD);
         rightFront.setDirection(DcMotor.Direction.REVERSE);
@@ -355,6 +356,7 @@ public class AutonomousFunctions {
 
         //target position to run to
         this.opMode.telemetry.addLine("set target");
+        this.opMode.telemetry.update();
         leftFront.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         rightFront.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         leftBack.setMode(DcMotor.RunMode.RUN_TO_POSITION);
@@ -367,11 +369,13 @@ public class AutonomousFunctions {
 
         //ensures robot will go to the destination needed
         this.opMode.telemetry.addLine("run to");
+        this.opMode.telemetry.update();
         leftFront.setPower(power);
         rightFront.setPower(power);
         leftBack.setPower(power);
         rightBack.setPower(power);
         this.opMode.telemetry.addLine("set power");
+        this.opMode.telemetry.update();
         //sets speed at which robot will run, 'power' is input
 
 

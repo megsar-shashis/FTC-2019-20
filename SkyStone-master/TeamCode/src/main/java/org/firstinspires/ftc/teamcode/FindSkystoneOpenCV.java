@@ -36,9 +36,9 @@ public class FindSkystoneOpenCV {
     private static float rectHeight = 1.0f / 8f;
     private static float rectWidth = 1.6f / 8f;
 
-    private float[] midPos = {4f / 8f, 4f / 8f};//0 = col, 1 = row
-    private float[] leftPos = {2.2f / 8f, 4f / 8f};
-    private float[] rightPos = {5.8f / 8f, 4f / 8f};
+    private float[] midPos = {3.3f / 8f, 4f / 8f};//0 = col, 1 = row
+    private float[] leftPos = {1.5f / 8f, 4f / 8f};
+    private float[] rightPos = {5.1f / 8f, 4f / 8f};
     //moves all rectangles right or left by amount. units are in ratio to monitor
 
     private final int rows = 640;
@@ -85,23 +85,23 @@ public class FindSkystoneOpenCV {
         // move robot left or right based on position
         if (valLeft == 0){
             //left
-            leftOffset = -4;
+            leftOffset = -6;
             scale = 1.5;
             forwardScale = 0;
         } else if (valRight == 0){
             //right
-            leftOffset = 10;
+            leftOffset = 8;
             scale = 1.5;
             forwardScale = leftOffset / 8;
         } else {
             // middle
-            leftOffset = 3;
+            leftOffset = 1;
             scale = 1.5;
             forwardScale = leftOffset / 8;
         }
 
         moveRobot(leftFront, rightFront, leftBack, rightBack, leftOffset * scale);
-        moveRobotForward(leftFront, rightFront, leftBack, rightBack, 32 + forwardScale);
+        moveRobotForward(leftFront, rightFront, leftBack, rightBack, 26 + forwardScale);
 
         webCam.closeCameraDevice();
     }
@@ -112,6 +112,7 @@ public class FindSkystoneOpenCV {
         //positive slides right, negative slides left
         this.opMode.telemetry.addLine("Remember, positive inches slide right...");
         this.opMode.telemetry.addLine(" and negative inches slide left");
+        this.opMode.telemetry.update();
 
         leftFront.setDirection(DcMotor.Direction.REVERSE);
         rightFront.setDirection(DcMotor.Direction.REVERSE);
@@ -130,6 +131,7 @@ public class FindSkystoneOpenCV {
 
         //target position to run to
         this.opMode.telemetry.addLine("set target");
+        this.opMode.telemetry.update();
 
         leftFront.setTargetPosition((int) (inches * positionsPerInch));
         rightFront.setTargetPosition((int) (inches * positionsPerInch));
@@ -144,11 +146,13 @@ public class FindSkystoneOpenCV {
 
         //ensures robot will go to the destination needed
         this.opMode.telemetry.addLine("run to");
+        this.opMode.telemetry.update();
         leftFront.setPower(0.716); //change values
-        rightFront.setPower(0.45);
+        rightFront.setPower(0.42);
         leftBack.setPower(0.35);
         rightBack.setPower(0.716);
         this.opMode.telemetry.addLine("set power");
+        this.opMode.telemetry.update();
         //sets speed at which robot will run, 'power' is input
 
         while (this.opMode.opModeIsActive()
@@ -186,8 +190,9 @@ public class FindSkystoneOpenCV {
 
         //target position to run to
         this.opMode.telemetry.addLine("set target");
+        this.opMode.telemetry.update();
 
-        leftFront.setTargetPosition((int) (inches * positionsPerInch * 7 / 5));
+        leftFront.setTargetPosition((int) (inches * positionsPerInch * 7 / 5.2));
         rightFront.setTargetPosition((int) (inches * positionsPerInch));
         leftBack.setTargetPosition((int) (inches * positionsPerInch));
         rightBack.setTargetPosition((int) (inches * positionsPerInch));
@@ -200,11 +205,13 @@ public class FindSkystoneOpenCV {
 
         //ensures robot will go to the destination needed
         this.opMode.telemetry.addLine("run to");
+        this.opMode.telemetry.update();
         leftFront.setPower(0.7); //change values
-        rightFront.setPower(0.5);
+        rightFront.setPower(0.6);
         leftBack.setPower(0.5);
         rightBack.setPower(0.5);
         this.opMode.telemetry.addLine("set power");
+        this.opMode.telemetry.update();
         //sets speed at which robot will run, 'power' is input
 
         while (this.opMode.opModeIsActive()

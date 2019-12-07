@@ -133,7 +133,6 @@ public class TeleopTwoController extends OpMode{
             position += .002;
             winch1.setPosition(position);
         }
-
 /************************************CHASSIS******************************/
         double fwdBackPower = gamepad1.left_stick_y;
         double strafePower = gamepad1.left_stick_x;

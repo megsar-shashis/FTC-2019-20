@@ -28,7 +28,6 @@
  */
 
 package org.firstinspires.ftc.teamcode;
-
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
@@ -58,9 +57,8 @@ public class AutonomousLoadingRed extends LinearOpMode {
 
     /* Declare OpMode members. */
     Config c = new Config();   // Use a Pushbot's hardware
-    AutonomousFunctions f = new AutonomousFunctions();
+
     ClawFunctions cf = new ClawFunctions();
-    FindSkystoneOpenCV fs = new FindSkystoneOpenCV(this);
 
     @Override
     public void runOpMode() {
@@ -69,15 +67,21 @@ public class AutonomousLoadingRed extends LinearOpMode {
          * The init() method of the hardware class does all the work here
          */
         c.init(hardwareMap);
+        AutonomousFunctions f = new AutonomousFunctions();
+        FindSkystoneOpenCV fs = new FindSkystoneOpenCV(this);
 
-        //move forward ~ 12"
-        f.MecanumMoveForwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 12);
+        waitForStart();
+
         c.orient.setPosition(0.4);
         cf.openf(c);
+        sleep(1000);
 
         fs.FindSkystoneAndMoveRobot();
+        telemetry.addLine("before claw");
         cf.close(c);
-
+        telemetry.addLine("after claw");
+        telemetry.update();
+        sleep(1000);
 
         f.MecanumMoveBackwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 8);
 
