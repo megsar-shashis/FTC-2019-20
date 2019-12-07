@@ -42,25 +42,25 @@ public class TwoControllerTeleop extends LinearOpMode{
                 winch1.setPosition(position);
             }
 
-            Servo winch2 = config.HSWinch;
-            double position2 = winch2.getPosition();
-
-            if(gamepad2.left_bumper == true && gamepad2.right_bumper == false)
-            {
-                position2 -= .1;
-                winch2.setPosition(position2);
-            }
-
-            if(gamepad2.left_bumper == false && gamepad2.right_bumper == true)
-            {
-                position2 += .1;
-                winch2.setPosition(position2);
-            }
-
-            if(gamepad2.left_bumper == false && gamepad2.right_bumper == false)
-            {
-                winch1.setPosition(position2);
-            }
+//            Servo winch2 = config.HSWinch;
+//            double position2 = winch2.getPosition();
+//
+//            if(gamepad2.left_bumper == true && gamepad2.right_bumper == false)
+//            {
+//                position2 -= .1;
+//                winch2.setPosition(position2);
+//            }
+//
+//            if(gamepad2.left_bumper == false && gamepad2.right_bumper == true)
+//            {
+//                position2 += .1;
+//                winch2.setPosition(position2);
+//            }
+//
+//            if(gamepad2.left_bumper == false && gamepad2.right_bumper == false)
+//            {
+//                winch1.setPosition(position2);
+//            }
 
 
             double fwdBackPower = -gamepad1.left_stick_y;
