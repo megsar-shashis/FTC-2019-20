@@ -16,7 +16,6 @@ public class TwoControllerTeleop extends LinearOpMode{
 
             if(gamepad1.right_trigger == 1 && gamepad1.left_trigger == 0)
             {
-                cf.open(config);
             }
             if(gamepad1.left_trigger == 1 && gamepad1.right_trigger == 0)
             {

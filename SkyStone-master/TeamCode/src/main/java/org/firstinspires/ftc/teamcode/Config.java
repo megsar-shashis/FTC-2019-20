@@ -24,12 +24,14 @@ public class Config{
     //arm
     Servo VSWinch = null;
     Servo HSWinch = null;
-    Servo VHElbow = null;
+    //Servo VHElbow = null;
     DcMotor Arm = null;
+
     //claw
     Servo orient = null;
     Servo claw = null;
-
+    Servo leftClaw = null;
+    Servo rightClaw = null;
 
     //pull
     Servo leftPull = null;
@@ -60,18 +62,23 @@ public class Config{
         leftBack = hwMap.get(DcMotor.class, "left_back");//hub2 - port 2
         rightBack = hwMap.get(DcMotor.class, "right_back");//hub2 - port 3
 
+        VSWinch= hwMap.get(Servo.class, "vs_winch");//hub 1 - port 4
         HSWinch = hwMap.get(Servo.class, "hs_winch"); //hub 1 - port1
+        //VHElbow = hwMap.get(Servo.class, "vh_elbow"); //hub 1 - port2
+        Arm = hwMap.get(DcMotor.class, "arm");//hub 1 - port 0
 
-        orient = hwMap.get(Servo.class, "orient");//hub 1 - port 3
-        claw = hwMap.get(Servo.class, "claw");//hub 1 - port 4
+        orient = hwMap.get(Servo.class, "orient");//hub 1 - port 0
+        claw = hwMap.get(Servo.class, "claw");//hub 1 - port 5
+        leftClaw = hwMap.get(Servo.class, "left_claw");//hub 1 - port 4
+        rightClaw = hwMap.get(Servo.class, "right_claw");//hub 1 - port 5
 
         leftPull = hwMap.get(Servo.class, "left_pull");//hub 2 - port 0
         rightPull = hwMap.get(Servo.class, "right_pull");//hub 2 - port 1
 
 
-        //set direction
-        leftFront.setDirection(DcMotor.Direction.REVERSE);
-        leftBack.setDirection(DcMotor.Direction.REVERSE);
+
+        leftFront.setDirection(DcMotor.Direction.FORWARD);
+        leftBack.setDirection(DcMotor.Direction.FORWARD);
         rightFront.setDirection(DcMotor.Direction.FORWARD);
         rightBack.setDirection(DcMotor.Direction.FORWARD);
 
@@ -80,8 +87,8 @@ public class Config{
         rightFront.setPower(0);
         rightBack.setPower(0);
 
-        leftPull.setPosition(0.5);
-        rightPull.setPosition(0);
+        leftPull.setPosition(0.5);// fix this position
+        rightPull.setPosition(1);
 
 
         // May want to use RUN_USING_ENCODERS if encoders are installed.

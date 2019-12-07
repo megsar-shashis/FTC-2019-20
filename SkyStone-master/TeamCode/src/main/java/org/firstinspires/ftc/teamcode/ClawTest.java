@@ -93,7 +93,7 @@ public class ClawTest extends OpMode{
     public void loop() {
         if(gamepad2.right_trigger == 1 && gamepad2.left_trigger == 0)
         {
-            cf.open(robot);
+
         }
         if(gamepad2.left_trigger == 1 && gamepad2.right_trigger == 0)
         {

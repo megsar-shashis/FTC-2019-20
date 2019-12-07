@@ -18,14 +18,17 @@ public class ClawFunctions {
         config.orient.setPosition(.75);
     }
 
-    public void open(Config config)
+    public void openl(Config config)
     {
         config.claw.setPosition(.5);
     }
-
+    public void openf(Config config)
+    {
+        config.claw.setPosition(.75);
+    }
     public void close(Config config)
     {
-        config.claw.setPosition(1);
+        config.claw.setPosition(-.5);
     }
 
     ElapsedTime timer = new ElapsedTime();

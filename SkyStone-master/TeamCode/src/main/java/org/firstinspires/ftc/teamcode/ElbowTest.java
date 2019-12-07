@@ -50,22 +50,7 @@ public class ElbowTest extends OpMode{
      */
     @Override
     public void loop() {
-        double position = robot.VHElbow.getPosition();
-        if(gamepad1.x == true)
-        {
-            position += 0.01;
-            robot.orient.setPosition(position);
-        }
-        if(gamepad1.y == true)
-        {
-            position -= 0.01;
-            robot.orient.setPosition(position);
-        }
-        if(gamepad1.x == false && gamepad1.y == false)
-        {
-            position = position;
-            robot.orient.setPosition(position);
-        }
+
     }
 
     /*
