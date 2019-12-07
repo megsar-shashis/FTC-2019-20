@@ -77,7 +77,7 @@ public class Config{
         rightFront.setPower(0);
         rightBack.setPower(0);
 
-        leftPull.setPosition(0.5);// fix this position
+        leftPull.setPosition(0.5);
         rightPull.setPosition(1);
 
 

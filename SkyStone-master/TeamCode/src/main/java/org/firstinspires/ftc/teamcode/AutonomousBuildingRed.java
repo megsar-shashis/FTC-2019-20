@@ -63,6 +63,7 @@ public class AutonomousBuildingRed extends LinearOpMode {
     /* Declare OpMode members. */
     Config c = new Config();   // Use a Pushbot's hardware
     AutonomousFunctions f = new AutonomousFunctions();
+    ClawFunctions cf = new ClawFunctions();
 
     @Override
     public void runOpMode() {
@@ -82,11 +83,13 @@ public class AutonomousBuildingRed extends LinearOpMode {
         f.MecanumMoveForwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 5);
 
         //clamp pull servos
+        cf.pull(c);
 
         //move backward ~ 30"
         f.MecanumMoveBackwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 30);
 
         //release pull servos
+        cf.nopull(c);
 
         //slide left ~ 52"
         f.MecanumSlideLeftInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 52);

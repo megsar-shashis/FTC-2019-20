@@ -60,6 +60,7 @@ public class AutonomousLoadingRed extends LinearOpMode {
     Config c = new Config();   // Use a Pushbot's hardware
     AutonomousFunctions f = new AutonomousFunctions();
     ClawFunctions cf = new ClawFunctions();
+    FindSkystoneOpenCV fs = new FindSkystoneOpenCV(this);
 
     @Override
     public void runOpMode() {
@@ -71,69 +72,31 @@ public class AutonomousLoadingRed extends LinearOpMode {
 
         //move forward ~ 12"
         f.MecanumMoveForwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 12);
+        c.orient.setPosition(0.4);
+        cf.openf(c);
 
-        //check for case 1,2,3
-        SkystoneVuforia.SkystoneLocation locationPrint = f.FindSkystone();
-        telemetry.addData("location", locationPrint.toString());
-        telemetry.update();
+        fs.FindSkystoneAndMoveRobot();
+        cf.close(c);
 
-        if(locationPrint.toString() == "LEFT")
-        {
-            f.MecanumSlideLeftInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 8);
-            cf.open(c);
-            f.MecanumMoveForwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 16);
-            cf.close(c);
-            double p = c.VSWinch.getPosition();
-            p+=0.01;
-            c.VSWinch.setPosition(p);
-            f.MecanumMoveBackwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 16);
-            f.MecanumSlideRightInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 16);
 
-        }
-        if(locationPrint.toString() == "RIGHT")
-        {
-            f.MecanumSlideRightInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 8);
-            cf.open(c);
-            f.MecanumMoveForwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 16);
-            cf.close(c);
-            double p = c.VSWinch.getPosition();
-            p+=0.01;
-            c.VSWinch.setPosition(p);
-            f.MecanumMoveBackwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 16);
-        }
-        if(locationPrint.toString() == "CENTER")
-        {
-            cf.open(c);
-            f.MecanumMoveForwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 16);
-            cf.close(c);
-            double p = c.VSWinch.getPosition();
-            p+=0.01;
-            c.VSWinch.setPosition(p);
-            f.MecanumMoveBackwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 16);
-            f.MecanumSlideRightInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 8);
-        }
-        if(locationPrint.toString() == "NONE")
-        {
-            cf.open(c);
-            f.MecanumMoveForwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 16);
-            cf.close(c);
-            double p = c.VSWinch.getPosition();
-            p+=0.01;
-            c.VSWinch.setPosition(p);
-            f.MecanumMoveBackwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 16);
-            f.MecanumSlideRightInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 8);
-        }
+        f.MecanumMoveBackwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 8);
 
-        //slide right ~72"
-        f.MecanumSlideRightInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 72);
+        //slide right ~80"
+        f.MecanumSlideRightInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 80);
+        double position = c.VSWinch.getPosition();
+        position += .1;
+        c.VSWinch.setPosition(position);
 
         //move forward to foundation ~ 12"
         f.MecanumMoveForwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 12);
 
-        cf.open(c);
+        cf.openl(c);
 
         //move backward away ~ 8"
         f.MecanumMoveBackwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 8);
+        position = c.VSWinch.getPosition();
+        position -= .1;
+        c.VSWinch.setPosition(position);
 
         //move left to park away ~ 48"
         f.MecanumSlideLeftInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.3, 48);

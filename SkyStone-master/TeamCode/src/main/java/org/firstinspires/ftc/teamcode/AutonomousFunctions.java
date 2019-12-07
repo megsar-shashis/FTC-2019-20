@@ -644,123 +644,123 @@ public class AutonomousFunctions {
         FORWARD,
         BACKWARD
     }
-    public SkystoneVuforia.SkystoneLocation FindSkystone(){
-        SkystoneVuforia.SkystoneLocation skystoneLocation = SkystoneVuforia.SkystoneLocation.NONE;
-        initVuforia();
-
-        if (ClassFactory.getInstance().canCreateTFObjectDetector()) {
-            initTfod();
-        } else {
-            this.opMode.telemetry.addData("Sorry!", "This device is not compatible with TFOD");
-        }
-
-        /**
-         * Activate TensorFlow Object Detection before we wait for the start command.
-         * Do it here so that the Camera Stream window will have the TensorFlow annotations visible.
-         **/
-        if (tfod != null) {
-            tfod.activate();
-        }
-
-        this.opMode.telemetry.addData(">", "Press Play to start op mode");
-        this.opMode.telemetry.update();
-        this.opMode.waitForStart();
-
-        if (this.opMode.opModeIsActive()) {
-            while (this.opMode.opModeIsActive() && skystoneLocation == SkystoneVuforia.SkystoneLocation.NONE) {
-                if (tfod != null) {
-                    // getUpdatedRecognitions() will return null if no new information is available since
-                    // the last time that call was made.
-                    List<Recognition> updatedRecognitions = tfod.getUpdatedRecognitions();
-                    if (updatedRecognitions != null) {
-                        this.opMode.telemetry.addData("# Object Detected", updatedRecognitions.size());
-                        // step through the list of recognitions and display boundary info.
-                        int i = 0;
-                        List<Recognition> skystone = new ArrayList<Recognition>();
-                        List<Recognition> stone = new ArrayList<Recognition>();
-                        float objectHeight = 0;
-                        float imageHeight = 0;
-                        float ratioHeight = 0;
-                        double horizontalAngle = 0;
-                        int skystoneUsed = 0;
-                        for (Recognition recognition : updatedRecognitions) {
-                            this.opMode.telemetry.addData(String.format("label (%d)", i), recognition.getLabel());
-                            this.opMode.telemetry.addData(String.format("  left,top (%d)", i), "%.03f , %.03f",
-                                    recognition.getLeft(), recognition.getTop());
-                            this.opMode.telemetry.addData(String.format("  right,bottom (%d)", i), "%.03f , %.03f",
-                                    recognition.getRight(), recognition.getBottom());
-
-                            objectHeight = recognition.getHeight();
-                            imageHeight = recognition.getImageHeight();
-                            ratioHeight = objectHeight/imageHeight;
-                            horizontalAngle = recognition.estimateAngleToObject(AngleUnit.DEGREES);
-
-                            this.opMode.telemetry.addData("Estimated Angle", "%.3f", horizontalAngle);
-                            this.opMode.telemetry.addData("Height Ratio", "%.3f", ratioHeight);
-                            this.opMode.telemetry.addData("Object Height", "%.3f", objectHeight);
-                            this.opMode.telemetry.addData("Image Height", "%.3f", imageHeight);
-                            if (recognition.getLabel().equals("Skystone")){
-                                //Add to Skystone List
-                                skystone.add(recognition);
-                            }else {
-                                //Add to Stone List
-                                stone.add(recognition);
-                            }
-
-                            i++;
-                        }
-
-                        //Check if Skystone list is empty
-                        if(skystone.size() > 0){
-                            //Recognizes Skystone
-                            this.opMode.telemetry.addData("Skystone Detected: ", skystone.size());
-                            if(skystone.size() == 1){
-                                skystoneUsed = 0;
-                            }else{
-                                if(skystone.get(0).estimateAngleToObject(AngleUnit.DEGREES) > skystone.get(1).estimateAngleToObject(AngleUnit.DEGREES)){
-                                    skystoneUsed = 0;
-                                }else{
-                                    skystoneUsed = 1;
-                                }
-                            }
-                            if(skystone.get(skystoneUsed).estimateAngleToObject(AngleUnit.DEGREES) < -5){
-                                //move left
-                                skystoneLocation = SkystoneVuforia.SkystoneLocation.LEFT;
-                            } else if(skystone.get(skystoneUsed).estimateAngleToObject(AngleUnit.DEGREES) > 5){
-                                //move right
-                                skystoneLocation = skystoneLocation.RIGHT;
-                            } else {
-                                //skystoneLocation = skystoneLocation.CENTERX;
-                                if (skystone.get(skystoneUsed).getHeight()/skystone.get(skystoneUsed).getImageHeight() < 0.45){
-                                    //move forwards
-                                    skystoneLocation = SkystoneVuforia.SkystoneLocation.FORWARD;
-                                }else if (skystone.get(skystoneUsed).getHeight()/skystone.get(skystoneUsed).getImageHeight() > 0.55){
-                                    //move backwards
-                                    skystoneLocation = SkystoneVuforia.SkystoneLocation.BACKWARD;
-                                }else{
-                                    skystoneLocation = SkystoneVuforia.SkystoneLocation.CENTER;
-                                }
-                            }
-                        }else if(stone.size() > 0){
-                            //No Skystones, Move to stone
-                            this.opMode.telemetry.addData("No Skystones Detected, Stones Detected: ", stone.size());
-
-                        }else{
-                            //Nothing Detected
-                            this.opMode.telemetry.addData("Nothing Detected", 0);
-                        }
-
-                        this.opMode.telemetry.update();
-                    }
-                }
-            }
-        }
-
-        if (tfod != null) {
-            tfod.shutdown();
-        }
-        return skystoneLocation;
-    }
+//    public SkystoneVuforia.SkystoneLocation FindSkystone(){
+//        SkystoneVuforia.SkystoneLocation skystoneLocation = SkystoneVuforia.SkystoneLocation.NONE;
+//        initVuforia();
+//
+//        if (ClassFactory.getInstance().canCreateTFObjectDetector()) {
+//            initTfod();
+//        } else {
+//            this.opMode.telemetry.addData("Sorry!", "This device is not compatible with TFOD");
+//        }
+//
+//        /**
+//         * Activate TensorFlow Object Detection before we wait for the start command.
+//         * Do it here so that the Camera Stream window will have the TensorFlow annotations visible.
+//         **/
+//        if (tfod != null) {
+//            tfod.activate();
+//        }
+//
+//        this.opMode.telemetry.addData(">", "Press Play to start op mode");
+//        this.opMode.telemetry.update();
+//        this.opMode.waitForStart();
+//
+//        if (this.opMode.opModeIsActive()) {
+//            while (this.opMode.opModeIsActive() && skystoneLocation == SkystoneVuforia.SkystoneLocation.NONE) {
+//                if (tfod != null) {
+//                    // getUpdatedRecognitions() will return null if no new information is available since
+//                    // the last time that call was made.
+//                    List<Recognition> updatedRecognitions = tfod.getUpdatedRecognitions();
+//                    if (updatedRecognitions != null) {
+//                        this.opMode.telemetry.addData("# Object Detected", updatedRecognitions.size());
+//                        // step through the list of recognitions and display boundary info.
+//                        int i = 0;
+//                        List<Recognition> skystone = new ArrayList<Recognition>();
+//                        List<Recognition> stone = new ArrayList<Recognition>();
+//                        float objectHeight = 0;
+//                        float imageHeight = 0;
+//                        float ratioHeight = 0;
+//                        double horizontalAngle = 0;
+//                        int skystoneUsed = 0;
+//                        for (Recognition recognition : updatedRecognitions) {
+//                            this.opMode.telemetry.addData(String.format("label (%d)", i), recognition.getLabel());
+//                            this.opMode.telemetry.addData(String.format("  left,top (%d)", i), "%.03f , %.03f",
+//                                    recognition.getLeft(), recognition.getTop());
+//                            this.opMode.telemetry.addData(String.format("  right,bottom (%d)", i), "%.03f , %.03f",
+//                                    recognition.getRight(), recognition.getBottom());
+//
+//                            objectHeight = recognition.getHeight();
+//                            imageHeight = recognition.getImageHeight();
+//                            ratioHeight = objectHeight/imageHeight;
+//                            horizontalAngle = recognition.estimateAngleToObject(AngleUnit.DEGREES);
+//
+//                            this.opMode.telemetry.addData("Estimated Angle", "%.3f", horizontalAngle);
+//                            this.opMode.telemetry.addData("Height Ratio", "%.3f", ratioHeight);
+//                            this.opMode.telemetry.addData("Object Height", "%.3f", objectHeight);
+//                            this.opMode.telemetry.addData("Image Height", "%.3f", imageHeight);
+//                            if (recognition.getLabel().equals("Skystone")){
+//                                //Add to Skystone List
+//                                skystone.add(recognition);
+//                            }else {
+//                                //Add to Stone List
+//                                stone.add(recognition);
+//                            }
+//
+//                            i++;
+//                        }
+//
+//                        //Check if Skystone list is empty
+//                        if(skystone.size() > 0){
+//                            //Recognizes Skystone
+//                            this.opMode.telemetry.addData("Skystone Detected: ", skystone.size());
+//                            if(skystone.size() == 1){
+//                                skystoneUsed = 0;
+//                            }else{
+//                                if(skystone.get(0).estimateAngleToObject(AngleUnit.DEGREES) > skystone.get(1).estimateAngleToObject(AngleUnit.DEGREES)){
+//                                    skystoneUsed = 0;
+//                                }else{
+//                                    skystoneUsed = 1;
+//                                }
+//                            }
+//                            if(skystone.get(skystoneUsed).estimateAngleToObject(AngleUnit.DEGREES) < -5){
+//                                //move left
+//                                skystoneLocation = SkystoneVuforia.SkystoneLocation.LEFT;
+//                            } else if(skystone.get(skystoneUsed).estimateAngleToObject(AngleUnit.DEGREES) > 5){
+//                                //move right
+//                                skystoneLocation = skystoneLocation.RIGHT;
+//                            } else {
+//                                //skystoneLocation = skystoneLocation.CENTERX;
+//                                if (skystone.get(skystoneUsed).getHeight()/skystone.get(skystoneUsed).getImageHeight() < 0.45){
+//                                    //move forwards
+//                                    skystoneLocation = SkystoneVuforia.SkystoneLocation.FORWARD;
+//                                }else if (skystone.get(skystoneUsed).getHeight()/skystone.get(skystoneUsed).getImageHeight() > 0.55){
+//                                    //move backwards
+//                                    skystoneLocation = SkystoneVuforia.SkystoneLocation.BACKWARD;
+//                                }else{
+//                                    skystoneLocation = SkystoneVuforia.SkystoneLocation.CENTER;
+//                                }
+//                            }
+//                        }else if(stone.size() > 0){
+//                            //No Skystones, Move to stone
+//                            this.opMode.telemetry.addData("No Skystones Detected, Stones Detected: ", stone.size());
+//
+//                        }else{
+//                            //Nothing Detected
+//                            this.opMode.telemetry.addData("Nothing Detected", 0);
+//                        }
+//
+//                        this.opMode.telemetry.update();
+//                    }
+//                }
+//            }
+//        }
+//
+//        if (tfod != null) {
+//            tfod.shutdown();
+//        }
+//        return skystoneLocation;
+//    }
 
     /**
      * Initialize the Vuforia localization engine.

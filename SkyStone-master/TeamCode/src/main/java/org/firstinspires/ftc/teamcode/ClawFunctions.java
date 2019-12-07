@@ -31,6 +31,17 @@ public class ClawFunctions {
         config.claw.setPosition(-.5);
     }
 
+    public void pull(Config config)
+    {
+        config.leftPull.setPosition(0);
+        config.rightPull.setPosition(0);
+    }
+    public void nopull(Config config)
+    {
+        config.leftPull.setPosition(1);
+        config.rightPull.setPosition(1);
+    }
+
     ElapsedTime timer = new ElapsedTime();
 
     public void setTimer(ElapsedTime timer) {

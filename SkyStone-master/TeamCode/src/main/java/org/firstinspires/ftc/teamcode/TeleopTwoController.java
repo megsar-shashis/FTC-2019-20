@@ -103,19 +103,28 @@ public class TeleopTwoController extends OpMode{
             //close
         }
 
+/**************************PULL********************************************/
 
+        if(gamepad1.x == true)
+        {
+            cf.pull(config);
+        }
+        if(gamepad1.b == true)
+        {
+            cf.nopull(config);
+        }
 /**************************LINEAR SLIDE************************************/
         Servo winch1 = config.VSWinch;
         double position = winch1.getPosition();
         telemetry.addData("winch position:", position);
 
-        if(gamepad2.left_trigger == 1 && gamepad2.right_trigger == 0)
+        if(gamepad1.left_trigger == 1 && gamepad1.right_trigger == 0)
         {
             position -= .002;
             winch1.setPosition(position);
         }
 
-        if(gamepad2.left_trigger == 0 && gamepad2.right_trigger == 1)
+        if(gamepad1.left_trigger == 0 && gamepad1.right_trigger == 1)
         {
             position += .002;
             winch1.setPosition(position);
