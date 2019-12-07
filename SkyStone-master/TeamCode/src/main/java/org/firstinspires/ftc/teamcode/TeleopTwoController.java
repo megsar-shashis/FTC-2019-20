@@ -102,6 +102,10 @@ public class TeleopTwoController extends OpMode{
             cf.close(config);
             //close
         }
+        if(gamepad1.y == true)
+        {
+            cf.openf(config);
+        }
 
 /**************************PULL********************************************/
 
