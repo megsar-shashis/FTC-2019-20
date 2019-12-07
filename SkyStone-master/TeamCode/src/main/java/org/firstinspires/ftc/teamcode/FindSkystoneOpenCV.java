@@ -87,7 +87,8 @@ public class FindSkystoneOpenCV {
             //left
             leftOffset = -6;
             scale = 1.5;
-            forwardScale = 0;
+            forwardScale = -26;
+            moveRobotForward(leftFront, rightFront, leftBack, rightBack, 26);
         } else if (valRight == 0){
             //right
             leftOffset = 8;
@@ -192,7 +193,7 @@ public class FindSkystoneOpenCV {
         this.opMode.telemetry.addLine("set target");
         this.opMode.telemetry.update();
 
-        leftFront.setTargetPosition((int) (inches * positionsPerInch * 7 / 5.2));
+        leftFront.setTargetPosition((int) (inches * positionsPerInch * 7 / 5.3));
         rightFront.setTargetPosition((int) (inches * positionsPerInch));
         leftBack.setTargetPosition((int) (inches * positionsPerInch));
         rightBack.setTargetPosition((int) (inches * positionsPerInch));
