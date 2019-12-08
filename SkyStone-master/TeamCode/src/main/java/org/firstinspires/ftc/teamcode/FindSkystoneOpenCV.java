@@ -26,7 +26,7 @@ public class FindSkystoneOpenCV {
     private DcMotor rightFront;
     private DcMotor leftBack;
     private DcMotor rightBack;
-    private double scale;
+    private double rightLeftScale;
     private double forwardScale;
 
     private int valMid = -1;
@@ -68,6 +68,36 @@ public class FindSkystoneOpenCV {
      */
     public void FindSkystoneAndMoveRobot() {
 
+        int direction = this.detectSkyston();
+
+        float leftOffset = 0.0f;
+        // move robot left or right based on direction value
+        if (direction == -1){
+            //left
+            leftOffset = -6;
+            rightLeftScale = 1.5;
+            forwardScale = -26;
+            moveRobotForward(leftFront, rightFront, leftBack, rightBack, 26 );
+        } else if (direction == 1){
+            //right
+            leftOffset = 8;
+            rightLeftScale = 1.5;
+            forwardScale = leftOffset / 8;
+        } else {
+            // middle
+            leftOffset = 1;
+            rightLeftScale = 1.5;
+            forwardScale = leftOffset / 8;
+        }
+
+        moveRobot(leftFront, rightFront, leftBack, rightBack, leftOffset * rightLeftScale);
+        moveRobotForward(leftFront, rightFront, leftBack, rightBack, 26 + forwardScale);
+
+        webCam.closeCameraDevice();
+    }
+
+    private int detectSkyston(){
+        int ret = 0; // middle:0  right:1  left:-1
         // detect the skytone, middle, left, or right inside three blocks
         while (!this.opMode.isStopRequested()) {
             this.opMode.telemetry.addData("Values", valLeft + "   " + valMid + "   " + valRight);
@@ -75,36 +105,22 @@ public class FindSkystoneOpenCV {
 
             // break when only one value is 0 to filter out the noise
             if (valMid == 0 && valLeft != 0 && valRight != 0
-            || valMid != 0 && valLeft == 0 && valRight != 0
-            || valMid != 0 && valLeft != 0 && valRight == 0) {
+                    || valMid != 0 && valLeft == 0 && valRight != 0
+                    || valMid != 0 && valLeft != 0 && valRight == 0) {
                 break;
             }
         }
 
-        float leftOffset = 0.0f;
         // move robot left or right based on position
         if (valLeft == 0){
             //left
-            leftOffset = -6;
-            scale = 1.5;
-            forwardScale = -26;
-            moveRobotForward(leftFront, rightFront, leftBack, rightBack, 26);
+            ret = -1;
         } else if (valRight == 0){
             //right
-            leftOffset = 8;
-            scale = 1.5;
-            forwardScale = leftOffset / 8;
-        } else {
-            // middle
-            leftOffset = 1;
-            scale = 1.5;
-            forwardScale = leftOffset / 8;
+            ret = 1;
         }
 
-        moveRobot(leftFront, rightFront, leftBack, rightBack, leftOffset * scale);
-        moveRobotForward(leftFront, rightFront, leftBack, rightBack, 26 + forwardScale);
-
-        webCam.closeCameraDevice();
+        return ret;
     }
 
     private void moveRobot
@@ -217,7 +233,7 @@ public class FindSkystoneOpenCV {
 
         while (this.opMode.opModeIsActive()
                 && leftFront.isBusy()
-                && rightFront.isBusy()
+                && rightFront.isBusy()      
                 && leftBack.isBusy()
                 && rightBack.isBusy()) {
             this.opMode.telemetry.addData("Left Front Motor Current Position: ", leftFront.getCurrentPosition());
