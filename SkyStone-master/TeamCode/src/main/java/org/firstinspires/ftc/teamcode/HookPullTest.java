@@ -38,7 +38,7 @@ import com.qualcomm.robotcore.util.Range;
 
 
 @TeleOp(name="Hook and Pull test", group="Test")
-//@Disabled
+@Disabled
 public class HookPullTest extends OpMode{
 
     /* Declare OpMode members. */

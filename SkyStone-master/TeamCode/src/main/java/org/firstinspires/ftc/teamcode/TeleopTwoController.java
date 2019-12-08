@@ -29,6 +29,7 @@
 
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -49,7 +50,7 @@ import com.qualcomm.robotcore.hardware.Servo;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@TeleOp(name="Teleop", group="Teleop")
+@TeleOp(name="TeleopTC", group="TeleopTC")
 //@Disabled
 public class TeleopTwoController extends OpMode{
 
@@ -92,6 +93,18 @@ public class TeleopTwoController extends OpMode{
      */
     @Override
     public void loop() {
+
+/**************************PULL********************************************/
+
+        if(gamepad1.x == true)
+        {
+            cf.pull(config);
+        }
+        if(gamepad1.b == true)
+        {
+            cf.nopull(config);
+        }
+
 /************************CLAW***************************/
 
         if(gamepad1.left_bumper ==  true){
@@ -106,17 +119,6 @@ public class TeleopTwoController extends OpMode{
         {
             cf.openf(config);
         }
-
-/**************************PULL********************************************/
-
-        if(gamepad1.x == true)
-        {
-            cf.pull(config);
-        }
-        if(gamepad1.b == true)
-        {
-            cf.nopull(config);
-        }
 /**************************LINEAR SLIDE************************************/
         Servo winch1 = config.VSWinch;
         double position = winch1.getPosition();
@@ -124,17 +126,23 @@ public class TeleopTwoController extends OpMode{
 
         if(gamepad1.left_trigger == 1 && gamepad1.right_trigger == 0)
         {
-            position -= .002;
+            position -= .1;
             winch1.setPosition(position);
         }
 
         if(gamepad1.left_trigger == 0 && gamepad1.right_trigger == 1)
         {
-            position += .002;
+            position += .1;
+            winch1.setPosition(position);
+        }
+
+        if(gamepad1.left_trigger == 0 && gamepad1.right_trigger == 0)
+        {
+            position += 0;
             winch1.setPosition(position);
         }
 /************************************CHASSIS******************************/
-        double fwdBackPower = gamepad1.left_stick_y;
+        double fwdBackPower = -gamepad1.left_stick_y;
         double strafePower = gamepad1.left_stick_x;
         double turnPower = gamepad1.right_stick_x;
 
@@ -162,6 +170,8 @@ public class TeleopTwoController extends OpMode{
         config.rightFront.setPower(rightFrontPower);
         config.leftBack.setPower(leftBackPower);
         config.rightBack.setPower(rightBackPower);
+
+
 
     }
 

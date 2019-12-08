@@ -49,7 +49,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
  */
 
 @TeleOp(name="ClawRead", group="Read")
-//@Disabled
+@Disabled
 public class ClawRead extends OpMode{
 
     /* Declare OpMode members. */

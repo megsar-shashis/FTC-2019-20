@@ -3,11 +3,14 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.util.ElapsedTime;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 
 /**
  * Created by meghn on 9/23/2018.
  */
 @Autonomous(name = "Mecanum Basics", group = "RW_Autonomous")
+
+@Disabled
 public class RW_Utils_Test_Autonomous_Mecanum_Basics extends LinearOpMode {
     RW_RConfig robot = new RW_RConfig();
     private ElapsedTime runtime = new ElapsedTime();

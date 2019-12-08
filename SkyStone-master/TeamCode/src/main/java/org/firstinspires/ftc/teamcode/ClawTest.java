@@ -50,7 +50,7 @@ import com.qualcomm.robotcore.util.Range;
  */
 
 @TeleOp(name="ClawTest", group="Test")
-//@Disabled
+@Disabled
 public class ClawTest extends OpMode{
 
     /* Declare OpMode members. */

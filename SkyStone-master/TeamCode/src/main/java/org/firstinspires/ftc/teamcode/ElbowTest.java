@@ -5,11 +5,12 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.Servo;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 
 
 
 @TeleOp(name="ElbowTest", group="Test")
-//@Disabled
+@Disabled
 public class ElbowTest extends OpMode{
 
     /* Declare OpMode members. */

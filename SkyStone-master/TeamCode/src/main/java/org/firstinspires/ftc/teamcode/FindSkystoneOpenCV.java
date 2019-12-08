@@ -88,20 +88,24 @@ public class FindSkystoneOpenCV {
             leftOffset = -6;
             scale = 1.5;
             forwardScale = 0;
+            moveRobotForward(leftFront, rightFront, leftBack, rightBack, 26 + forwardScale);
+            moveRobot(leftFront, rightFront, leftBack, rightBack, leftOffset * scale);
         } else if (valRight == 0){
             //right
             leftOffset = 8;
             scale = 1.5;
             forwardScale = leftOffset / 8;
+            moveRobot(leftFront, rightFront, leftBack, rightBack, leftOffset * scale);
+            moveRobotForward(leftFront, rightFront, leftBack, rightBack, 26 + forwardScale);
         } else {
             // middle
             leftOffset = 1;
             scale = 1.5;
             forwardScale = leftOffset / 8;
+            moveRobot(leftFront, rightFront, leftBack, rightBack, leftOffset * scale);
+            moveRobotForward(leftFront, rightFront, leftBack, rightBack, 26 + forwardScale);
         }
 
-        moveRobot(leftFront, rightFront, leftBack, rightBack, leftOffset * scale);
-        moveRobotForward(leftFront, rightFront, leftBack, rightBack, 26 + forwardScale);
 
         webCam.closeCameraDevice();
     }

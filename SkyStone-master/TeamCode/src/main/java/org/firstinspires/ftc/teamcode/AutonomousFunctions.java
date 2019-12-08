@@ -29,11 +29,20 @@ import java.util.List;
  * Created by meghn on 10/1/2018.
  */
 
+
 public class AutonomousFunctions {
 
-    private LinearOpMode opMode;
+   private LinearOpMode opMode;
+
     BNO055IMU imu;
     // **************************** START OF MOVE, SLIDE & TURN ROBOT ******************************************************
+    public AutonomousFunctions(LinearOpMode _opMode) {
+        opMode = _opMode;
+    }
+
+    public AutonomousFunctions()
+    {
+    }
 
     public void MecanumSlideInInches
             (DcMotor leftFront, DcMotor rightFront,
@@ -94,119 +103,6 @@ public class AutonomousFunctions {
         }
     }
 
-    public void MecanumSlideRightInInches
-            (DcMotor leftFront, DcMotor rightFront,
-             DcMotor leftBack, DcMotor rightBack, double power, double inches)
-    {
-        leftFront.setDirection(DcMotor.Direction.REVERSE);
-        rightFront.setDirection(DcMotor.Direction.REVERSE);
-        leftBack.setDirection(DcMotor.Direction.FORWARD);
-        rightBack.setDirection(DcMotor.Direction.FORWARD);
-        //sets proper direction
-
-        leftFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        leftBack.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        rightFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        rightBack.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        //resets encoder
-
-        double count = 2.5;
-
-        double positionsPerInch = 1120/12.533;
-        //positionsPerInch is the amount of counts the encoder makes to move 1 inch
-
-        //target position to run to
-        this.opMode.telemetry.addLine("set target");
-        leftFront.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        leftBack.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        rightFront.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        rightBack.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        //runs to the position
-
-        leftFront.setTargetPosition((int) (inches * positionsPerInch));
-        leftBack.setTargetPosition((int) (inches * positionsPerInch));
-        rightFront.setTargetPosition((int) (inches * positionsPerInch));
-        rightBack.setTargetPosition((int) (inches * positionsPerInch));
-
-        //ensures robot will go to the destination needed
-        this.opMode.telemetry.addLine("run to");
-        leftFront.setPower(power);
-        leftBack.setPower(power);
-        rightFront.setPower(power);
-        rightBack.setPower(power);
-        this.opMode.telemetry.addLine("set power");
-        //sets speed at which robot will run
-
-        while (opMode.opModeIsActive()
-                && leftFront.isBusy()
-                && leftBack.isBusy()
-                && rightFront.isBusy()
-                && rightBack.isBusy()) {
-            this.opMode.telemetry.addData("Left Front Motor Current Position: ", leftFront.getCurrentPosition());
-            this.opMode.telemetry.addData("Left Back Motor Current Position: ", leftBack.getCurrentPosition());
-            this.opMode.telemetry.addData("Right Front Current Position: ", rightFront.getCurrentPosition());
-            this.opMode.telemetry.addData("Right Back Motor Current Position: ", rightBack.getCurrentPosition());
-            this.opMode.telemetry.update();
-            //sends data on the positions of where the motor is located
-        }
-    }
-
-    public void MecanumSlideLeftInInches
-            (DcMotor leftFront, DcMotor rightFront,
-             DcMotor leftBack, DcMotor rightBack, double power, double inches)
-    {
-        leftFront.setDirection(DcMotor.Direction.FORWARD);
-        rightFront.setDirection(DcMotor.Direction.FORWARD);
-        leftBack.setDirection(DcMotor.Direction.REVERSE);
-        rightBack.setDirection(DcMotor.Direction.REVERSE);
-        //sets proper direction
-
-        leftFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        leftBack.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        rightFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        rightBack.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        //resets encoder
-
-        double count = 2.5;
-
-        double positionsPerInch = 1120/12.533;
-        //positionsPerInch is the amount of counts the encoder makes to move 1 inch
-
-        //target position to run to
-        this.opMode.telemetry.addLine("set target");
-        leftFront.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        leftBack.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        rightFront.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        rightBack.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        //runs to the position
-
-        leftFront.setTargetPosition((int) (inches * positionsPerInch));
-        leftBack.setTargetPosition((int) (inches * positionsPerInch));
-        rightFront.setTargetPosition((int) (inches * positionsPerInch));
-        rightBack.setTargetPosition((int) (inches * positionsPerInch));
-
-        //ensures robot will go to the destination needed
-        this.opMode.telemetry.addLine("run to");
-        leftFront.setPower(power);
-        leftBack.setPower(power);
-        rightFront.setPower(power);
-        rightBack.setPower(power);
-        this.opMode.telemetry.addLine("set power");
-        //sets speed at which robot will run
-
-        while (opMode.opModeIsActive()
-                && leftFront.isBusy()
-                && leftBack.isBusy()
-                && rightFront.isBusy()
-                && rightBack.isBusy()) {
-            this.opMode.telemetry.addData("Left Front Motor Current Position: ", leftFront.getCurrentPosition());
-            this.opMode.telemetry.addData("Left Back Motor Current Position: ", leftBack.getCurrentPosition());
-            this.opMode.telemetry.addData("Right Front Current Position: ", rightFront.getCurrentPosition());
-            this.opMode.telemetry.addData("Right Back Motor Current Position: ", rightBack.getCurrentPosition());
-            this.opMode.telemetry.update();
-            //sends data on the positions of where the motor is located
-        }
-    }
 
     public void MecanumMoveInInches
             (DcMotor leftFront, DcMotor rightFront,
@@ -270,9 +166,133 @@ public class AutonomousFunctions {
 
     }
 
+    public void MecanumSlideRightInInches
+            (DcMotor leftFront, DcMotor rightFront,
+             DcMotor leftBack, DcMotor rightBack,
+             double leftFrontPower, double rightFrontPower,
+             double leftBackPower, double rightBackPower,
+             double inches)
+    {
+        leftFront.setDirection(DcMotor.Direction.REVERSE);
+        rightFront.setDirection(DcMotor.Direction.REVERSE);
+        leftBack.setDirection(DcMotor.Direction.FORWARD);
+        rightBack.setDirection(DcMotor.Direction.FORWARD);
+        //sets proper direction
+
+        leftFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        leftBack.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        rightFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        rightBack.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        //resets encoder
+
+        double count = 2.5;
+
+        double positionsPerInch = 1120/12.533;
+        //positionsPerInch is the amount of counts the encoder makes to move 1 inch
+
+        //target position to run to
+        this.opMode.telemetry.addLine("set target");
+        leftFront.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        leftBack.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        rightFront.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        rightBack.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        //runs to the position
+
+        leftFront.setTargetPosition((int) (inches * positionsPerInch));
+        leftBack.setTargetPosition((int) (inches * positionsPerInch));
+        rightFront.setTargetPosition((int) (inches * positionsPerInch));
+        rightBack.setTargetPosition((int) (inches * positionsPerInch));
+
+        //ensures robot will go to the destination needed
+        this.opMode.telemetry.addLine("run to");
+        leftFront.setPower(leftFrontPower); //change values
+        rightFront.setPower(rightFrontPower);
+        leftBack.setPower(leftBackPower);
+        rightBack.setPower(rightBackPower);
+        this.opMode.telemetry.addLine("set power");
+        //sets speed at which robot will run
+
+        while (opMode.opModeIsActive()
+                && leftFront.isBusy()
+                && leftBack.isBusy()
+                && rightFront.isBusy()
+                && rightBack.isBusy()) {
+            this.opMode.telemetry.addData("Left Front Motor Current Position: ", leftFront.getCurrentPosition());
+            this.opMode.telemetry.addData("Left Back Motor Current Position: ", leftBack.getCurrentPosition());
+            this.opMode.telemetry.addData("Right Front Current Position: ", rightFront.getCurrentPosition());
+            this.opMode.telemetry.addData("Right Back Motor Current Position: ", rightBack.getCurrentPosition());
+            this.opMode.telemetry.update();
+            //sends data on the positions of where the motor is located
+        }
+    }
+
+    public void MecanumSlideLeftInInches
+            (DcMotor leftFront, DcMotor rightFront,
+             DcMotor leftBack, DcMotor rightBack,
+             double leftFrontPower, double rightFrontPower,
+             double leftBackPower, double rightBackPower,
+             double inches)
+    {
+        leftFront.setDirection(DcMotor.Direction.FORWARD);
+        rightFront.setDirection(DcMotor.Direction.FORWARD);
+        leftBack.setDirection(DcMotor.Direction.REVERSE);
+        rightBack.setDirection(DcMotor.Direction.REVERSE);
+        //sets proper direction
+
+        leftFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        leftBack.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        rightFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        rightBack.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        //resets encoder
+
+        double count = 2.5;
+
+        double positionsPerInch = 1120/12.533;
+        //positionsPerInch is the amount of counts the encoder makes to move 1 inch
+
+        //target position to run to
+        this.opMode.telemetry.addLine("get target");
+        leftFront.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        leftBack.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        rightFront.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        rightBack.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        //runs to the position
+
+        leftFront.setTargetPosition((int) (inches * positionsPerInch));
+        leftBack.setTargetPosition((int) (inches * positionsPerInch));
+        rightFront.setTargetPosition((int) (inches * positionsPerInch));
+        rightBack.setTargetPosition((int) (inches * positionsPerInch));
+
+        //ensures robot will go to the destination needed
+        this.opMode.telemetry.addLine("run to");
+        leftFront.setPower(leftFrontPower); //change values
+        rightFront.setPower(rightFrontPower);
+        leftBack.setPower(leftBackPower);
+        rightBack.setPower(rightBackPower);
+        this.opMode.telemetry.addLine("set power");
+        this.opMode.telemetry.update();
+        //sets speed at which robot will run
+
+        while (this.opMode.opModeIsActive()
+                && leftFront.isBusy()
+                && leftBack.isBusy()
+                && rightFront.isBusy()
+                && rightBack.isBusy()) {
+            this.opMode.telemetry.addData("Left Front Motor Current Position: ", leftFront.getCurrentPosition());
+            this.opMode.telemetry.addData("Left Back Motor Current Position: ", leftBack.getCurrentPosition());
+            this.opMode.telemetry.addData("Right Front Current Position: ", rightFront.getCurrentPosition());
+            this.opMode.telemetry.addData("Right Back Motor Current Position: ", rightBack.getCurrentPosition());
+            this.opMode.telemetry.update();
+            //sends data on the positions of where the motor is located
+        }
+    }
+
     public void MecanumMoveForwardInInches
             (DcMotor leftFront, DcMotor rightFront,
-             DcMotor leftBack, DcMotor rightBack, double power, double inches)
+             DcMotor leftBack, DcMotor rightBack,
+             double leftFrontPower, double rightFrontPower,
+             double leftBackPower, double rightBackPower,
+             double inches)
     {
         this.opMode.telemetry.addLine("Mecanum move forward ...");
 
@@ -305,10 +325,10 @@ public class AutonomousFunctions {
 
         //ensures robot will go to the destination needed
         this.opMode.telemetry.addLine("run to");
-        leftFront.setPower(power);
-        rightFront.setPower(power);
-        leftBack.setPower(power);
-        rightBack.setPower(power);
+        leftFront.setPower(leftFrontPower); //change values
+        rightFront.setPower(rightFrontPower);
+        leftBack.setPower(leftBackPower);
+        rightBack.setPower(rightBackPower);
         this.opMode.telemetry.addLine("set power");
         //sets speed at which robot will run, 'power' is input
 
@@ -331,7 +351,10 @@ public class AutonomousFunctions {
 
     public void MecanumMoveBackwardInInches
             (DcMotor leftFront, DcMotor rightFront,
-             DcMotor leftBack, DcMotor rightBack, double power, double inches)
+             DcMotor leftBack, DcMotor rightBack,
+             double leftFrontPower, double rightFrontPower,
+             double leftBackPower, double rightBackPower,
+             double inches)
     {
         //positive slides right, negative slides left
 
@@ -370,10 +393,10 @@ public class AutonomousFunctions {
         //ensures robot will go to the destination needed
         this.opMode.telemetry.addLine("run to");
         this.opMode.telemetry.update();
-        leftFront.setPower(power);
-        rightFront.setPower(power);
-        leftBack.setPower(power);
-        rightBack.setPower(power);
+        leftFront.setPower(leftFrontPower); //change values
+        rightFront.setPower(rightFrontPower);
+        leftBack.setPower(leftBackPower);
+        rightBack.setPower(rightBackPower);
         this.opMode.telemetry.addLine("set power");
         this.opMode.telemetry.update();
         //sets speed at which robot will run, 'power' is input
@@ -393,217 +416,6 @@ public class AutonomousFunctions {
             //sends data on the positions of where the motor is located
         }
 
-    }
-
-    public void MecanumMoveInInchesWithRampUpSpeed
-            (DcMotor leftFront, DcMotor rightFront,
-             DcMotor leftBack, DcMotor rightBack, double power, double inches)
-    {
-        ElapsedTime motorTimer = new ElapsedTime();
-
-        double motorStartPower = 0.1;
-
-        double motorCurrentPower = motorStartPower;
-        motorTimer.reset();
-        double currentTime = motorTimer.milliseconds();
-        double maxTimeToRampUp = 1000;
-        double timeStep = 10;
-        double powerUpPerTimeStep = (power - motorStartPower)/(maxTimeToRampUp/timeStep);
-
-        double positionsPerInch = 1120/12.533;
-
-        leftFront.setDirection(DcMotor.Direction.FORWARD);
-        rightFront.setDirection(DcMotor.Direction.FORWARD);
-        leftBack.setDirection(DcMotor.Direction.FORWARD);
-        rightBack.setDirection(DcMotor.Direction.FORWARD);
-        //sets proper direction
-
-        leftFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        leftBack.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        rightFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        rightBack.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        //resets encoder
-
-
-        //target position to run to
-        this.opMode.telemetry.addLine("set target");
-        leftFront.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        leftBack.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        rightFront.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        rightBack.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        //runs to the position
-
-        leftFront.setTargetPosition((int) (inches * positionsPerInch));
-        leftBack.setTargetPosition((int) (inches * positionsPerInch));
-        rightFront.setTargetPosition((int) (inches * positionsPerInch));
-        rightBack.setTargetPosition((int) (inches * positionsPerInch));
-
-        //ensures robot will go to the destination needed
-        this.opMode.telemetry.addLine("run to");
-
-        while (opMode.opModeIsActive()
-                && leftFront.isBusy()
-                && leftBack.isBusy()
-                && rightFront.isBusy()
-                && rightBack.isBusy()) {
-
-            // motor power has exceeded the max power allowed
-            if(motorTimer.milliseconds() > currentTime + timeStep && motorCurrentPower <= power) {
-
-                motorCurrentPower = motorCurrentPower +  powerUpPerTimeStep;
-                currentTime = currentTime + timeStep;
-
-                leftFront.setPower(motorCurrentPower);
-                leftBack.setPower(motorCurrentPower);
-                rightFront.setPower(motorCurrentPower);
-                rightBack.setPower(motorCurrentPower);
-                this.opMode.telemetry.addLine("set power");
-                //sets speed at which robot will run
-            }
-
-            this.opMode.telemetry.addData("Left Front Motor Current Position: ", leftFront.getCurrentPosition());
-            this.opMode.telemetry.addData("Left Back Motor Current Position: ", leftBack.getCurrentPosition());
-            this.opMode.telemetry.addData("Right Front Current Position: ", rightFront.getCurrentPosition());
-            this.opMode.telemetry.addData("Right Back Motor Current Position: ", rightBack.getCurrentPosition());
-            this.opMode.telemetry.update();
-            //sends data on the positions of where the motor is located
-        }
-    }
-
-    public void MecanumMoveInInchesWithCounter
-            (DcMotor leftFront, DcMotor rightFront,
-             DcMotor leftBack, DcMotor rightBack, double power, double inches)
-    {
-        leftFront.setDirection(DcMotor.Direction.FORWARD);
-        rightFront.setDirection(DcMotor.Direction.FORWARD);
-        leftBack.setDirection(DcMotor.Direction.FORWARD);
-        rightBack.setDirection(DcMotor.Direction.FORWARD);
-        //sets proper direction
-
-        leftFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        leftBack.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        rightFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        rightBack.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        //resets encoder
-
-        double count = 2.5;
-
-        double positionsPerInch = 1120/12.533;
-        //positionsPerInch is the amount of counts the encoder makes to move 1 inch
-
-        if ((double)(count/(positionsPerInch * inches))*power < power) {
-            count = count + 10;
-
-            //target position to run to
-            this.opMode.telemetry.addLine("set target");
-            leftFront.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-            leftBack.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-            rightFront.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-            rightBack.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-            //runs to the position
-
-            leftFront.setTargetPosition((int) (inches * positionsPerInch));
-            leftBack.setTargetPosition((int) (inches * positionsPerInch));
-            rightFront.setTargetPosition((int) (inches * positionsPerInch));
-            rightBack.setTargetPosition((int) (inches * positionsPerInch));
-
-            //ensures robot will go to the destination needed
-            this.opMode.telemetry.addLine("run to");
-            leftFront.setPower(power * (count / (positionsPerInch * inches)));
-            leftBack.setPower(power * (count / (positionsPerInch * inches)));
-            rightFront.setPower(power * (count / (positionsPerInch * inches)));
-            rightBack.setPower(power * (count / (positionsPerInch * inches)));
-            this.opMode.telemetry.addLine("set power");
-            //sets speed at which robot will run
-
-            while (opMode.opModeIsActive()
-                    && leftFront.isBusy()
-                    && leftBack.isBusy()
-                    && rightFront.isBusy()
-                    && rightBack.isBusy()) {
-                this.opMode.telemetry.addData("Left Front Motor Current Position: ", leftFront.getCurrentPosition());
-                this.opMode.telemetry.addData("Left Back Motor Current Position: ", leftBack.getCurrentPosition());
-                this.opMode.telemetry.addData("Right Front Current Position: ", rightFront.getCurrentPosition());
-                this.opMode.telemetry.addData("Right Back Motor Current Position: ", rightBack.getCurrentPosition());
-                this.opMode.telemetry.update();
-                //sends data on the positions of where the motor is located
-            }
-        }
-        else {
-            //target position to run to
-            this.opMode.telemetry.addLine("set target");
-            leftFront.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-            leftBack.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-            rightFront.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-            rightBack.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-            //runs to the position
-
-            leftFront.setTargetPosition((int) (inches * positionsPerInch));
-            leftBack.setTargetPosition((int) (inches * positionsPerInch));
-            rightFront.setTargetPosition((int) (inches * positionsPerInch));
-            rightBack.setTargetPosition((int) (inches * positionsPerInch));
-
-            //ensures robot will go to the destination needed
-            this.opMode.telemetry.addLine("run to");
-            leftFront.setPower(power);
-            leftBack.setPower(power);
-            rightFront.setPower(power);
-            rightBack.setPower(power);
-            this.opMode.telemetry.addLine("set power");
-            //sets speed at which robot will run
-
-            while (opMode.opModeIsActive()
-                    && leftFront.isBusy()
-                    && leftBack.isBusy()
-                    && rightFront.isBusy()
-                    && rightBack.isBusy()) {
-                this.opMode.telemetry.addData("Left Front Motor Current Position: ", leftFront.getCurrentPosition());
-                this.opMode.telemetry.addData("Left Back Motor Current Position: ", leftBack.getCurrentPosition());
-                this.opMode.telemetry.addData("Right Front Current Position: ", rightFront.getCurrentPosition());
-                this.opMode.telemetry.addData("Right Back Motor Current Position: ", rightBack.getCurrentPosition());
-                this.opMode.telemetry.update();
-                //sends data on the positions of where the motor is located
-            }
-        }
-    }
-
-    public void MecanumTurningInDegrees(DcMotor leftFront, DcMotor rightFront,
-                                        DcMotor leftBack, DcMotor rightBack,
-                                        double power, double degrees){
-
-
-        leftFront.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        rightFront.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        leftBack.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        rightBack.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-
-        double accumulatedTurn = 0;
-        double startAngle = this.getAbsoluteHeading();
-
-        while(this.opMode.opModeIsActive() && Math.abs(accumulatedTurn) <= Math.abs(degrees)) {
-
-            accumulatedTurn = this.getAbsoluteHeading() - startAngle; // calculate the turn amount
-
-            // normalize the turned amount within -180 to +180
-            if (accumulatedTurn < -180)
-                accumulatedTurn += 360;
-            else if (accumulatedTurn > 180)
-                accumulatedTurn -= 360;
-
-            if (degrees < 0) {
-                // turn left
-                leftFront.setPower(-0.3);
-                leftBack.setPower(-0.3);
-                rightFront.setPower(0.3);
-                rightBack.setPower(0.3);
-            } else {
-                // turn right
-                leftFront.setPower(0.3);
-                leftBack.setPower(0.3);
-                rightFront.setPower(-0.3);
-                rightBack.setPower(-0.3);
-            }
-        }
     }
 
     private double getAbsoluteHeading()
