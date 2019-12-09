@@ -28,6 +28,7 @@
  */
 
 package org.firstinspires.ftc.teamcode;
+
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
@@ -51,15 +52,14 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@Autonomous(name="AutonomousLRed", group="Auto")
+@Autonomous(name="AutonomousFPark", group="Auto")
 //@Disabled
-public class AutonomousLoadingRed extends LinearOpMode {
+public class AutonomousForwardPark extends LinearOpMode {
 
     /* Declare OpMode members. */
     Config c = new Config();   // Use a Pushbot's hardware
     AutonomousFunctions f = new AutonomousFunctions(this);
 
-    ClawFunctions cf = new ClawFunctions();
 
     @Override
     public void runOpMode() {
@@ -68,41 +68,19 @@ public class AutonomousLoadingRed extends LinearOpMode {
          * The init() method of the hardware class does all the work here
          */
         c.init(hardwareMap);
-        FindSkystoneOpenCV fs = new FindSkystoneOpenCV(this);
 
         waitForStart();
 
-        c.orient.setPosition(0.4);
-        cf.openf(c);
+        //move forward ~ 12"
+//        f.MecanumMoveForwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.7, 0.6, 0.5, 0.5,12);
+        c.leftFront.setPower(-0.7);
+        c.leftBack.setPower(0.5);
+        c.rightFront.setPower(0.6);
+        c.rightBack.setPower(-0.5);
         sleep(1000);
-
-        fs.FindSkystoneAndMoveRobot();
-        telemetry.addLine("before claw");
-        cf.close(c);
-        telemetry.addLine("after claw");
-        telemetry.update();
-        sleep(1000);
-
-        f.MecanumMoveBackwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.8, 0.6, 0.5, 0.5,8);
-
-        //slide right ~80"
-        f.MecanumSlideRightInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.716, 0.42, 0.35, 0.716,120);
-        double position = c.VSWinch.getPosition();
-        position += .1;
-        c.VSWinch.setPosition(position);
-
-        //move forward to foundation ~ 12"
-        f.MecanumMoveForwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.7, 0.6, 0.5, 0.5,12);
-
-        cf.openl(c);
-
-        //move backward away ~ 8"
-        f.MecanumMoveBackwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.8, 0.6, 0.5, 0.5, 8);
-        position = c.VSWinch.getPosition();
-        position -= .1;
-        c.VSWinch.setPosition(position);
-
-        //move left to park away ~ 48"
-        f.MecanumSlideLeftInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.716, 0.42, 0.35, 0.716, 48);
-        }
+        c.leftFront.setPower(0);
+        c.leftBack.setPower(0);
+        c.rightFront.setPower(0);
+        c.rightBack.setPower(0);
+    }
 }

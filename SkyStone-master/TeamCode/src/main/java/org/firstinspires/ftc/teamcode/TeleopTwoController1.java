@@ -33,6 +33,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Servo;
 
 /**
@@ -52,7 +53,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 
 @TeleOp(name="TeleopTC", group="TeleopTC")
 //@Disabled
-public class TeleopTwoController extends OpMode{
+public class TeleopTwoController1 extends OpMode{
 
     /* Declare OpMode members. */
     ClawFunctions cf       = new ClawFunctions(); // use the class created to define a Pushbot's hardware
@@ -68,6 +69,8 @@ public class TeleopTwoController extends OpMode{
          * The init() method of the hardware class does all the work here
          */
         config.init(hardwareMap);
+        config.leftFront.setDirection(DcMotor.Direction.REVERSE);
+        config.leftBack.setDirection(DcMotor.Direction.REVERSE);
 
         // Send telemetry message to signify robot waiting;
         telemetry.addData("Say", "Hello Driver");    //
@@ -124,6 +127,8 @@ public class TeleopTwoController extends OpMode{
         double position = winch1.getPosition();
         telemetry.addData("winch position:", position);
 
+//        winch1.setPosition((0.05 + (gamepad2.right_trigger / 2) - (gamepad2.left_trigger / 2)));
+
         if(gamepad1.left_trigger == 1 && gamepad1.right_trigger == 0)
         {
             position -= .1;
@@ -138,7 +143,7 @@ public class TeleopTwoController extends OpMode{
 
         if(gamepad1.left_trigger == 0 && gamepad1.right_trigger == 0)
         {
-            position += 0;
+            position = 0.05;
             winch1.setPosition(position);
         }
 /************************************CHASSIS******************************/
