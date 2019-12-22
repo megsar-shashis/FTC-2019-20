@@ -5,6 +5,7 @@ package org.firstinspires.ftc.teamcode;
 import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
@@ -43,6 +44,8 @@ public class FindSkystoneOpenCV {
 
     private final int rows = 640;
     private final int cols = 480;
+
+    private double positionsPerInch = 1120 / 12.605;
 
     private OpenCvCamera webCam;
 
@@ -88,132 +91,87 @@ public class FindSkystoneOpenCV {
             leftOffset = -6;
             scale = 1.5;
             forwardScale = 0;
-            moveRobotForward(leftFront, rightFront, leftBack, rightBack, 26 + forwardScale);
-            moveRobot(leftFront, rightFront, leftBack, rightBack, leftOffset * scale);
+            moveRobotForward(26 + forwardScale);
+            moveRobotLeft(leftOffset * scale);
         } else if (valRight == 0){
             //right
             leftOffset = 8;
             scale = 1.5;
             forwardScale = leftOffset / 8;
-            moveRobot(leftFront, rightFront, leftBack, rightBack, leftOffset * scale);
-            moveRobotForward(leftFront, rightFront, leftBack, rightBack, 26 + forwardScale);
+            moveRobotLeft(leftOffset * scale);
+            moveRobotForward(26 + forwardScale);
         } else {
             // middle
             leftOffset = 1;
             scale = 1.5;
             forwardScale = leftOffset / 8;
-            moveRobot(leftFront, rightFront, leftBack, rightBack, leftOffset * scale);
-            moveRobotForward(leftFront, rightFront, leftBack, rightBack, 26 + forwardScale);
+            moveRobotLeft(leftOffset * scale);
+            moveRobotForward(26 + forwardScale);
         }
-
 
         webCam.closeCameraDevice();
     }
-
+    public void moveRobotLeft (double inches){
+        leftFront.setDirection(DcMotor.Direction.REVERSE);
+        rightFront.setDirection(DcMotor.Direction.REVERSE);
+        leftBack.setDirection(DcMotor.Direction.FORWARD);
+        rightBack.setDirection(DcMotor.Direction.FORWARD);
+        moveRobot(0.716, 0.42, 0.35, 0.716, inches * positionsPerInch);
+    }
+    public void moveRobotRight (double inches){
+        leftFront.setDirection(DcMotor.Direction.FORWARD);
+        rightFront.setDirection(DcMotor.Direction.FORWARD);
+        leftBack.setDirection(DcMotor.Direction.REVERSE);
+        rightBack.setDirection(DcMotor.Direction.REVERSE);
+        moveRobot(0.716, 0.42, 0.35, 0.716, inches * positionsPerInch);
+    }
+    public void moveRobotForward (double inches){
+        leftFront.setDirection(DcMotor.Direction.FORWARD);
+        rightFront.setDirection(DcMotor.Direction.FORWARD);
+        leftBack.setDirection(DcMotor.Direction.FORWARD);
+        rightBack.setDirection(DcMotor.Direction.FORWARD);
+        moveRobot(0.7, 0.6, 0.5, 0.5, inches * positionsPerInch);
+    }
+    public void moveRobotBackward (double inches){
+        leftFront.setDirection(DcMotor.Direction.REVERSE);
+        rightFront.setDirection(DcMotor.Direction.REVERSE);
+        leftBack.setDirection(DcMotor.Direction.REVERSE);
+        rightBack.setDirection(DcMotor.Direction.REVERSE);
+        moveRobot(0.7, 0.6, 0.5, 0.5, inches * positionsPerInch);
+    }
     private void moveRobot
-            (DcMotor leftFront, DcMotor rightFront,
-             DcMotor leftBack, DcMotor rightBack, double inches) {
+            (double leftFrontPower, double rightFrontPower, double leftBackPower, double rightBackPower, double distance) {
         //positive slides right, negative slides left
         this.opMode.telemetry.addLine("Remember, positive inches slide right...");
         this.opMode.telemetry.addLine(" and negative inches slide left");
         this.opMode.telemetry.update();
 
-        leftFront.setDirection(DcMotor.Direction.REVERSE);
-        rightFront.setDirection(DcMotor.Direction.REVERSE);
-        leftBack.setDirection(DcMotor.Direction.FORWARD);
-        rightBack.setDirection(DcMotor.Direction.FORWARD);
-
         leftFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         rightFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         leftBack.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         rightBack.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
 
-        double positionsPerInch = 1120 / 12.605;
-        //positionsPerInch is the amount of counts the encoder makes to move 1 inch
-
-        //positionsToMove is the amount of counts the encoder must make to reach the target location
-
         //target position to run to
         this.opMode.telemetry.addLine("set target");
         this.opMode.telemetry.update();
 
-        leftFront.setTargetPosition((int) (inches * positionsPerInch));
-        rightFront.setTargetPosition((int) (inches * positionsPerInch));
-        leftBack.setTargetPosition((int) (inches * positionsPerInch));
-        rightBack.setTargetPosition((int) (inches * positionsPerInch));
+        leftFront.setTargetPosition((int) (distance));
+        rightFront.setTargetPosition((int) (distance));
+        leftBack.setTargetPosition((int) (distance));
+        rightBack.setTargetPosition((int) (distance));
 
         leftFront.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         rightFront.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         leftBack.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         rightBack.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
-
         //ensures robot will go to the destination needed
         this.opMode.telemetry.addLine("run to");
         this.opMode.telemetry.update();
-        leftFront.setPower(0.716); //change values
-        rightFront.setPower(0.42);
-        leftBack.setPower(0.35);
-        rightBack.setPower(0.716);
-        this.opMode.telemetry.addLine("set power");
-        this.opMode.telemetry.update();
-        //sets speed at which robot will run, 'power' is input
-
-        while (this.opMode.opModeIsActive()
-                && leftFront.isBusy()
-                && rightFront.isBusy()
-                && leftBack.isBusy()
-                && rightBack.isBusy()) {
-            this.opMode.telemetry.addData("Left Front Motor Current Position: ", leftFront.getCurrentPosition());
-            this.opMode.telemetry.addData("Right Front Current Position: ", rightFront.getCurrentPosition());
-            this.opMode.telemetry.addData("Left Back Motor Current Position: ", leftBack.getCurrentPosition());
-            this.opMode.telemetry.addData("Right Back Motor Current Position: ", rightBack.getCurrentPosition());
-            this.opMode.telemetry.update();
-            //sends data on the positions of where the motor is located
-        }
-    }
-
-    public void moveRobotForward
-            (DcMotor leftFront, DcMotor rightFront,
-             DcMotor leftBack, DcMotor rightBack, double inches) {
-
-        leftFront.setDirection(DcMotor.Direction.REVERSE);
-        rightFront.setDirection(DcMotor.Direction.FORWARD);
-        leftBack.setDirection(DcMotor.Direction.FORWARD);
-        rightBack.setDirection(DcMotor.Direction.REVERSE);
-
-        leftFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        rightFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        leftBack.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        rightBack.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-
-        double positionsPerInch = 1120 / 12.605;
-        //positionsPerInch is the amount of counts the encoder makes to move 1 inch
-
-        //positionsToMove is the amount of counts the encoder must make to reach the target location
-
-        //target position to run to
-        this.opMode.telemetry.addLine("set target");
-        this.opMode.telemetry.update();
-
-        leftFront.setTargetPosition((int) (inches * positionsPerInch * 7 / 5.2));
-        rightFront.setTargetPosition((int) (inches * positionsPerInch));
-        leftBack.setTargetPosition((int) (inches * positionsPerInch));
-        rightBack.setTargetPosition((int) (inches * positionsPerInch));
-
-        leftFront.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        rightFront.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        leftBack.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-        rightBack.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-
-
-        //ensures robot will go to the destination needed
-        this.opMode.telemetry.addLine("run to");
-        this.opMode.telemetry.update();
-        leftFront.setPower(0.7); //change values
-        rightFront.setPower(0.6);
-        leftBack.setPower(0.5);
-        rightBack.setPower(0.5);
+        leftFront.setPower(leftFrontPower); //change values
+        rightFront.setPower(rightFrontPower);
+        leftBack.setPower(leftBackPower);
+        rightBack.setPower(rightBackPower);
         this.opMode.telemetry.addLine("set power");
         this.opMode.telemetry.update();
         //sets speed at which robot will run, 'power' is input
