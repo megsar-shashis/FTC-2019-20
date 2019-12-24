@@ -9,24 +9,26 @@ import com.qualcomm.robotcore.util.ElapsedTime;
  */
 @Autonomous(name = "MecBasicsREAL", group = "Autonomous")
 public class MecanumBasics extends LinearOpMode {
-    Config robot = new Config();
+    MecBasicsConfig robot = new MecBasicsConfig();
     private ElapsedTime runtime = new ElapsedTime();
 
-    AutonomousFunctions Utils = new AutonomousFunctions(this);
+    MecanumFunctions mecanumFunctions = new MecanumFunctions(this);
+    //AutonomousFunctions Utils = new AutonomousFunctions(this);
     public void runOpMode() {
         robot.init(hardwareMap);
 
-        Utils.MecanumSlideLeftInInches(robot.leftFront, robot.rightFront, robot.leftBack,
-                robot.rightBack, 0.716, 0.42, 0.35, 0.716, 20);
+        waitForStart();
+        mecanumFunctions.MoveRobot(robot, MecanumFunctions.MoveAction.MoveForward, 10, 0.5 );
 
-        Utils.MecanumSlideRightInInches(robot.leftFront, robot.rightFront, robot.leftBack,
-                robot.rightBack, 0.716, 0.42, 0.35, 0.716, 20);
+        mecanumFunctions.MoveRobot(robot, MecanumFunctions.MoveAction.MoveBackward, 10, 0.5 );
 
-        Utils.MecanumMoveForwardInInches(robot.leftFront, robot.rightFront, robot.leftBack,
-                robot.rightBack, 0.7, 0.6, 0.5, 0.5, 20);
+        mecanumFunctions.MoveRobot(robot, MecanumFunctions.MoveAction.SlideLeft, 10, 0.5 );
 
-        Utils.MecanumMoveBackwardInInches(robot.leftFront, robot.rightFront, robot.leftBack,
-                robot.rightBack, 0.8, 0.6, 0.5, 0.5, 20);
+        mecanumFunctions.MoveRobot(robot, MecanumFunctions.MoveAction.SlideRight, 10, 0.5 );
+
+        mecanumFunctions.MoveRobot(robot, MecanumFunctions.MoveAction.TurnLeft, 10, 0.5 );
+
+        mecanumFunctions.MoveRobot(robot, MecanumFunctions.MoveAction.TurnRight, 10, 0.5 );
     }
 }
 

@@ -12,7 +12,7 @@ public class TwoControllerTeleop extends LinearOpMode{
         Config config = new Config();
         ClawFunctions cf = new ClawFunctions();
         waitForStart();
-        while(opModeIsActive()) {
+         while(opModeIsActive()) {
 
             if(gamepad1.right_trigger == 1 && gamepad1.left_trigger == 0)
             {

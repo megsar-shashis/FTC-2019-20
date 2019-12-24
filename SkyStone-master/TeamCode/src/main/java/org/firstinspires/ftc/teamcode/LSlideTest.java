@@ -93,6 +93,7 @@ public class LSlideTest extends OpMode{
     public void loop() {
         Servo winch1 = robot.VSWinch;
         double position = winch1.getPosition();
+        double newPosition = position+(gamepad2.right_trigger/10)-(gamepad2.left_trigger/10);
 
         if(gamepad1.left_trigger == 1 && gamepad1.right_trigger == 0)
         {
