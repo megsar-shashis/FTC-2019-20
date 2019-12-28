@@ -22,7 +22,7 @@ public class TwoControllerTeleop extends LinearOpMode{
                 cf.close(config);
             }
 
-            Servo winch1 = config.VSWinch;
+            Servo winch1 = config.winch1;
             double position = winch1.getPosition();
 
             if(gamepad2.left_trigger == 1 && gamepad2.right_trigger == 0)

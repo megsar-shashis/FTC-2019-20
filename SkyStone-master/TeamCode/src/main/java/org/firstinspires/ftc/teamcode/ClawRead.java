@@ -91,7 +91,7 @@ public class ClawRead extends OpMode{
     @Override
     public void loop() {
 
-        double rightRead = robot.VSWinch.getPosition();
+        double rightRead = robot.winch1.getPosition();
 
         telemetry.addData("elbow read: ", null);
         telemetry.addData("IGNORE read: ", rightRead);

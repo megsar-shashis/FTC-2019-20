@@ -38,13 +38,19 @@ public class MecanumFunctions {
 
             case MoveForward:
                 robot.leftFront.setDirection(DcMotor.Direction.REVERSE);
-                robot.leftBack.setDirection(DcMotor.Direction.FORWARD);
+                robot.leftBack.setDirection(DcMotor.Direction.REVERSE);
                 robot.rightFront.setDirection(DcMotor.Direction.FORWARD);
-                robot.rightBack.setDirection(DcMotor.Direction.REVERSE);
+                robot.rightBack.setDirection(DcMotor.Direction.FORWARD);
                 break;
             case MoveBackward:
                 robot.leftFront.setDirection(DcMotor.Direction.FORWARD);
-                robot.leftBack.setDirection(DcMotor.Direction.REVERSE);
+                robot.leftBack.setDirection(DcMotor.Direction.FORWARD);
+                robot.rightFront.setDirection(DcMotor.Direction.REVERSE);
+                robot.rightBack.setDirection(DcMotor.Direction.REVERSE);
+                break;
+            case SlideRight:
+                robot.leftFront.setDirection(DcMotor.Direction.REVERSE);
+                robot.leftBack.setDirection(DcMotor.Direction.FORWARD);
                 robot.rightFront.setDirection(DcMotor.Direction.REVERSE);
                 robot.rightBack.setDirection(DcMotor.Direction.FORWARD);
                 break;
@@ -53,12 +59,6 @@ public class MecanumFunctions {
                 robot.leftBack.setDirection(DcMotor.Direction.REVERSE);
                 robot.rightFront.setDirection(DcMotor.Direction.FORWARD);
                 robot.rightBack.setDirection(DcMotor.Direction.REVERSE);
-                break;
-            case SlideRight:
-                robot.leftFront.setDirection(DcMotor.Direction.REVERSE);
-                robot.leftBack.setDirection(DcMotor.Direction.FORWARD);
-                robot.rightFront.setDirection(DcMotor.Direction.REVERSE);
-                robot.rightBack.setDirection(DcMotor.Direction.FORWARD);
                 break;
             case TurnLeft:
                 robot.leftFront.setDirection(DcMotor.Direction.FORWARD);

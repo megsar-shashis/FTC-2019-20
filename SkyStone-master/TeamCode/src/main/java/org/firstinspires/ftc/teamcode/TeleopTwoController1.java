@@ -123,7 +123,7 @@ public class TeleopTwoController1 extends OpMode{
             cf.openf(config);
         }
 /**************************LINEAR SLIDE************************************/
-        Servo winch1 = config.VSWinch;
+        Servo winch1 = config.winch1;
         double position = winch1.getPosition();
         telemetry.addData("winch position:", position);
 

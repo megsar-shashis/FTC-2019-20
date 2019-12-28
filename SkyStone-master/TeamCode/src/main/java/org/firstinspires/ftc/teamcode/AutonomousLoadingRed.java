@@ -87,9 +87,9 @@ public class AutonomousLoadingRed extends LinearOpMode {
 
         //slide right ~80"
         f.MecanumSlideRightInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.716, 0.42, 0.35, 0.716,120);
-        double position = c.VSWinch.getPosition();
+        double position = c.winch1.getPosition();
         position += .1;
-        c.VSWinch.setPosition(position);
+        c.winch1.setPosition(position);
 
         //move forward to foundation ~ 12"
         f.MecanumMoveForwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.7, 0.6, 0.5, 0.5,12);
@@ -98,9 +98,9 @@ public class AutonomousLoadingRed extends LinearOpMode {
 
         //move backward away ~ 8"
         f.MecanumMoveBackwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.8, 0.6, 0.5, 0.5, 8);
-        position = c.VSWinch.getPosition();
+        position = c.winch1.getPosition();
         position -= .1;
-        c.VSWinch.setPosition(position);
+        c.winch1.setPosition(position);
 
         //move left to park away ~ 48"
         f.MecanumSlideLeftInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.716, 0.42, 0.35, 0.716, 48);

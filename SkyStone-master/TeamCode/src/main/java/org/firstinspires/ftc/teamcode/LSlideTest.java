@@ -91,26 +91,14 @@ public class LSlideTest extends OpMode{
      */
     @Override
     public void loop() {
-        Servo winch1 = robot.VSWinch;
-        double position = winch1.getPosition();
-        double newPosition = position+(gamepad2.right_trigger/10)-(gamepad2.left_trigger/10);
-
-        if(gamepad1.left_trigger == 1 && gamepad1.right_trigger == 0)
-        {
-            position -= .1;
-            winch1.setPosition(position);
-        }
-
-        if(gamepad1.left_trigger == 0 && gamepad1.right_trigger == 1)
-        {
-            position += .1;
-            winch1.setPosition(position);
-        }
-
-        if(gamepad1.left_trigger == 0 && gamepad1.right_trigger == 0)
-        {
-            winch1.setPosition(position);
-        }
+        Servo winch1 = robot.winch1;
+        Servo winch2 = robot.winch2;
+        double position1 = winch1.getPosition();
+        winch1.setPosition(position1+(gamepad1.right_trigger/10)-(gamepad1.left_trigger/10));
+        double position2 = winch1.getPosition();
+        winch1.setPosition(position2-(gamepad1.right_trigger/10)-(gamepad1.left_trigger/10));
+        telemetry.addData("winch1: ", winch1.getPosition());
+        telemetry.addData("winch2: ", winch2.getPosition());
     }
 
     /*

@@ -22,8 +22,8 @@ public class Config{
     DcMotor rightBack = null;
 
     //arm
-    Servo VSWinch = null;
-
+    Servo winch1 = null;
+    Servo winch2 = null;
     //claw
     Servo orient = null;
     Servo claw = null;
@@ -57,8 +57,8 @@ public class Config{
         leftBack = hwMap.get(DcMotor.class, "left_back");//hub2 - port 2
         rightBack = hwMap.get(DcMotor.class, "right_back");//hub2 - port 3
 
-        VSWinch= hwMap.get(Servo.class, "vs_winch");//hub 1 - port 4
-
+        winch1= hwMap.get(Servo.class, "rwinch");//hub 1
+        winch2= hwMap.get(Servo.class, "lwinch");//hub 1 - port 4
         orient = hwMap.get(Servo.class, "orient");//hub 1 - port 0
         claw = hwMap.get(Servo.class, "claw");//hub 1 - port 5
 

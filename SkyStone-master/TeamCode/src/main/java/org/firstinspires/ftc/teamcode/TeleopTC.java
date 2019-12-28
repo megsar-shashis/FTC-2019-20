@@ -52,7 +52,7 @@ public class TeleopTC extends LinearOpMode{
                 cf.openf(config);
             }
 /**************************LINEAR SLIDE************************************/
-            Servo winch1 = config.VSWinch;
+            Servo winch1 = config.winch1;
             double position = winch1.getPosition();
             telemetry.addData("winch position:", position);
 
