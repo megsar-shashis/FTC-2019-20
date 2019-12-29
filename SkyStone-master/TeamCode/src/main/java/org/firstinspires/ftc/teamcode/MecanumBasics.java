@@ -9,7 +9,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
  */
 @Autonomous(name = "MecBasicsREAL", group = "Autonomous")
 public class MecanumBasics extends LinearOpMode {
-    MecBasicsConfig robot = new MecBasicsConfig();
+    Config robot = new Config();
     private ElapsedTime runtime = new ElapsedTime();
 
     MecanumFunctions mecanumFunctions = new MecanumFunctions(this);

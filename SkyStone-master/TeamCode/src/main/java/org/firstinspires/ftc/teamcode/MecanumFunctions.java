@@ -33,7 +33,7 @@ public class MecanumFunctions {
     }
 
 
-    public void MoveRobot(MecBasicsConfig robot, MoveAction moveAction, double inches, double power) {
+    public void MoveRobot(Config robot, MoveAction moveAction, double inches, double power) {
         switch (moveAction) {
 
             case MoveForward:
