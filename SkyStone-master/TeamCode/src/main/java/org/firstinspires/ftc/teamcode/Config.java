@@ -77,8 +77,8 @@ public class Config{
         rightFront.setPower(0);
         rightBack.setPower(0);
 
-        leftPull.setPosition(0.2);
-        rightPull.setPosition(0.2);
+//        leftPull.setPosition(0.2);
+//        rightPull.setPosition(0.2);
 
 
         // May want to use RUN_USING_ENCODERS if encoders are installed.

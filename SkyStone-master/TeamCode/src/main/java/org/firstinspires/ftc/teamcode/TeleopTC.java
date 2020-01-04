@@ -52,27 +52,19 @@ public class TeleopTC extends LinearOpMode{
                 cf.openf(config);
             }
 /**************************LINEAR SLIDE************************************/
-            Servo winch1 = config.winch1;
+            Servo winch1 = config.winch2;
             double position = winch1.getPosition();
             telemetry.addData("winch position:", position);
 
 //        winch1.setPosition((0.05 + (gamepad2.right_trigger / 2) - (gamepad2.left_trigger / 2)));
 
-            if(gamepad1.left_trigger == 1 && gamepad1.right_trigger == 0)
-            {
-                position -= .1;
-                winch1.setPosition(position);
+            if (gamepad1.right_trigger == 1) {
+//            winch1.setPosition(.5);
+                winch1.setPosition(position - .2);
             }
-
-            if(gamepad1.left_trigger == 0 && gamepad1.right_trigger == 1)
-            {
-                position += .1;
-                winch1.setPosition(position);
-            }
-
-            if(gamepad1.left_trigger == 0 && gamepad1.right_trigger == 0)
-            {
-                position = 0.05;
+            if (gamepad1.left_trigger == 1) {
+//            winch1.setPosition(.3);
+                position = position + .2;
                 winch1.setPosition(position);
             }
 
@@ -98,7 +90,6 @@ public class TeleopTC extends LinearOpMode{
                 leftBackPower = leftBackPower/maxPower;
                 rightBackPower = rightBackPower/maxPower;
             }
-
             telemetry.addData("powers", "|%.3f|%.3f|%.3f|%.3f|",
                     leftFrontPower, rightFrontPower, leftBackPower, rightBackPower);
             telemetry.update();

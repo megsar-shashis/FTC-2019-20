@@ -31,8 +31,8 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
+import com.qualcomm.robotcore.util.ElapsedTime;
 
 /**
  * This file provides basic Telop driving for a Pushbot robot.
@@ -49,13 +49,14 @@ import com.qualcomm.robotcore.hardware.Servo;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@TeleOp(name="LSlideTest", group="Test")
+@TeleOp(name="LSlideTest2", group="Test")
 //@Disabled
-public class LSlideTest extends OpMode{
+public class LSlideTest2 extends OpMode{
 
     /* Declare OpMode members. */
     ClawFunctions cf       = new ClawFunctions(); // use the class created to define a Pushbot's hardware
     Config robot = new Config();
+    ElapsedTime runtime = new ElapsedTime();
 
     Servo winch1;
     Servo winch2;
@@ -72,12 +73,13 @@ public class LSlideTest extends OpMode{
         winch1 = robot.winch1;
         winch2 = robot.winch2;
 
-        winch1.setPosition(1);
-        winch2.setPosition(0);
+
         // Send telemetry message to signify robot waiting;
 
         telemetry.addData("winch1 initpos: ", winch1.getPosition());
         telemetry.addData("winch2 initpos: ", winch2.getPosition());
+        double position2 = winch2.getPosition();
+
     }
 
     /*
@@ -99,56 +101,69 @@ public class LSlideTest extends OpMode{
      */
     @Override
     public void loop() {
-        if(gamepad1.left_bumper ==  true){
-            cf.openl(robot);
-            //open little
-        }
-        if(gamepad1.right_bumper == true){
-            cf.close(robot);
-            //close
-        }
-        if(gamepad1.y == true)
-        {
-            cf.openf(robot);
-        }
+
+        double position2 = winch2.getPosition();
+
+            telemetry.addLine("Elapsed time:" + runtime);
+            if (gamepad1.left_bumper == true) {
+                cf.openl(robot);
+                //open little
+            }
+            if (gamepad1.right_bumper == true) {
+                cf.close(robot);
+                //close
+            }
+            if (gamepad1.y == true) {
+                cf.openf(robot);
+            }
+            if (gamepad1.right_trigger == 1) {
+//            winch1.setPosition(.5);
+                winch2.setPosition(position2 - .2);
+            }
+            if (gamepad1.left_trigger == 1) {
+//            winch1.setPosition(.3);
+                position2 = position2 + .2;
+                winch2.setPosition(position2);
+            }
 
 
+;
 //        winch1.setPosition(position2-(gamepad1.right_trigger/10)-(gamepad1.left_trigger/10));
 
-        double position1 = winch1.getPosition();
-        double position2 = winch2.getPosition();
-        //double delta = (gamepad1.right_trigger/10)-(gamepad1.left_trigger/10);
-        double delta = 0.05;
-
-        telemetry.addData("position1: ", position1);
-        telemetry.addData("position2", position2);
-
-        telemetry.addData("winch1 pos before set: ", winch1.getPosition());
-        telemetry.addData("winch2 pos before set: ", winch2.getPosition());
-        if(gamepad1.left_trigger == 1)
-        {
-
-            position1 = position1 + delta;
-            position2 = position2 + delta;
-        }
-        if(gamepad1.right_trigger == 1)
-        {
-            position1 = position1 - delta;
-            position2 = position2 - delta;
-        }
-        if(gamepad1.left_trigger == 0 && gamepad1.right_trigger == 0)
-        {
-            position1 +=0;
-            position2 +=0;
-        }
-
-        telemetry.addData("position1: ", position1);
-        telemetry.addData("position2", position2);
-        winch1.setPosition(position1);
-        winch2.setPosition(position2);
-
-        telemetry.addData("winch1 pos after set: ", winch1.getPosition());
-        telemetry.addData("winch2 pos after set: ", winch2.getPosition());
+//        double position1 = winch1.getPosition();
+//        double position2 = winch2.getPosition();
+//        //double delta = (gamepad1.right_trigger/10)-(gamepad1.left_trigger/10);
+//        double delta = 0.05;
+//
+//        telemetry.addData("position1: ", position1);
+//        telemetry.addData("position2", position2);
+//
+//        telemetry.addData("winch1 pos before set: ", winch1.getPosition());
+//        telemetry.addData("winch2 pos before set: ", winch2.getPosition());
+//        if(gamepad1.left_trigger == 1)
+//        {
+//
+//            position1 = position1 + delta;
+//            position2 = position2 + delta;
+//        }
+//        if(gamepad1.right_trigger == 1)
+//        {
+//            position1 = position1 - delta;
+//            position2 = position2 - delta;
+//        }
+//        if(gamepad1.left_trigger == 0 && gamepad1.right_trigger == 0)
+//        {
+//            position1 +=0;
+//            position2 +=0;
+//        }
+//
+//        telemetry.addData("position1: ", position1);
+//        telemetry.addData("position2", position2);
+//        winch1.setPosition(position1);
+//        winch2.setPosition(position2);
+//
+//        telemetry.addData("winch1 pos after set: ", winch1.getPosition());
+//        telemetry.addData("winch2 pos after set: ", winch2.getPosition());
     }
 
     /*

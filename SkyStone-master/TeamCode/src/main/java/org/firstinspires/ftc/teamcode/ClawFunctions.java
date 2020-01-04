@@ -28,7 +28,7 @@ public class ClawFunctions {
     }
     public void close(Config config)
     {
-        config.claw.setPosition(-.5);
+        config.claw.setPosition(-.7);
     }
 
     public void pull(Config config)
