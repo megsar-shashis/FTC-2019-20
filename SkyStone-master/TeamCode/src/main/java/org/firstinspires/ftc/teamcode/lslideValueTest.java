@@ -29,9 +29,11 @@
 
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.Servo;
+
+import static android.os.SystemClock.sleep;
 
 /**
  * This file provides basic Telop driving for a Pushbot robot.
@@ -48,14 +50,16 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@TeleOp(name="ClawRead", group="Read")
-@Disabled
-public class ClawRead extends OpMode{
+@TeleOp(name="Slide Value Test", group="Test")
+//@Disabled
+public class lslideValueTest extends OpMode{
 
     /* Declare OpMode members. */
     ClawFunctions cf       = new ClawFunctions(); // use the class created to define a Pushbot's hardware
     Config robot = new Config();
 
+    Servo winch1;
+    Servo winch2;
 
     /*
      * Code to run ONCE when the driver hits INIT
@@ -66,9 +70,9 @@ public class ClawRead extends OpMode{
          * The init() method of the hardware class does all the work here
          */
         robot.init(hardwareMap);
-
-        // Send telemetry message to signify robot waiting;
-        telemetry.addData("Say", "Hello Driver");    //
+        winch1 = robot.winch1;
+        winch1.scaleRange(0.02, 0.3);
+        winch2 = robot.winch2;
     }
 
     /*
@@ -90,12 +94,88 @@ public class ClawRead extends OpMode{
      */
     @Override
     public void loop() {
+        if(gamepad1.left_bumper ==  true){
+            cf.openl(robot);
+            //open little
+        }
+        if(gamepad1.right_bumper == true){
+            cf.close(robot);
+            //close
+        }
+        if(gamepad1.y == true)
+        {
+            cf.openf(robot);
+        }
 
-        double rightRead = robot.winch1.getPosition();
 
-        telemetry.addData("elbow read: ", null);
-        telemetry.addData("IGNORE read: ", rightRead);
+//        winch1.setPosition(position2-(gamepad1.right_trigger/10)-(gamepad1.left_trigger/10));
+
+        winch2.setPosition(0);
+        telemetry.addData("position1: ", winch1.getPosition());
+        telemetry.addData("position2", winch2.getPosition());
         telemetry.update();
+        
+
+        winch1.setPosition(.1);
+        telemetry.addData("position1: ", winch1.getPosition());
+        telemetry.addData("position2", winch2.getPosition());
+        telemetry.update();
+        sleep(2000);
+
+        winch1.setPosition(.2);
+        telemetry.addData("position1: ", winch1.getPosition());
+        telemetry.addData("position2", winch2.getPosition());
+        telemetry.update();
+        sleep(2000);
+
+        winch1.setPosition(.3);
+        telemetry.addData("position1: ", winch1.getPosition());
+        telemetry.addData("position2", winch2.getPosition());
+        telemetry.update();
+        sleep(2000);
+
+        winch1.setPosition(.4);
+        telemetry.addData("position1: ", winch1.getPosition());
+        telemetry.addData("position2", winch2.getPosition());
+        telemetry.update();
+        sleep(2000);
+
+        winch1.setPosition(.5);
+        telemetry.addData("position1: ", winch1.getPosition());
+        telemetry.addData("position2", winch2.getPosition());
+        telemetry.update();
+        sleep(2000);
+
+        winch1.setPosition(.6);
+        telemetry.addData("position1: ", winch1.getPosition());
+        telemetry.addData("position2", winch2.getPosition());
+        telemetry.update();
+        sleep(2000);
+
+        winch1.setPosition(.7);
+        telemetry.addData("position1: ", winch1.getPosition());
+        telemetry.addData("position2", winch2.getPosition());
+        telemetry.update();
+        sleep(2000);
+
+        winch1.setPosition(.8);
+        telemetry.addData("position1: ", winch1.getPosition());
+        telemetry.addData("position2", winch2.getPosition());
+        telemetry.update();
+        sleep(2000);
+
+        winch1.setPosition(.9);
+        telemetry.addData("position1: ", winch1.getPosition());
+        telemetry.addData("position2", winch2.getPosition());
+        telemetry.update();
+        sleep(2000);
+
+        winch1.setPosition(1.0);
+        telemetry.addData("position1: ", winch1.getPosition());
+        telemetry.addData("position2", winch2.getPosition());
+        telemetry.update();
+        sleep(2000);
+
     }
 
     /*

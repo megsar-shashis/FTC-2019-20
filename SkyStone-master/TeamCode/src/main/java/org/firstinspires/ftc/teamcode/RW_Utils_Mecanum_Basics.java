@@ -11,7 +11,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 @Autonomous(name = "Mecanum Basics", group = "RW_Autonomous")
 
 @Disabled
-public class RW_Utils_Test_Autonomous_Mecanum_Basics extends LinearOpMode {
+public class RW_Utils_Mecanum_Basics extends LinearOpMode {
     RW_RConfig robot = new RW_RConfig();
     private ElapsedTime runtime = new ElapsedTime();
 

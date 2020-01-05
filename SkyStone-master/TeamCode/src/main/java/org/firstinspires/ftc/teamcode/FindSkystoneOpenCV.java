@@ -168,10 +168,12 @@ public class FindSkystoneOpenCV {
         //ensures robot will go to the destination needed
         this.opMode.telemetry.addLine("run to");
         this.opMode.telemetry.update();
+
         leftFront.setPower(leftFrontPower); //change values
         rightFront.setPower(rightFrontPower);
         leftBack.setPower(leftBackPower);
         rightBack.setPower(rightBackPower);
+
         this.opMode.telemetry.addLine("set power");
         this.opMode.telemetry.update();
         //sets speed at which robot will run, 'power' is input

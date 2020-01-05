@@ -86,9 +86,9 @@ public class AutonomousUltimateRed extends LinearOpMode {
         //slide right ~72"
         f.MecanumSlideRightInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.716, 0.42, 0.35, 0.716,80);
 
-        double position = c.VSWinch.getPosition();
+        double position = c.winch1.getPosition();
         position += .2;
-        c.VSWinch.setPosition(position);
+        c.winch1.setPosition(position);
 
         //move forward to foundation ~ 12"
         f.MecanumMoveForwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.7, 0.6, 0.5, 0.5,12);

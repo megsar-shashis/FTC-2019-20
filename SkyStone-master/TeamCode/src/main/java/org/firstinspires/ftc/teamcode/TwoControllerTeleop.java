@@ -12,7 +12,7 @@ public class TwoControllerTeleop extends LinearOpMode{
         Config config = new Config();
         ClawFunctions cf = new ClawFunctions();
         waitForStart();
-        while(opModeIsActive()) {
+         while(opModeIsActive()) {
 
             if(gamepad1.right_trigger == 1 && gamepad1.left_trigger == 0)
             {
@@ -22,7 +22,7 @@ public class TwoControllerTeleop extends LinearOpMode{
                 cf.close(config);
             }
 
-            Servo winch1 = config.VSWinch;
+            Servo winch1 = config.winch1;
             double position = winch1.getPosition();
 
             if(gamepad2.left_trigger == 1 && gamepad2.right_trigger == 0)
