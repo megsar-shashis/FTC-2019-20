@@ -57,8 +57,8 @@ public class AutonomousLoadingRed extends LinearOpMode {
 
     /* Declare OpMode members. */
     Config c = new Config();   // Use a Pushbot's hardware
+    MecanumFunctions mecanumFunctions = new MecanumFunctions(this);
     AutonomousFunctions f = new AutonomousFunctions(this);
-
     ClawFunctions cf = new ClawFunctions();
 
     @Override
@@ -72,37 +72,87 @@ public class AutonomousLoadingRed extends LinearOpMode {
 
         waitForStart();
 
-        c.orient.setPosition(0.4);
-        cf.openf(c);
-        sleep(1000);
-
-        fs.FindSkystoneAndMoveRobot();
-        telemetry.addLine("before claw");
-        cf.close(c);
-        telemetry.addLine("after claw");
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideRight, 80, 0.5 );
+        telemetry.addLine("done 1");
         telemetry.update();
         sleep(1000);
+        telemetry.clearAll();
 
-        f.MecanumMoveBackwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.8, 0.6, 0.5, 0.5,8);
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.MoveForward, 20, 0.5 );
+        telemetry.addLine("done 2");
+        telemetry.update();
+        sleep(1000);
+        telemetry.clearAll();
 
-        //slide right ~80"
-        f.MecanumSlideRightInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.716, 0.42, 0.35, 0.716,120);
-        double position = c.winch1.getPosition();
-        position += .1;
-        c.winch1.setPosition(position);
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideRight, 5, 0.5 );
+        telemetry.addLine("done 3");
+        telemetry.update();
+        sleep(1000);
+        telemetry.clearAll();
 
-        //move forward to foundation ~ 12"
-        f.MecanumMoveForwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.7, 0.6, 0.5, 0.5,12);
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.MoveForward, 15, 0.5 );
+        telemetry.addLine("done 4");
+        telemetry.update();
+        sleep(1000);
+        telemetry.clearAll();
 
-        cf.openl(c);
+        c.leftPull.setPosition(0);
+        c.rightPull.setPosition(1);
+        telemetry.addLine("done 5");
+        telemetry.update();
+        sleep(1000);
+        telemetry.clearAll();
 
-        //move backward away ~ 8"
-        f.MecanumMoveBackwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.8, 0.6, 0.5, 0.5, 8);
-        position = c.winch1.getPosition();
-        position -= .1;
-        c.winch1.setPosition(position);
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.MoveBackward, 46, 0.5 );
+        telemetry.addLine("done 6");
+        telemetry.update();
+        sleep(1000);
+        telemetry.clearAll();
 
-        //move left to park away ~ 48"
-        f.MecanumSlideLeftInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.716, 0.42, 0.35, 0.716, 48);
+        c.leftPull.setPosition(1);
+        c.rightPull.setPosition(0);
+        telemetry.addLine("done 7");
+        telemetry.update();
+        sleep(1000);
+        telemetry.clearAll();
+
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideLeft, 55, 0.5 );
+        telemetry.addLine("done 8");
+        telemetry.update();
+        sleep(1000);
+        telemetry.clearAll();
+
+//        c.orient.setPosition(0.4);
+//        cf.openf(c);
+//        sleep(1000);
+//
+//        fs.FindSkystoneAndMoveRobot();
+//        telemetry.addLine("before claw");
+//        cf.close(c);
+//        telemetry.addLine("after claw");
+//        telemetry.update();
+//        sleep(1000);
+//
+//        f.MecanumMoveBackwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.8, 0.6, 0.5, 0.5,8);
+//
+//        //slide right ~80"
+//        f.MecanumSlideRightInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.716, 0.42, 0.35, 0.716,120);
+//        double position = c.winch1.getPosition();
+//        position += .1;
+//        c.winch1.setPosition(position);
+//
+//        //move forward to foundation ~ 12"
+//        f.MecanumMoveForwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.7, 0.6, 0.5, 0.5,12);
+//
+//        cf.openl(c);
+//
+//        //move backward away ~ 8"
+//        f.MecanumMoveBackwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.8, 0.6, 0.5, 0.5, 8);
+//        position = c.winch1.getPosition();
+//        position -= .1;
+//        c.winch1.setPosition(position);
+//
+//        //move left to park away ~ 48"
+//        f.MecanumSlideLeftInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.716, 0.42, 0.35, 0.716, 48);
         }
 }
