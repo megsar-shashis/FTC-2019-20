@@ -71,6 +71,38 @@ public class FindSkystoneOpenCV {
     /*
      * Unitl function to move the robot in front of the skystone
      */
+    public int FindSkystone() {
+
+        // detect the skytone, middle, left, or right inside three blocks
+        while (!this.opMode.isStopRequested()) {
+            this.opMode.telemetry.addData("Values", valLeft + "   " + valMid + "   " + valRight);
+            this.opMode.telemetry.update();
+
+            // break when only one value is 0 to filter out the noise
+            if (valMid == 0 && valLeft != 0 && valRight != 0
+                    || valMid != 0 && valLeft == 0 && valRight != 0
+                    || valMid != 0 && valLeft != 0 && valRight == 0) {
+                break;
+            }
+        }
+
+        int ret = 0;
+        if (valLeft == 0){
+            //left
+            ret = -1;
+        } else if (valRight == 0){
+            //right
+            ret = 1;
+        }
+
+        webCam.closeCameraDevice();
+
+        return ret;
+    }
+
+    /*
+     * Unitl function to move the robot in front of the skystone
+     */
     public void FindSkystoneAndMoveRobot() {
 
         // detect the skytone, middle, left, or right inside three blocks
@@ -110,6 +142,7 @@ public class FindSkystoneOpenCV {
 
         webCam.closeCameraDevice();
     }
+
     public void moveRobotLeft (double inches){
         leftFront.setDirection(DcMotor.Direction.REVERSE);
         rightFront.setDirection(DcMotor.Direction.REVERSE);
