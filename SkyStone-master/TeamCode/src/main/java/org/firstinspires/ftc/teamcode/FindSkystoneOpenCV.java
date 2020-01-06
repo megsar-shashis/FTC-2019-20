@@ -27,7 +27,6 @@ public class FindSkystoneOpenCV {
     private DcMotor rightFront;
     private DcMotor leftBack;
     private DcMotor rightBack;
-    private double scale;
     private double forwardScale;
 
     private int valMid = -1;
@@ -37,6 +36,8 @@ public class FindSkystoneOpenCV {
     private static float rectHeight = 1.0f / 8f;
     private static float rectWidth = 1.6f / 8f;
 
+    private float forwardDistance = 34;
+    private float scale = 1.5f;
     private float cameraOffset = -1.1f;
     private float[] midPos = {(4.2f + cameraOffset) / 8f, 4f / 8f};//0 = col, 1 = row
     private float[] leftPos = {(2.4f + cameraOffset) / 8f, 4f / 8f};
@@ -90,24 +91,21 @@ public class FindSkystoneOpenCV {
         if (valLeft == 0){
             //left
             leftOffset = -7;
-            scale = 1.5;
             forwardScale = 0;
-            moveRobotForward(32 + forwardScale);
+            moveRobotForward(forwardDistance + forwardScale);
             moveRobotLeft(leftOffset * scale);
         } else if (valRight == 0){
             //right
             leftOffset = 7;
-            scale = 1.5;
             forwardScale = leftOffset / 8;
             moveRobotLeft(leftOffset * scale);
-            moveRobotForward(32 + forwardScale);
+            moveRobotForward(forwardDistance + forwardScale);
         } else {
             // middle
             leftOffset = 0;
-            scale = 1.5;
             forwardScale = leftOffset / 8;
             moveRobotLeft(leftOffset * scale);
-            moveRobotForward(32 + forwardScale);
+            moveRobotForward(forwardDistance + forwardScale);
         }
 
         webCam.closeCameraDevice();
