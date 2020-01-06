@@ -37,9 +37,10 @@ public class FindSkystoneOpenCV {
     private static float rectHeight = 1.0f / 8f;
     private static float rectWidth = 1.6f / 8f;
 
-    private float[] midPos = {3.3f / 8f, 4f / 8f};//0 = col, 1 = row
-    private float[] leftPos = {1.5f / 8f, 4f / 8f};
-    private float[] rightPos = {5.1f / 8f, 4f / 8f};
+    private float cameraOffset = -1.1f;
+    private float[] midPos = {(4.2f + cameraOffset) / 8f, 4f / 8f};//0 = col, 1 = row
+    private float[] leftPos = {(2.4f + cameraOffset) / 8f, 4f / 8f};
+    private float[] rightPos = {(6.0f + cameraOffset) / 8f, 4f / 8f};
     //moves all rectangles right or left by amount. units are in ratio to monitor
 
     private final int rows = 640;
@@ -88,25 +89,25 @@ public class FindSkystoneOpenCV {
         // move robot left or right based on position
         if (valLeft == 0){
             //left
-            leftOffset = -6;
+            leftOffset = -7;
             scale = 1.5;
             forwardScale = 0;
-            moveRobotForward(26 + forwardScale);
+            moveRobotForward(32 + forwardScale);
             moveRobotLeft(leftOffset * scale);
         } else if (valRight == 0){
             //right
-            leftOffset = 8;
+            leftOffset = 7;
             scale = 1.5;
             forwardScale = leftOffset / 8;
             moveRobotLeft(leftOffset * scale);
-            moveRobotForward(26 + forwardScale);
+            moveRobotForward(32 + forwardScale);
         } else {
             // middle
-            leftOffset = 1;
+            leftOffset = 0;
             scale = 1.5;
             forwardScale = leftOffset / 8;
             moveRobotLeft(leftOffset * scale);
-            moveRobotForward(26 + forwardScale);
+            moveRobotForward(32 + forwardScale);
         }
 
         webCam.closeCameraDevice();
@@ -126,9 +127,9 @@ public class FindSkystoneOpenCV {
         moveRobot(0.716, 0.42, 0.35, 0.716, inches * positionsPerInch);
     }
     public void moveRobotForward (double inches){
-        leftFront.setDirection(DcMotor.Direction.FORWARD);
+        leftFront.setDirection(DcMotor.Direction.REVERSE);
         rightFront.setDirection(DcMotor.Direction.FORWARD);
-        leftBack.setDirection(DcMotor.Direction.FORWARD);
+        leftBack.setDirection(DcMotor.Direction.REVERSE);
         rightBack.setDirection(DcMotor.Direction.FORWARD);
         moveRobot(0.7, 0.6, 0.5, 0.5, inches * positionsPerInch);
     }
