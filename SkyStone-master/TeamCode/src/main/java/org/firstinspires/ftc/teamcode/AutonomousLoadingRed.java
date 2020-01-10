@@ -76,7 +76,7 @@ public class AutonomousLoadingRed extends LinearOpMode {
 
         waitForStart();
 
-        c.orient.setPosition(0.4);
+        c.orient.setPosition(0.6);
         cf.openf(c);
         //sleep(1000);
 
@@ -88,16 +88,16 @@ public class AutonomousLoadingRed extends LinearOpMode {
 
         //move horizontally 8 * stoneposition
         mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideRight, 8*stonePosition, 0.5 );
-
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.MoveForward, 0.2, 0.7 );
         telemetry.addLine("before claw");
         cf.close(c);
         telemetry.addLine("after claw");
 
         telemetry.update();
-        //sleep(1000);
+        sleep(50);
 
         // after grab the stone, need to move back to avoid bumping into the bridge
-        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.MoveBackward, 8, 0.5 );
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.MoveBackward, 8.2, 0.5 );
         telemetry.addLine("move backward 8");
         telemetry.update();
         //sleep(1000);
@@ -116,31 +116,32 @@ public class AutonomousLoadingRed extends LinearOpMode {
         //sleep(1000);
         telemetry.clearAll();
 
-        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideRight, 60, 0.5 );
-        telemetry.addLine("move right 60");
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideRight, 68, 0.5 );
+        telemetry.addLine("move right 64");
         telemetry.update();
         //sleep(1000);
         telemetry.clearAll();
 
         // lift the stone up
         winch.setPosition(-0.8);
+        sleep(1000);
 
         position = winch.getPosition();
         telemetry.addData("winch position:", position);
 
-        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.MoveForward, 20, 0.5 );
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.MoveForward, 18, 0.5 );
         telemetry.addLine("done 2");
         telemetry.update();
         //sleep(1000);
         telemetry.clearAll();
 
-        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideRight, 5, 0.5 );
+       // mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideRight, 5, 0.5 );
         telemetry.addLine("done 3");
         telemetry.update();
         //sleep(1000);
         telemetry.clearAll();
 
-        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.MoveForward, 15, 0.5 );
+        //mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.MoveForward, 15, 0.5 );
         telemetry.addLine("done 4");
         telemetry.update();
         //sleep(1000);
@@ -149,18 +150,21 @@ public class AutonomousLoadingRed extends LinearOpMode {
         telemetry.addLine("before claw");
         cf.openf(c);
         telemetry.addLine("after claw");
+        sleep(1000);
 
         // down the winch
-        winch.setPosition(0.0);
+        winch.setPosition(0.7);
+        sleep(1000);
 
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideRight, 5, 0.5 );
         c.leftPull.setPosition(0);
         c.rightPull.setPosition(1);
         telemetry.addLine("done 5");
         telemetry.update();
-        //sleep(1000);
+        sleep(1000);
         telemetry.clearAll();
 
-        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.MoveBackward, 46, 0.5 );
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.MoveBackward, 30, 1);
         telemetry.addLine("done 6");
         telemetry.update();
         //sleep(1000);
@@ -170,10 +174,10 @@ public class AutonomousLoadingRed extends LinearOpMode {
         c.rightPull.setPosition(0);
         telemetry.addLine("done 7");
         telemetry.update();
-        //sleep(1000);
+        sleep(1000);
         telemetry.clearAll();
 
-        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideLeft, 55, 0.5 );
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideLeft, 50, 0.5 );
         telemetry.addLine("done 8");
         telemetry.update();
         //sleep(1000);
