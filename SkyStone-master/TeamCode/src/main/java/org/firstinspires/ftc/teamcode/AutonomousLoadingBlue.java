@@ -52,8 +52,9 @@ import com.qualcomm.robotcore.hardware.Servo;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@Autonomous(name="AutonomousLRed", group="Auto")
-public class AutonomousLoadingRed extends LinearOpMode {
+@Autonomous(name="AutonomousLBlue", group="Auto")
+//@Disabled
+public class AutonomousLoadingBlue extends LinearOpMode {
 
     /* Declare OpMode members. */
     Config c = new Config();   // Use a Pushbot's hardware
@@ -106,8 +107,8 @@ public class AutonomousLoadingRed extends LinearOpMode {
         sleep(100);
         telemetry.clearAll();
 
-        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideRight, 11-9*stonePosition, 0.5 );
-        telemetry.addLine("move right");
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideLeft, 11+9*stonePosition, 0.5 );
+        telemetry.addLine("move left");
         telemetry.update();
         sleep(100);
         telemetry.clearAll();
@@ -119,7 +120,7 @@ public class AutonomousLoadingRed extends LinearOpMode {
         sleep(100);
         telemetry.clearAll();
 
-        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideRight, 40, 0.5 );
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideLeft, 40, 0.5 );
         telemetry.addLine("move right 25");
         telemetry.update();
         sleep(100);
@@ -129,7 +130,7 @@ public class AutonomousLoadingRed extends LinearOpMode {
         winch.setPosition(0.4);
         sleep(4000);
 
-        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideRight, 37, 0.5 );
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideLeft, 37, 0.5 );
         telemetry.addLine("move right 37");
         telemetry.update();
         sleep(100)
@@ -143,7 +144,7 @@ public class AutonomousLoadingRed extends LinearOpMode {
         telemetry.update();
         sleep(100);
         telemetry.clearAll();
-        // mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideRight, 5, 0.5 );
+        // mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideLeft, 5, 0.5 );
         telemetry.addLine("done 3");
         telemetry.update();
         sleep(100);
@@ -166,7 +167,7 @@ public class AutonomousLoadingRed extends LinearOpMode {
         winch.setPosition(0.0);
         sleep(1000);
 
-        //mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideRight, 7, 0.5 );
+        //mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideLeft, 7, 0.5 );
         c.leftPull.setPosition(0);
         c.rightPull.setPosition(1);
         telemetry.addLine("done 5");
@@ -187,7 +188,7 @@ public class AutonomousLoadingRed extends LinearOpMode {
         sleep(1000);
         telemetry.clearAll();
 
-        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideLeft, 60, 0.5 );
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideRight, 60, 0.5 );
         telemetry.addLine("done 8");
         telemetry.update();
         sleep(100);
@@ -207,7 +208,7 @@ public class AutonomousLoadingRed extends LinearOpMode {
 //        f.MecanumMoveBackwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.8, 0.6, 0.5, 0.5,8);
 //
 //        //slide right ~80"
-//        f.MecanumSlideRightInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.716, 0.42, 0.35, 0.716,120);
+//        f.MecanumSlideLeftInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.716, 0.42, 0.35, 0.716,120);
 //        double position = c.winch1.getPosition();
 //        position += .1;
 //        c.winch1.setPosition(position);
@@ -224,6 +225,7 @@ public class AutonomousLoadingRed extends LinearOpMode {
 //        c.winch1.setPosition(position);
 //
 //        //move left to park away ~ 48"
-//        f.MecanumSlideLeftInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.716, 0.42, 0.35, 0.716, 48);
-        }
+//        f.MecanumSlideRightInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.716, 0.42, 0.35, 0.716, 48);
+    }
 }
+
