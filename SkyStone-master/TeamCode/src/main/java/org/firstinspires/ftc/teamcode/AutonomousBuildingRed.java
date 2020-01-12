@@ -58,7 +58,6 @@ import org.firstinspires.ftc.robotcontroller.external.samples.HardwarePushbot;
  */
 
 @Autonomous(name="AutonomousBRed", group="Auto")
-//@Disabled
 public class AutonomousBuildingRed extends LinearOpMode {
 
     /* Declare OpMode members. */

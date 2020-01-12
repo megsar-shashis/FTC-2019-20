@@ -53,7 +53,6 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
  */
 
 @Autonomous(name="AutonomousBBlue", group="Auto")
-//@Disabled
 public class AutonomousBuildingBlue extends LinearOpMode {
 
     /* Declare OpMode members. */

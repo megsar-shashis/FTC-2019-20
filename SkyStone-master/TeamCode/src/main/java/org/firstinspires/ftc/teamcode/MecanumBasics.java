@@ -18,13 +18,13 @@ public class MecanumBasics extends LinearOpMode {
         robot.init(hardwareMap);
 
         waitForStart();
-        mecanumFunctions.MoveRobot(robot, MecanumFunctions.MoveAction.MoveForward, 10, 0.5 );
+        mecanumFunctions.MoveRobot(robot, MecanumFunctions.MoveAction.MoveForward, 20, 0.5 );
 
-        mecanumFunctions.MoveRobot(robot, MecanumFunctions.MoveAction.MoveBackward, 10, 0.5 );
+        mecanumFunctions.MoveRobot(robot, MecanumFunctions.MoveAction.MoveBackward, 20, 0.5 );
 
-        mecanumFunctions.MoveRobot(robot, MecanumFunctions.MoveAction.SlideLeft, 10, 0.5 );
+        mecanumFunctions.MoveRobot(robot, MecanumFunctions.MoveAction.SlideLeft, 20, 0.5 );
 
-        mecanumFunctions.MoveRobot(robot, MecanumFunctions.MoveAction.SlideRight, 10, 0.5 );
+        mecanumFunctions.MoveRobot(robot, MecanumFunctions.MoveAction.SlideRight, 20, 0.5 );
 
         mecanumFunctions.MoveRobot(robot, MecanumFunctions.MoveAction.TurnLeft, 10, 0.5 );
 

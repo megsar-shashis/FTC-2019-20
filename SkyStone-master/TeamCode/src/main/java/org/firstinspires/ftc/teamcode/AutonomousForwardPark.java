@@ -53,7 +53,6 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
  */
 
 @Autonomous(name="AutonomousFPark", group="Auto")
-//@Disabled
 public class AutonomousForwardPark extends LinearOpMode {
 
     /* Declare OpMode members. */

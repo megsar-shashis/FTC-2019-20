@@ -53,7 +53,6 @@ import com.qualcomm.robotcore.hardware.Servo;
  */
 
 @Autonomous(name="AutonomousLRed", group="Auto")
-//@Disabled
 public class AutonomousLoadingRed extends LinearOpMode {
 
     /* Declare OpMode members. */
