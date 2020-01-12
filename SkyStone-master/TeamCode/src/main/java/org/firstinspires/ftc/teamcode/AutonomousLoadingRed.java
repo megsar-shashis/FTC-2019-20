@@ -77,68 +77,77 @@ public class AutonomousLoadingRed extends LinearOpMode {
         waitForStart();
 
         c.orient.setPosition(0.6);
-        cf.openf(c);
+        //cf.openf(c);
+        // open claw to the top position
+        c.claw.setPosition(1.0);
         //sleep(1000);
 
         double position = winch.getPosition();
         telemetry.addData("initial winch position:", position);
+        telemetry.update();
 
         //move forward
         mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.MoveForward, 32.5, 0.5 );
 
         //move horizontally 8 * stoneposition
-        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideRight, 8*stonePosition, 0.5 );
-        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.MoveForward, 0.2, 0.7 );
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideRight, 9*stonePosition, 0.5 );
+        sleep(100);
+
         telemetry.addLine("before claw");
         cf.close(c);
         telemetry.addLine("after claw");
-
         telemetry.update();
-        sleep(50);
-
-        // after grab the stone, need to move back to avoid bumping into the bridge
-        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.MoveBackward, 8.2, 0.5 );
-        telemetry.addLine("move backward 8");
-        telemetry.update();
-        //sleep(1000);
-        telemetry.clearAll();
-
-        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideRight, 20, 0.5 );
-        telemetry.addLine("move right 20");
-        telemetry.update();
-        //sleep(1000);
-        telemetry.clearAll();
+        // sleep one sec to grab the stone before move backward
+        sleep(1000);
 
         // after grab the stone, need to move back to avoid bumping into the bridge
         mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.MoveBackward, 8, 0.5 );
-        telemetry.addLine("move back 8");
+        telemetry.addLine("move backward 8");
         telemetry.update();
-        //sleep(1000);
+        sleep(100);
         telemetry.clearAll();
 
-        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideRight, 68, 0.5 );
-        telemetry.addLine("move right 64");
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideRight, 11-9*stonePosition, 0.5 );
+        telemetry.addLine("move right");
         telemetry.update();
-        //sleep(1000);
+        sleep(100);
+        telemetry.clearAll();
+
+        // after grab the stone, need to move back to avoid bumping into the bridge
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.MoveBackward, 4, 0.5 );
+        telemetry.addLine("move back 4");
+        telemetry.update();
+        sleep(100);
+        telemetry.clearAll();
+
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideRight, 40, 0.5 );
+        telemetry.addLine("move right 25");
+        telemetry.update();
+        sleep(100);
         telemetry.clearAll();
 
         // lift the stone up
-        winch.setPosition(-0.8);
-        sleep(1000);
+        winch.setPosition(0.4);
+        sleep(4000);
 
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideRight, 38, 0.5 );
+        telemetry.addLine("move right 50");
+        telemetry.update();
+        sleep(100)
+        ;
+        telemetry.clearAll();
         position = winch.getPosition();
         telemetry.addData("winch position:", position);
 
-        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.MoveForward, 18, 0.5 );
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.MoveForward, 16, 0.5 );
         telemetry.addLine("done 2");
         telemetry.update();
-        //sleep(1000);
+        sleep(100);
         telemetry.clearAll();
-
-       // mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideRight, 5, 0.5 );
+        // mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideRight, 5, 0.5 );
         telemetry.addLine("done 3");
         telemetry.update();
-        //sleep(1000);
+        sleep(100);
         telemetry.clearAll();
 
         //mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.MoveForward, 15, 0.5 );
@@ -148,15 +157,17 @@ public class AutonomousLoadingRed extends LinearOpMode {
         telemetry.clearAll();
 
         telemetry.addLine("before claw");
-        cf.openf(c);
+        //cf.openf(c);
+        //keep the claw open up
+        c.claw.setPosition(1.0);
         telemetry.addLine("after claw");
         sleep(1000);
 
         // down the winch
-        winch.setPosition(0.7);
+        winch.setPosition(0.0);
         sleep(1000);
 
-        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideRight, 5, 0.5 );
+        //mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideRight, 7, 0.5 );
         c.leftPull.setPosition(0);
         c.rightPull.setPosition(1);
         telemetry.addLine("done 5");
@@ -164,10 +175,10 @@ public class AutonomousLoadingRed extends LinearOpMode {
         sleep(1000);
         telemetry.clearAll();
 
-        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.MoveBackward, 30, 1);
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.MoveBackward, 48, 1);
         telemetry.addLine("done 6");
         telemetry.update();
-        //sleep(1000);
+        sleep(100);
         telemetry.clearAll();
 
         c.leftPull.setPosition(1);
@@ -177,10 +188,10 @@ public class AutonomousLoadingRed extends LinearOpMode {
         sleep(1000);
         telemetry.clearAll();
 
-        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideLeft, 50, 0.5 );
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideLeft, 60, 0.5 );
         telemetry.addLine("done 8");
         telemetry.update();
-        //sleep(1000);
+        sleep(100);
         telemetry.clearAll();
 
 //        c.orient.setPosition(0.4);
