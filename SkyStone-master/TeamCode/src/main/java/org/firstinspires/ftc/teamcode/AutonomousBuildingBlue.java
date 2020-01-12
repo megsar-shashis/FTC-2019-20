@@ -58,7 +58,9 @@ public class AutonomousBuildingBlue extends LinearOpMode {
 
     /* Declare OpMode members. */
     Config c = new Config();   // Use a Pushbot's hardware
-    AutonomousFunctions f = new AutonomousFunctions();
+    MecanumFunctions mecanumFunctions = new MecanumFunctions(this);
+    AutonomousFunctions f = new AutonomousFunctions(this);
+    ClawFunctions cf = new ClawFunctions();
 
     @Override
     public void runOpMode() {
@@ -66,28 +68,61 @@ public class AutonomousBuildingBlue extends LinearOpMode {
         /* Initialize the drive system variables.
          * The init() method of the hardware class does all the work here
          */
+
         c.init(hardwareMap);
+        waitForStart();
 
-        //move forward ~ 25"
-        f.MecanumMoveForwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.7, 0.6, 0.5, 0.5,25);
+        cf.openf(c);
 
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideLeft, 80, 0.5 );
+        telemetry.addLine("done 1");
+        telemetry.update();
+        sleep(500);
+        telemetry.clearAll();
 
-        //slide right ~ 8"
-        f.MecanumSlideLeftInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.716, 0.42, 0.35, 0.716, 5);
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.MoveForward, 18, 0.5 );
+        telemetry.addLine("done 2");
+        telemetry.update();
+        sleep(500);
+        telemetry.clearAll();
 
-        //move forward ~ 5"
-        f.MecanumMoveForwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.7, 0.6, 0.5, 0.5,5);
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideLeft, 15, 0.5 );
+        telemetry.addLine("done 3");
+        telemetry.update();
+        sleep(500);
+        telemetry.clearAll();
 
-        //clamp pull servos
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.MoveForward, 15, 0.5 );
+        telemetry.addLine("done 4");
+        telemetry.update();
+        sleep(500);
+        telemetry.clearAll();
 
-        //move backward ~ 30"
-        f.MecanumMoveBackwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.8, 0.6, 0.5, 0.5, 30);
+        c.leftPull.setPosition(0);
+        c.rightPull.setPosition(1);
+        telemetry.addLine("done 5");
+        telemetry.update();
+        sleep(500);
+        telemetry.clearAll();
 
-        //release pull servos
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.MoveBackward, 50, 1.0);
+        telemetry.addLine("done 6");
+        telemetry.update();
+        sleep(100);
+        telemetry.clearAll();
 
-        //slide left ~ 52"
-        f.MecanumSlideRightInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.716, 0.42, 0.35, 0.716,120);
+        c.leftPull.setPosition(1);
+        c.rightPull.setPosition(0);
+        telemetry.addLine("done 7");
+        telemetry.update();
+        sleep(100);
+        telemetry.clearAll();
 
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideRight, 50, 1.0);
+        telemetry.addLine("done 8");
+        telemetry.update();
+        sleep(500);
+        telemetry.clearAll();
 
     }
 }

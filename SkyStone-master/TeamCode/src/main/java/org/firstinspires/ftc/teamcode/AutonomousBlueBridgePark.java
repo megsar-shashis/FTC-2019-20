@@ -32,10 +32,6 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import com.qualcomm.robotcore.hardware.LightSensor;
-import com.qualcomm.robotcore.hardware.Servo;
-
-import org.firstinspires.ftc.robotcontroller.external.samples.HardwarePushbot;
 
 /**
  * This file illustrates the concept of driving up to a line and then stopping.
@@ -57,14 +53,14 @@ import org.firstinspires.ftc.robotcontroller.external.samples.HardwarePushbot;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@Autonomous(name="AutonomousBRed", group="Auto")
-//@Disabled
-public class AutonomousBuildingRed extends LinearOpMode {
+@Autonomous(name="AutoBBridge", group="Auto")
+public class AutonomousBlueBridgePark extends LinearOpMode {
 
     /* Declare OpMode members. */
     Config c = new Config();   // Use a Pushbot's hardware
     MecanumFunctions mecanumFunctions = new MecanumFunctions(this);
     AutonomousFunctions f = new AutonomousFunctions(this);
+    ClawFunctions cf = new ClawFunctions();
 
     @Override
     public void runOpMode() {
@@ -76,78 +72,16 @@ public class AutonomousBuildingRed extends LinearOpMode {
         c.init(hardwareMap);
         waitForStart();
 
-        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideRight, 80, 0.5 );
+        cf.openf(c);
+
+        // Sleep to let Alliance get a head start
+        sleep(20000);
+
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideLeft, 40, 0.5 );
         telemetry.addLine("done 1");
         telemetry.update();
-        sleep(500);
+        sleep(1000);
         telemetry.clearAll();
-
-        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.MoveForward, 18, 0.5 );
-        telemetry.addLine("done 2");
-        telemetry.update();
-        sleep(500);
-        telemetry.clearAll();
-
-        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideRight, 15, 0.5 );
-        telemetry.addLine("done 3");
-        telemetry.update();
-        sleep(500);
-        telemetry.clearAll();
-
-        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.MoveForward, 15, 0.5 );
-        telemetry.addLine("done 4");
-        telemetry.update();
-        sleep(500);
-        telemetry.clearAll();
-
-        c.leftPull.setPosition(0);
-        c.rightPull.setPosition(1);
-        telemetry.addLine("done 5");
-        telemetry.update();
-        sleep(500);
-        telemetry.clearAll();
-
-        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.MoveBackward, 50, 1);
-        telemetry.addLine("done 6");
-        telemetry.update();
-        sleep(100);
-        telemetry.clearAll();
-
-        c.leftPull.setPosition(1);
-        c.rightPull.setPosition(0);
-        telemetry.addLine("done 7");
-        telemetry.update();
-        sleep(100);
-        telemetry.clearAll();
-
-        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideLeft, 50, 0.5 );
-        telemetry.addLine("done 8");
-        telemetry.update();
-        //sleep(1000);
-        telemetry.clearAll();
-
-//        c.init(hardwareMap);
-//
-//        //move forward ~ 25"
-//        f.MecanumMoveForwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.7, 0.6, 0.5, 0.5,25);
-//
-//        //slide right ~ 8"
-//        f.MecanumSlideRightInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.716, 0.42, 0.35, 0.716,5);
-//
-//        //move forward ~ 5"
-//        f.MecanumMoveForwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.7, 0.6, 0.5, 0.5,5);
-//
-//        //clamp pull servos
-//        cf.pull(c);
-//
-//        //move backward ~ 30"
-//        f.MecanumMoveBackwardInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.8, 0.6, 0.5, 0.5, 30);
-//
-//        //release pull servos
-//        cf.nopull(c);
-//
-//        //slide left ~ 52"
-//        f.MecanumSlideLeftInInches(c.leftFront, c.rightFront, c.leftBack, c.rightBack, 0.716, 0.42, 0.35, 0.716, 52);
 
     }
 }

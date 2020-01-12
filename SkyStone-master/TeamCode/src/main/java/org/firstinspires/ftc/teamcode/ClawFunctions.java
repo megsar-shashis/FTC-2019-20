@@ -24,7 +24,7 @@ public class ClawFunctions {
     }
     public void openf(Config config)
     {
-        config.claw.setPosition(.75);
+        config.claw.setPosition(.85);
     }
     public void close(Config config)
     {
@@ -33,12 +33,12 @@ public class ClawFunctions {
 
     public void pull(Config config)
     {
-        config.leftPull.setPosition(0);
+        config.leftPull.setPosition(1);
         config.rightPull.setPosition(0);
     }
     public void nopull(Config config)
     {
-        config.leftPull.setPosition(1);
+        config.leftPull.setPosition(0   );
         config.rightPull.setPosition(1);
     }
 
