@@ -130,8 +130,8 @@ public class AutonomousLoadingRed extends LinearOpMode {
         winch.setPosition(0.4);
         sleep(4000);
 
-        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideRight, 38, 0.5 );
-        telemetry.addLine("move right 50");
+        mecanumFunctions.MoveRobot(c, MecanumFunctions.MoveAction.SlideRight, 37, 0.5 );
+        telemetry.addLine("move right 37");
         telemetry.update();
         sleep(100)
         ;
